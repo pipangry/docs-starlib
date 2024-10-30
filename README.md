@@ -1,2 +1,2 @@
 # docs-starlib
-StarLibV2 documentation
+StarLibV2 documentation/
