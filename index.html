@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>StarLib Docs</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>StarLib V2 Documentation</h2>
+            <ul>
+                <li><a href="#" onclick="showTab('home')">Home</a></li>
+                <li><a href="#" onclick="showTab('start')">Getting started</a></li>
+            </ul>
+            <h3>Examples</h3>
+            <ul>
+                <li><a href="#" onclick="showTab('dynamic_example')">Dynamic UI example</a></li>
+                <li><a href="#" onclick="showTab('multiforms_example')">Multi forms UI example</a></li>
+            </ul>
+            <div class="line"></div>
+            <h4>package_screen:</h4>
+            <ul>
+                <li><a href="#" onclick="showTab('pkg_scr_temp')">screen_template.json</a></li>
+                <li><a href="#" onclick="showTab('pkg_scr_com')">screen_common.json</a></li>
+            </ul>
+            <div class="line"></div>
+            <h4>package_button:</h4>
+            <ul>
+                <li><a href="#" onclick="showTab('pkg_scr_temp')">button_style.json</a></li>
+                <li><a href="#" onclick="showTab('pkg_scr_temp')">button_templates.json</a></li>
+                <li><a href="#" onclick="showTab('pkg_scr_com')">common_button.json</a></li>
+            </ul>
+            <div class="line"></div>
+        </div>
+        <div class="content">
+
+            <section id="home" class="tab-content">
+                <div class="important-info">
+                    <div class="color-bar"></div>
+                    <div class="content">
+                        <h2>Check GrimUI now! - one of the most powerful UIs.</h2>
+                        <a href="https://discord.com/channels/523663022053392405/1300103021035786260" target="_blank">GrimUI - Bedrock addons post</a>
+                    </div>
+                </div>
+                <h1>Home</h1>
+                <div class="image-container">
+                    <img src="assets/logo.png" alt="logo" width="auto" height="200">
+                </div>
+                <h3>StarLib - Library to help you create a JsonUI forms. Supports multi-forming, dynamic structure, custom tabs, styles and much more!</h3>
+
+                <a href="https://github.com/pipangry/StarLibV2" class="repo-card" target="_blank">
+                    <img src="assets/github.png" alt="icon" class="repo-icon">
+                    <div class="repo-text">
+                        <h3>Source code</h3>
+                        <p>Download latest release of StarLib.</p>
+                    </div>
+                </a>
+
+                <h2>Contributors</h2>
+
+                <div class="contributors">
+                    <div class="contributor">
+                        <a href="https://github.com/pipangry" target="_blank">
+                            <img src="assets/contributors/pipangry.png" alt="Pipa_ngry">
+                            <p>Pipa_ngry</p>
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="start" class="tab-content" style="display:none;">
+                <h1>Getting started</h1>
+                <h4>Hello! I'll tell you a little bit about how to use StarLib.</h4>
+                <p>StarLib created to help make Forms in JsonUI, you can use this library in non-complex UI, and at the same time in very complex ones. The library supports dynamic structure, multiform optimization, custom tabs and much more!</p>
+                <h4>1. To get started, download the latest StarLib V2 release from Github.</h4>
+
+                <a href="https://github.com/pipangry/StarLibV2" class="repo-card" target="_blank">
+                    <img src="assets/github.png" alt="icon" class="repo-icon">
+                    <div class="repo-text">
+                        <h3>Source code</h3>
+                        <p>Download latest release of StarLib.</p>
+                    </div>
+                </a>
+
+                <h4>2. Paste the _ui_defs.json file and the starlib2 folder to the ui folder. If your file is _ui_defs.json is already in use, copy the lines below and paste it into the file.</h4>
+                <div class="text-container" data-file="docs/start/defs.txt">
+                    <h2>_ui_defs.json</h2>
+                    <p class="text-content">Loading...</p>
+                    <button class="copy-button">Copy</button>
+                </div>
+
+                <h4>3. Your setup is done! Read the documentation, look at the examples and get started to use StarLibV2.</h4>
+                <div class="image-container">
+                    <img src="assets/cat.gif" alt="logo" width="auto" height="200">
+                </div>
+               <!-- <table>
+                    <thead>
+                        <tr>
+                            <th>Header 1</th>
+                            <th>Header 2</th>
+                            <th>Header 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Info 1</td>
+                            <td>Info 2</td>
+                            <td>Info 3</td>
+                        </tr>
+                        <tr>
+                            <td>Info 4</td>
+                            <td>Info 5</td>
+                            <td>Info 6</td>
+                        </tr>
+                        <tr>
+                            <td>Info 7</td>
+                            <td>Info 8</td>
+                            <td>Info 9</td>
+                        </tr>
+                        <tr>
+                            <td>Info 10</td>
+                            <td>Info 11</td>
+                            <td>Info 12</td>
+                        </tr>
+                    </tbody>
+                </table> -->
+            </section>
+
+            <section id="dynamic_example" class="tab-content">
+                <h1>DynamicUI example</h1>
+                <h3>Hello! Now I want to show a small example of a dynamic UI made with StarLibV2 using the example of NutUI</h3>
+                <div class="image-container">
+                    <img src="assets/tabs/dynamic_example/form_example.png" alt="logo" width="auto" height="400">
+                </div>
+                <div class="important-info">
+                    <div class="color-bar"></div>
+                    <div class="content">
+                        <h2>You can download this example here.</h2>
+                        <a href="https://discord.com/channels/523663022053392405/1300103021035786260" target="_blank">Download</a>
+                    </div>
+                </div>
+
+                <h3>Getting started with creating screen.</h3>
+                <div class="text-container" data-file="docs/dynamic_example/screen.txt">
+                    <h2>server_form.json</h2>
+                    <p class="text-content">Loading...</p>
+                    <button class="copy-button">Copy</button>
+                </div>
+                <p>As you can see, we using StarLib's dynamic header "starlib_pkg_dynamic_common.common_dynamic_header". Dynamic header allows you to move the titleline away from the button, as well as add additional buttons using $DYNAMIC_HEADER_header_contents_control, but in this ui I decided not to add them.</p>
+
+                <h3>Now let's add out custom style elements to make form looking good.</h3>
+                <div class="text-container" data-file="docs/dynamic_example/style.txt">
+                    <h2>server_form.json</h2>
+                    <p class="text-content">Loading...</p>
+                    <button class="copy-button">Copy</button>
+                </div>
+
+                <h2>Now the scary part! Dynamic button.</h2>
+                <div class="important-info">
+                    <div class="color-bar"></div>
+                    <div class="content">
+                        <h2>What is dynamic?</h2>
+                        <p>A dynamic UI means that the shape, location, and size of the buttons depend on the tags inserted into the button text. this allows you to make countless variations. GrimUI uses the same method</p>
+                    </div>
+                </div>
+                <h3>Explanations of the method used in the code below</h3>
+                <p>Almost all dynamic forms use the padding-based sizer & no_height structure scheme. Why? Because it provides the best optimization. And it is this structure that is used in StarLibV2!</p>
+                <h3>I created a diagram to show how it works</h3>
+                <img src="assets/tabs/dynamic_example/scheme.png" alt="scheme" width="auto" height="400">
+                <p>A button is a finite element. that is, the output. Async vertical size controls the vertical size of the button, but when using the no_height tag, it turns off to turn off the collision of the button as well. Disabling the button collision, that is, no_height, allows you to make several buttons in one line, while being in the same stack panel. </p>
+                <h3>This is how padding-based sizing works</h3>
+                <img src="assets/tabs/dynamic_example/sizing_scheme.png" alt="scheme" width="auto" height="200">
+                <p>Did you get it? Padding pushes the main button to the side</p>
+                <h3>And now, with knowledge of the structure of the dynamic button, we move on to the code!</h3>
+
+                <div class="text-container" data-file="docs/dynamic_example/button.txt">
+                    <h2>server_form.json</h2>
+                    <p class="text-content">Loading...</p>
+                    <button class="copy-button">Copy</button>
+                </div>
+            </section>
+           <!--
+            <section id="start" class="tab-content" style="display:none;">
+                <h1>Getting started</h1>
+                <p>starlibv2</p>
+                <div class="dark-table">
+                    <table>
+                        <tr>
+                            <th>1</th>
+                            <th>2</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="text-container" data-file="docs/file1.txt">
+                    <h2>Header</h2>
+                    <p class="text-content">Loading...</p>
+                    <button class="copy-button">Copy</button>
+                </div>
+                
+                <div class="text-container" data-file="docs/file2.txt">
+                    <h2>Header</h2>
+                    <p class="text-content">Loading...</p>
+                    <button class="copy-button">Copy</button>
+                </div>
+              -->
+            </section>
+        </div>
+    </div>
+        <div class="line"></div>
+    <div class="footer">
+        <p>© Pipa_ngry 2024</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+  "long_form@starlib_pkg_screen_template.screen": {
+    "$fade_enabled": true, //We are turning on the background darkening that has already been done
+    "$fade_alpha": 0.2, //Intensity of the darkening
+    "$SCREEN_TEMPLATE_header_control": "starlib_pkg_dynamic_common.common_dynamic_header", //Using dynamic header
+    "$DYNAMIC_HEADER_background_control": "server_form.black",
+    "$DYNAMIC_HEADER_style_control": "server_form.header",
+    "$CLOSE_BUTTON_TEMPLATE_default": "server_form.close_button_default", //Using our custom close button
+    "$CLOSE_BUTTON_TEMPLATE_hover": "server_form.close_button_hover",
+    "$CLOSE_BUTTON_TEMPLATE_pressed": "server_form.close_button_hover",
+    "$SCREEN_TEMPLATE_background": "server_form.background", //Using our custom background
+    "$SCREEN_TEMPLATE_content_size": [ //Because we have big background frame, we editing main form content to fit better.
+      "100% - 16px",
+      "100% - 16px"
+    ],
+    "$button_item_control": "server_form.button" //Using out dynamic button
+  },
