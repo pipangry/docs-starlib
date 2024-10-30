@@ -1,0 +1,146 @@
+{
+  "namespace": "server_form",
+  "third_party_server_screen@common.base_screen": {
+    "$screen_content": "server_form.server_form",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      }
+    ]
+  },
+  "server_form": {
+    "type": "panel",
+    "size": [
+      "100%",
+      "100%"
+    ],
+    "controls": [
+      {
+        "server_form_factory": {
+          "type": "factory",
+          "control_ids": {
+            "long_form": "@server_form.long_form",
+            "custom_form": "@server_form.custom_form"
+          }
+        }
+      }
+    ]
+  },
+  "long_form@starlib_pkg_screen_template.screen": {
+    "$fade_enabled": true,
+    "$fade_alpha": 0.2,
+    "$SCREEN_TEMPLATE_header_control": "starlib_pkg_dynamic_common.common_dynamic_header",
+    "$DYNAMIC_HEADER_background_control": "server_form.black",
+    "$DYNAMIC_HEADER_style_control": "server_form.header",
+    "$CLOSE_BUTTON_TEMPLATE_default": "server_form.close_button_default",
+    "$CLOSE_BUTTON_TEMPLATE_hover": "server_form.close_button_hover",
+    "$CLOSE_BUTTON_TEMPLATE_pressed": "server_form.close_button_hover",
+    "$SCREEN_TEMPLATE_background": "server_form.background",
+    "$SCREEN_TEMPLATE_content_size": [
+      "100% - 16px",
+      "100% - 16px"
+    ],
+    "$button_item_control": "server_form.button"
+  },
+  "black@style.image": {
+    "texture": "textures/example/black"
+  },
+  "header@style.image": {
+    "texture": "textures/example/header"
+  },
+  "close_button_default@style.image": {
+    "texture": "textures/example/close_button",
+    "controls": [
+      {
+        "cross@style.close_button_default": {
+          "size": [
+            15,
+            15
+          ]
+        }
+      }
+    ]
+  },
+  "close_button_hover@style.image": {
+    "texture": "textures/example/close_button",
+    "controls": [
+      {
+        "hightlight@hightlight": {}
+      },
+      {
+        "cross@style.close_button_default": {
+          "size": [
+            15,
+            15
+          ]
+        }
+      }
+    ]
+  },
+  "hightlight@style.image": {
+    "texture": "textures/example/hover",
+    "size": [
+      "100% + 2px",
+      "100% + 2px"
+    ]
+  },
+  "background@style.image": {
+    "texture": "textures/example/background"
+  },
+  "button@starlib_pkg_dynamic_structure.dynamic_item_template": {
+    "$DYNAMIC_ITEM_entry": "starlib_pkg_dynamic_sizer.third_sizer_template",
+    "$DYNAMIC_SIZER_third_output": "starlib_pkg_dynamic_sizer.half_sizer_template",
+    "$DYNAMIC_SIZER_half_output": "starlib_pkg_dynamic_structure.vertical_processing_panel",
+    "$VERTICAL_PROCESSING_output_control": "starlib_pkg_button_templates.horizontal_button_template",
+    "$BORDERED_BUTTON_background_control": "server_form.black",
+    "$COMMON_BUTTON_hover_control": "server_form.hightlight",
+    "$COMMON_BUTTON_style_control": "starlib_pkg_button_style.disabled_variable_button_style",
+    "$BUTTON_STYLE_disabled_variable_key": "§s§0§0",
+    "$HORIZONTAL_BUTTON_size": [
+      "100% - 2px",
+      "100% - 2px"
+    ],
+    "$BUTTON_SIZER_left_third": "§c§1§1",
+    "$BUTTON_SIZER_right_third": "§c§2§1",
+    "$BUTTON_SIZER_left_half": "§c§1§2",
+    "$BUTTON_SIZER_right_half": "§c§2§2",
+    "$VERTICAL_PROCESSING_no_height_key": "§c§0§0",
+    "$COMMON_BUTTON_bindings": [
+      {
+        "binding_collection_name": "form_buttons",
+        "binding_type": "collection_details"
+      },
+      {
+        "binding_collection_name": "form_buttons",
+        "binding_name": "#form_button_text",
+        "binding_type": "collection"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#form_button_text - '§s§0§0') = #form_button_text)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#form_button_text - '§s§0§0') = #form_button_text)",
+        "target_property_name": "#enabled"
+      }
+    ],
+    "$BUTTON_STYLE_disabled_variable_controls": [
+      {
+        "style@style.image": {
+          "texture": "textures/example/button_disabled"
+        }
+      }
+    ],
+    "$BUTTON_STYLE_default_variable_controls": [
+      {
+        "style@style.image": {
+          "texture": "textures/example/button"
+        }
+      }
+    ]
+  }
+}
