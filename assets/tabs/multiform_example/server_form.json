@@ -1,0 +1,128 @@
+{
+  "namespace": "server_form",
+  "third_party_server_screen@common.base_screen": {
+    "$screen_content": "server_form.server_form",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      }
+    ]
+  },
+  "server_form": {
+    "type": "panel",
+    "size": [
+      "100%",
+      "100%"
+    ],
+    "controls": [
+      {
+        "server_form_factory": {
+          "type": "factory",
+          "control_ids": {
+            "long_form": "@server_form.long_form",
+            "custom_form": "@server_form.custom_form"
+          }
+        }
+      }
+    ]
+  },
+  "long_form@starlib_pkg_screen_template.screen": {
+    "$screen_size": [
+      380,
+      240
+    ],
+    "$frame_enabled": true,
+    "$SCREEN_TEMPLATE_between_contents_padding_size": [
+      "100%",
+      1
+    ],
+    "$SCREEN_TEMPLATE_between_contents_padding_control": "style.white_frame",
+    "$HEADER_TEMPLATE_style_control": "server_form.my_header",
+    "$HEADER_TEMPLATE_title_control": "server_form.my_title",
+    "$SCREEN_TEMPLATE_content_control": "server_form.content"
+  },
+  "my_header@style.image": {
+    "texture": "textures/ui/Black",
+    "alpha": 0.8
+  },
+  "my_title@starlib_pkg_screen_common.title_template": {
+    "text_alignment": "left",
+    "size": [
+      "100% - 10px",
+      "default"
+    ]
+  },
+  "content": {
+    "type": "panel",
+    "controls": [
+      {
+        "default_panel@server_form.default_panel": {
+          "bindings": [
+            {
+              "binding_name": "#title_text",
+              "binding_type": "global"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#title_text - 'custom_panel') = #title_text)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "custom_panel@server_form.custom_panel": {
+          "bindings": [
+            {
+              "binding_name": "#title_text",
+              "binding_type": "global"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not((#title_text - 'custom_panel') = #title_text))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "default_panel@starlib_pkg_screen_template.content_template": {
+    "$scrolling_content": "server_form.default_panel_content"
+  },
+  "custom_panel@starlib_pkg_screen_template.content_template": {
+    "$scrolling_content": "server_form.custom_panel_content"
+  },
+  "default_panel_content@starlib_pkg_screen_template.scrolling_content_template": {
+    "$button_item_control": "starlib_pkg_button_templates.horizontal_button",
+    "$BUTTON_STYLE_default_texture": "textures/example/button_2",
+    "$BORDERED_BUTTON_background_control": "global.empty_panel"
+  },
+  "custom_panel_content@global.grid": {
+    "$grid_item": "server_form.cubic_button"
+  },
+  "cubic_button": {
+    "type": "panel",
+    "size": [
+      "25%",
+      "100%x"
+    ],
+    "controls": [
+      {
+        "cubic_button@starlib_pkg_button_templates.cubic_button": {
+          "size": [
+            "100% - 2px",
+            "100% - 2px"
+          ],
+          "$BUTTON_STYLE_default_texture": "textures/example/button_2",
+          "$CUBIC_BUTTON_image_size": [
+            "100% - 16px",
+            "100% - 16px"
+          ]
+        }
+      }
+    ]
+  }
+}

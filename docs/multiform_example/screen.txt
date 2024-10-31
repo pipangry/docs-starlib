@@ -1,0 +1,26 @@
+  "long_form@starlib_pkg_screen_template.screen": { //Using screen template.
+    "$screen_size": [ //Making form size bigger.
+      380,
+      240
+    ],
+    "$frame_enabled": true, //Enable white frame around a form.
+    "$SCREEN_TEMPLATE_between_contents_padding_size": [ //Now we activating between contents padding by changing it size.
+      "100%",
+      1
+    ],
+    "$SCREEN_TEMPLATE_between_contents_padding_control": "style.white_frame", //Adding texture to between contents padding
+    "$HEADER_TEMPLATE_style_control": "server_form.my_header", //Changing style
+    "$HEADER_TEMPLATE_title_control": "server_form.my_title",
+    "$SCREEN_TEMPLATE_content_control": "server_form.content" //Changing content
+  },
+  "my_header@style.image": {
+    "texture": "textures/ui/Black",
+    "alpha": 0.8
+  },
+  "my_title@starlib_pkg_screen_common.title_template": { //Title template
+    "text_alignment": "left", //Changing orientation to left
+    "size": [
+      "100% - 10px",
+      "default"
+    ]
+  },
