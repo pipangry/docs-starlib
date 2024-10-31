@@ -107,27 +107,7 @@
     "$BUTTON_SIZER_left_half": "§c§1§2",
     "$BUTTON_SIZER_right_half": "§c§2§2",
     "$VERTICAL_PROCESSING_no_height_key": "§c§0§0",
-    "$COMMON_BUTTON_bindings": [
-      {
-        "binding_collection_name": "form_buttons",
-        "binding_type": "collection_details"
-      },
-      {
-        "binding_collection_name": "form_buttons",
-        "binding_name": "#form_button_text",
-        "binding_type": "collection"
-      },
-      {
-        "binding_type": "view",
-        "source_property_name": "((#form_button_text - '§s§0§0') = #form_button_text)",
-        "target_property_name": "#visible"
-      },
-      {
-        "binding_type": "view",
-        "source_property_name": "((#form_button_text - '§s§0§0') = #form_button_text)",
-        "target_property_name": "#enabled"
-      }
-    ],
+    "$COMMON_BUTTON_panel_control": "starlib_pkg_button_common.disabled_variable_button_panel",
     "$BUTTON_STYLE_disabled_variable_controls": [
       {
         "style@style.image": {

@@ -8,7 +8,7 @@
     "$COMMON_BUTTON_hover_control": "server_form.hightlight",
     "$COMMON_BUTTON_style_control": "starlib_pkg_button_style.disabled_variable_button_style", //We using StarLib's prepared 2 variations style.
     "$BUTTON_STYLE_disabled_variable_key": "§s§0§0", //Key for disabled button style variable.
-    "$HORIZONTAL_BUTTON_size": [ //We adding paddings to button.
+    "$HORIZONTAL_BUTTON_size": [ //We adding margins to button.
       "100% - 2px",
       "100% - 2px"
     ],
@@ -17,27 +17,7 @@
     "$BUTTON_SIZER_left_half": "§c§1§2",
     "$BUTTON_SIZER_right_half": "§c§2§2",
     "$VERTICAL_PROCESSING_no_height_key": "§c§0§0",
-    "$COMMON_BUTTON_bindings": [ //We need to disable button panel if the disabled key exists.
-      {
-          "binding_collection_name": "form_buttons",
-          "binding_type": "collection_details"
-      },
-      {
-          "binding_collection_name": "form_buttons",
-          "binding_name": "#form_button_text",
-          "binding_type": "collection"
-      },
-      {
-          "binding_type": "view",
-          "source_property_name": "((#form_button_text - '§s§0§0') = #form_button_text)",
-          "target_property_name": "#visible"
-      },
-      {
-          "binding_type": "view",
-          "source_property_name": "((#form_button_text - '§s§0§0') = #form_button_text)",
-          "target_property_name": "#enabled"
-      }
-    ],
+    "$COMMON_BUTTON_panel_control": "starlib_pkg_button_common.disabled_variable_button_panel", //We need to disable button panel if the disabled key exists, so we using custom button panel binding.
     "$BUTTON_STYLE_disabled_variable_controls": [ //Style controls
       {
         "style@style.image": {

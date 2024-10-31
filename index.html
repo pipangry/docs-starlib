@@ -35,9 +35,9 @@
             <div class="line"></div>
             <h4>package_button:</h4>
             <ul>
-                <li><a href="#" onclick="showTab('pkg_scr_temp')">button_style.json</a></li>
-                <li><a href="#" onclick="showTab('pkg_scr_temp')">button_templates.json</a></li>
-                <li><a href="#" onclick="showTab('pkg_scr_com')">common_button.json</a></li>
+                <li><a href="#" onclick="showTab('pkg_but_style')">button_style.json</a></li>
+                <li><a href="#" onclick="showTab('pkg_but_temp')">button_templates.json</a></li>
+                <li><a href="#" onclick="showTab('pkg_but_com')">common_button.json</a></li>
             </ul>
             <div class="line"></div>
         </div>
@@ -514,6 +514,594 @@
                     <div class="line"></div>
                 <h3>@starlib_pkg_screen_template.close_button</h3>
                 <p>Close button for classic header. Uses @starlib_pkg_screen_common.close_button_template</p>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_screen_template.content_template</h3>
+                <p>Content template. Contains scrolling panel.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$scrolling_content</td>
+                            <td>starlib_pkg_screen_template.scrolling_content_template</td>
+                            <td>Scrolling content.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_screen_template.scrolling_content_template</h3>
+                <p>Scrolling content template. Has the form of a stack panel, contains form text and button factory.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$SCROLLING_CONTENT_form_text_control</td>
+                            <td>starlib_pkg_screen_common.form_text_template</td>
+                            <td>Form text template.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$button_item_control</td>
+                            <td>style.nd_b</td>
+                            <td>Button factory item.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="pkg_scr_com" class="tab-content">
+                <h1>screen_common.json</h1>
+                <h3>screen_common.json is used for default screen elements.</h3>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_screen_common.title_template</h3>
+                <p>Form title text template.</p>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_screen_common.close_button_template</h3>
+                <p>Classic close button template. Does not support async styles.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$CLOSE_BUTTON_TEMPLATE_size</td>
+                            <td>[ 15, 15 ]</td>
+                            <td>Close button size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$CLOSE_BUTTON_TEMPLATE_default</td>
+                            <td>style.close_button_default</td>
+                            <td>Close button default state control.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$CLOSE_BUTTON_TEMPLATE_hover</td>
+                            <td>style.close_button_hover</td>
+                            <td>Close button hover state control.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$CLOSE_BUTTON_TEMPLATE_pressed</td>
+                            <td>style.close_button_hover</td>
+                            <td>Close button pressed state control.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_screen_common.form_text_template</h3>
+                <p>Form text template.</p>
+                    <div class="line"></div>
+            </section>
+
+            <section id="pkg_but_style" class="tab-content">
+                <h1>button_style.json</h1>
+                <h3>button_style.json is used to control asynchronous button styles.</h3>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_style.common_button_style</h3>
+                <p>Common button style template.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$BUTTON_STYLE_default</td>
+                            <td>starlib_pkg_button_style.button_style_template</td>
+                            <td>Default style element control. Acts as the only and default element in common $BUTTON_STYLE_variables.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BUTTON_STYLE_default_texture</td>
+                            <td>textures/ui/Black</td>
+                            <td>Texture for $BUTTON_STYLE_default element.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BUTTON_STYLE_variables</td>
+                            <td>[ { @$BUTTON_STYLE_default } ]</td>
+                            <td>Button style variables controls.</td>
+                            <td>array</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_style.button_style_template</h3>
+                <p>Button style template. Uses @style.image</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$bindings</td>
+                            <td>[]</td>
+                            <td>Bindings.</td>
+                            <td>array</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_style.style_variable</h3>
+                <p>Template for style variable. Uses @starlib_pkg_button_style.button_style_template and a binding identical to @global.binding.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$key</td>
+                            <td>""</td>
+                            <td>If $key is in form_button_text, the element is visible.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_style.reverse_style_variable</h3>
+                <p>Template for style variable. Uses @starlib_pkg_button_style.button_style_template and a binding identical to @global.reverse_binding.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$key</td>
+                            <td>""</td>
+                            <td>If $key is NOT in form_button_text, the element is visible.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_style.disabled_variable_button_style</h3>
+                <p>Template for two variations button style. You can see an example of its use in the Dynamic UI example.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$BUTTON_STYLE_disabled_variable_key</td>
+                            <td>""</td>
+                            <td>Key for switch between default variation and disabled variation. If the key is in the form_button_text, disabled variable will be displayed, otherwise default one will be displayed.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BUTTON_STYLE_default_variable_controls</td>
+                            <td>[]</td>
+                            <td>Elements of the default style variation.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$BUTTON_STYLE_disabled_variable_controls</td>
+                            <td>[]</td>
+                            <td>Elements of the disabled style variation.</td>
+                            <td>array</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="pkg_but_temp" class="tab-content">
+                <h1>button_templates.json</h1>
+                <h3>button_templates.json contains templates for building buttons.</h3>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_templates.common_vertical_stack_item</h3>
+                <p>Template for making magrins on the top and the bottom of the button. CAN'T be used for dynamic button.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$VERTICAL_ITEM_button_control</td>
+                            <td>style.nd_vt</td>
+                            <td>The main element.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$VERTICAL_ITEM_top_margin_size</td>
+                            <td>[ 0, 1 ]</td>
+                            <td>Size of the top margin.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$VERTICAL_ITEM_bottom_margin_size</td>
+                            <td>[ 0, 1 ]</td>
+                            <td>Size of the bottom margin.</td>
+                            <td>array</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_templates.bordered_button_template</h3>
+                <p>Template for adding background to a button item.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$BORDERED_BUTTON_background_control</td>
+                            <td>style.black</td>
+                            <td>Button background control.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BORDERED_BUTTON_inner</td>
+                            <td>[]</td>
+                            <td>Controls of the elements inside the background.</td>
+                            <td>array</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_templates.horizontal_button</h3>
+                <p>@starlib_pkg_button_templates.horizontal_button_template but with applied margins. Uses @starlib_pkg_button_templates.common_vertical_stack_item.</p>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_templates.horizontal_button_template</h3>
+                <p>Horizontal button template.</p>
+                <div class="image-container">
+                    <img src="assets/tabs/buttons/horizontal.png" alt="button" width="auto" height="100">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$HORIZONTAL_BUTTON_size</td>
+                            <td>[ 100%, 32 ]</td>
+                            <td>Button size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$HORIZONTAL_BUTTON_root_control</td>
+                            <td>starlib_pkg_button_common.common_button</td>
+                            <td>Button root control.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$HORIZONTAL_BUTTON_content_control</td>
+                            <td>starlib_pkg_button_common.button_text</td>
+                            <td>Button content control.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_templates.cubic_button</h3>
+                <p>Cubic button.</p>
+                <div class="image-container">
+                    <img src="assets/tabs/buttons/cubic.png" alt="button" width="auto" height="200">
+                </div>
+                <div class="important-info">
+                    <div class="color-bar"></div>
+                    <div class="content">
+                        <h2>Features:</h2>
+                        <p>The image in the cubic button has a fill size, that is, it tries to take up the maximum space, but rests on the text field.</p>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$CUBIC_BUTTON_size</td>
+                            <td>[ 100%, 100%x ]</td>
+                            <td>Button size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$CUBIC_BUTTON_image_size</td>
+                            <td>[ 100%, 100% ]</td>
+                            <td>Button image size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$CUBIC_BUTTON_text_control</td>
+                            <td>starlib_pkg_button_common.button_text</td>
+                            <td>Button text control.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_templates.big_button</h3>
+                <p>Big button.</p>
+                <div class="image-container">
+                    <img src="assets/tabs/buttons/big.png" alt="button" width="auto" height="200">
+                </div>
+                <div class="important-info">
+                    <div class="color-bar"></div>
+                    <div class="content">
+                        <h2>Features:</h2>
+                        <p>Similar to cubic button, but image and content are located separately and can take up all the space.</p>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$BIG_BUTTON_size</td>
+                            <td>[ 100%, 100%x ]</td>
+                            <td>Button size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$BIG_BUTTON_content</td>
+                            <td>starlib_pkg_button_templates.common_big_button_content</td>
+                            <td>Button content.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BIG_BUTTON_content_size</td>
+                            <td>[ 100% - 4px, 100% - 4px ]</td>
+                            <td>Button content size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$BIG_BUTTON_image_size</td>
+                            <td>[ 100% - 4px, 100% - 4px ]</td>
+                            <td>Button image size.</td>
+                            <td>array</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_templates.common_big_button_content</h3>
+                <p>Big button content. Uses @starlib_pkg_button_common.button_text.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$BIG_BUTTON_CONTENT_text_alignment</td>
+                            <td>left</td>
+                            <td>Text alignment.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BIG_BUTTON_CONTENT_font_type</td>
+                            <td>MinecraftTen</td>
+                            <td>Font type.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BIG_BUTTON_CONTENT_font_scale_factor</td>
+                            <td>1.2</td>
+                            <td>Font scale factor.</td>
+                            <td>float</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="pkg_but_com" class="tab-content">
+                <h1>common_button.json</h1>
+                <h3>common_button.json contains common button elements and templates.</h3>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_common.common_button_panel</h3>
+                <p>Button panel. Uses @common.button. Supports async styles.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$COMMON_BUTTON_hover_control</td>
+                            <td>style.hightlight</td>
+                            <td>Async hover state element control.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$COMMON_BUTTON_pressed_control</td>
+                            <td>$COMMON_BUTTON_hover_control</td>
+                            <td>Async pressed state element control.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$COMMON_BUTTON_bindings</td>
+                            <td>[ { "binding_collection_name": "form_buttons", "binding_type": "collection_details" } ]</td>
+                            <td>Button bindings.</td>
+                            <td>array</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_common.common_button</h3>
+                <p>Common button root template.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$COMMON_BUTTON_panel_control</td>
+                            <td>starlib_pkg_button_common.common_button_panel</td>
+                            <td>Button panel control.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$COMMON_BUTTON_style_control</td>
+                            <td>starlib_pkg_button_style.common_button_style</td>
+                            <td>Button style control.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_common.disabled_variable_button_panel</h3>
+                <p>Custom bindings for disabling button panel if disabled style key exists. You can see an example of its usage in Dynamic UI example. Uses @starlib_pkg_button_common.common_button_panel.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$BUTTON_STYLE_disabled_variable_key</td>
+                            <td>""</td>
+                            <td>Disabled style variable key.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_common.button_image</h3>
+                <p>Button image template. Uses @style.image</p>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_common.button_text</h3>
+                <p>Common form_button_text. Uses @style.label</p>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_button_common.range_selection_button_text</h3>
+                <p>Range selection form button text. Has bindings similar to @global.range_selection_binding. Uses @style.label</p>
+                <div class="important-info">
+                    <div class="color-bar"></div>
+                    <div class="content">
+                        <h2>Important!</h2>
+                        <p>range_selection_button_text uses \t as a space in the text. That is, it takes it into account in the size of the field, but in the final version it removes it.</p>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$from</td>
+                            <td>""</td>
+                            <td>Specifies from which point the text selection field starts.</td>
+                            <td>float</td>
+                        </tr>
+                        <tr>
+                            <td>$to</td>
+                            <td>""</td>
+                            <td>Specifies the point to which the text selection field will go.</td>
+                            <td>float</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </div>
     </div>

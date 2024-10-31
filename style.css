@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #1e1e1e;
-    color: #ffffff;
+    color: #e7e7e7;
 }
 
 .container {
@@ -32,7 +32,7 @@ body {
 
 .sidebar a {
     border-radius: 5px;
-    color: #ffffff;
+    color: #dadada;
     text-decoration: none;
     display: block;
     padding: 10px;
@@ -74,7 +74,7 @@ body {
 .text-container h2 {
     margin: 0 0 3px 0;
     font-size: 1.2em;
-    color: #ffffff;
+    color: #e7e7e7;
 }
 .text-container p {
     color: rgb(206, 145, 91);
@@ -84,7 +84,7 @@ body {
     right: 10px;
     bottom: 10px;
     background-color: #2f2f2f;
-    color: #ffffff;
+    color: #e7e7e7;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -109,7 +109,7 @@ body {
     margin-bottom: 5px;
 }
 .footer {
-    color: white;
+    color: #e7e7e7;
     text-align: center;
 }
 table {
@@ -127,7 +127,7 @@ th, td {
 
 th {
     background-color: #1e1e1e;
-    color: #ffffff;
+    color: #e7e7e7;
 }
 
 tr {
@@ -172,16 +172,16 @@ tr:last-child td {
 
 .important-info h2 {
     margin: 0 0 10px;
-    color: #ffffff;
+    color: #e7e7e7;
 }
 
 .important-info p {
     margin: 0;
-    color: #e0e0e0;
+    color: #e7e7e7;
 }
 
 .important-info a {
-    color: #ffffff;
+    color: #e7e7e7;
     font-size: 18px;
 }
 
@@ -229,12 +229,12 @@ tr:last-child td {
 
 .repo-text h3 {
     margin: 0;
-    color: #ffffff;
+    color: #e7e7e7;
 }
 
 .repo-text p {
     margin: 5px 0 0;
-    color: #e0e0e0;
+    color: #e7e7e7;
 }
 
 .repo-link {
@@ -276,5 +276,5 @@ tr:last-child td {
 }
 
 .contributor a:hover {
-    color: #ffffff;
+    color: #e7e7e7;
 }
