@@ -12,5 +12,5 @@
       "100% - 16px",
       "100% - 16px"
     ],
-    "$button_item_control": "server_form.button" //Using out dynamic button
+    "$button_item_control": "server_form.button" //Using our dynamic button
   },
