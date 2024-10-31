@@ -409,7 +409,7 @@
                         </tr>
                         <tr>
                             <td>$forms_holder_controls</td>
-                            <td>[ @starlib_pkg_screen_template.form_template ]</td>
+                            <td>[ { @starlib_pkg_screen_template.form_template } ]</td>
                             <td>Control of the forms used. It is usually used for multiforms.</td>
                             <td>array</td>
                         </tr>
@@ -418,6 +418,102 @@
                     <div class="line"></div>
                 <h3>@starlib_pkg_screen_template.form_template</h3>
                 <p>Starlib advanced form template. Used by default in starlib_pkg_screen_template.screen</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$SCREEN_TEMPLATE_header_control</td>
+                            <td>starlib_pkg_screen_template.header_template</td>
+                            <td>Element to be used as header.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$SCREEN_TEMPLATE_content_control</td>
+                            <td>starlib_pkg_screen_template.content_template</td>
+                            <td>Element to be used as form content.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$SCREEN_TEMPLATE_sub_content_control</td>
+                            <td>global.empty_panel</td>
+                            <td>Element to be used as form subcontent.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$SCREEN_TEMPLATE_background</td>
+                            <td>style.black_alpha</td>
+                            <td>Element to be used as form content background.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$SCREEN_TEMPLATE_between_contents_padding_control</td>
+                            <td>global.empty_panel</td>
+                            <td>Element to be used as padding between header and form content.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$SCREEN_TEMPLATE_between_contents_padding_size</td>
+                            <td>[ 0, 0 ]</td>
+                            <td>Size of the between contents padding.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$SCREEN_TEMPLATE_content_size</td>
+                            <td>[ 100% - 8px, 100% - 8px ]</td>
+                            <td>Size of the form content panel.</td>
+                            <td>array</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_screen_template.header_template</h3>
+                <p>Classic header template.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$HEADER_TEMPLATE_size</td>
+                            <td>[ 100%, 24 ]</td>
+                            <td>Header panel size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$HEADER_TEMPLATE_style_control</td>
+                            <td>style.black</td>
+                            <td>Header style control.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$HEADER_TEMPLATE_title_control</td>
+                            <td>starlib_pkg_screen_common.title_template</td>
+                            <td>Title element control.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$HEADER_TEMPLATE_close_button_control</td>
+                            <td>starlib_pkg_screen_template.close_button</td>
+                            <td>Close button element control.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="line"></div>
+                <h3>@starlib_pkg_screen_template.close_button</h3>
+                <p>Close button for classic header. Uses @starlib_pkg_screen_common.close_button_template</p>
             </section>
         </div>
     </div>
