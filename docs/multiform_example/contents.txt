@@ -33,17 +33,9 @@
       }
     ]
   },
-  "default_panel@starlib_pkg_screen_template.content_template": { //Using content_template with scrolling_panel.
+  "default_panel@starlib_pkg_screen_template.content_template": { //Using form content template with scrolling_panel
     "$scrolling_content": "server_form.default_panel_content"
   },
-  "custom_panel@starlib_pkg_screen_template.content_template": {
+  "custom_panel@starlib_pkg_screen_template.content_template": { //Using form content template with scrolling_panel
     "$scrolling_content": "server_form.custom_panel_content"
-  },
-  "default_panel_content@starlib_pkg_screen_template.scrolling_content_template": {
-    "$button_item_control": "starlib_pkg_button_templates.horizontal_button", //Factory item for buttons stack.
-    "$BUTTON_STYLE_default_texture": "textures/example/button_2", //Button texture.
-    "$BORDERED_BUTTON_background_control": "global.empty_panel" //Disabling button background by changing control to empty panel.
-  },
-  "custom_panel_content@global.grid": { //Here we using StarLib's grid to make code easier.
-    "$grid_item": "server_form.cubic_button"
   },
