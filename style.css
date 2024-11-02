@@ -5,6 +5,11 @@ body {
     color: #e7e7e7;
 }
 
+.container, .sidebar, .content, .text-container, .important-info, .repo-card {
+    overflow-x: hidden;
+}
+
+
 .container {
     display: flex;
 }
@@ -66,10 +71,11 @@ body {
     padding: 15px;
     margin: 5px 0 5px 0;
     position: relative;
-    width: auto;
-    height: auto;
-    overflow: auto;
+    /* width: auto;
+    height: auto; */
+    /* overflow: scroll; */
     border-radius: 5px;
+    box-sizing: border-box;
 }
 .text-container h2 {
     margin: 0 0 3px 0;
@@ -112,6 +118,13 @@ body {
     color: #e7e7e7;
     text-align: center;
 }
+
+.responsive-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+    width: 100%;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -277,4 +290,62 @@ tr:last-child td {
 
 .contributor a:hover {
     color: #e7e7e7;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .repo-card, .important-info, .contributors {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 1000;
+    }
+
+    .sidebar.visible {
+        display: block;
+        width: 250px;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+        padding: 10px;
+        margin: 10px;
+        font-size: 16px;
+        background-color: #242424;
+        color: #e7e7e7;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 800px){
+    .menu-toggle{
+        visibility: hidden;
+    }
 }

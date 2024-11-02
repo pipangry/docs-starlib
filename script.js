@@ -4,6 +4,7 @@ function showTab(tabId) {
         tab.style.display = 'none';
     });
     document.getElementById(tabId).style.display = 'block';
+    document.querySelector('.sidebar').classList.toggle('visible');
 }
 
 showTab('home');
@@ -39,4 +40,14 @@ document.querySelectorAll('.text-container').forEach(container => {
             console.error('Text copying error:', err);
         });
     });
+});
+
+// Toggle sidebar on mobile
+const toggleButton = document.createElement('button');
+toggleButton.innerText = "Menu";
+toggleButton.classList.add('menu-toggle');
+document.body.insertBefore(toggleButton, document.body.firstChild);
+
+toggleButton.addEventListener('click', () => {
+    document.querySelector('.sidebar').classList.toggle('visible');
 });

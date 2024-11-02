@@ -160,10 +160,14 @@
                 <h3>Explanations of the method used in the code below</h3>
                 <p>Almost all dynamic forms use the padding-based sizer & no_height structure scheme. Why? Because it provides the best optimization. And it is this structure that is used in StarLibV2!</p>
                 <h3>I created a diagram to show how it works</h3>
-                <img src="assets/tabs/dynamic_example/scheme.png" alt="scheme" width="auto" height="400">
+                <div class="image-container">
+                    <img src="assets/tabs/dynamic_example/scheme.png" alt="scheme" width="auto" height="400">
+                </div>
                 <p>A button is a finite element. that is, the output. Async vertical size controls the vertical size of the button, but when using the no_height tag, it turns off to turn off the collision of the button as well. Disabling the button collision, that is, no_height, allows you to make several buttons in one line, while being in the same stack panel. </p>
                 <h3>This is how padding-based sizing works</h3>
-                <img src="assets/tabs/dynamic_example/sizing_scheme.png" alt="scheme" width="auto" height="200">
+                <div class="image-container">
+                    <img src="assets/tabs/dynamic_example/sizing_scheme.png" alt="scheme" width="auto" height="200">
+                </div>
                 <p>Did you get it? Padding pushes the main button to the side</p>
                 <h3>And now, with knowledge of the structure of the dynamic button, we move on to the code!</h3>
 
@@ -388,195 +392,205 @@
                     <div class="line"></div>
                 <h3>@starlib_pkg_screen_template.screen</h3>
                 <p>Starlib advanced screen template.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$SCREEN_TEMPLATE_fade_control</td>
-                            <td>style.fade</td>
-                            <td>Element to be used as fade.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$SCREEN_TEMPLATE_frame_control</td>
-                            <td>style.white_frame</td>
-                            <td>Element to be used as a frame.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$fade_enabled</td>
-                            <td>false</td>
-                            <td>Screen background fade.</td>
-                            <td>boolean</td>
-                        </tr>
-                        <tr>
-                            <td>$frame_enabled</td>
-                            <td>false</td>
-                            <td>Form frame.</td>
-                            <td>boolean</td>
-                        </tr>
-                        <tr>
-                            <td>$forms_holder_controls</td>
-                            <td>[ { @starlib_pkg_screen_template.form_template } ]</td>
-                            <td>Control of the forms used. It is usually used for multiforms.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$SCREEN_TEMPLATE_fade_control</td>
+                                <td>style.fade</td>
+                                <td>Element to be used as fade.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$SCREEN_TEMPLATE_frame_control</td>
+                                <td>style.white_frame</td>
+                                <td>Element to be used as a frame.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$fade_enabled</td>
+                                <td>false</td>
+                                <td>Screen background fade.</td>
+                                <td>boolean</td>
+                            </tr>
+                            <tr>
+                                <td>$frame_enabled</td>
+                                <td>false</td>
+                                <td>Form frame.</td>
+                                <td>boolean</td>
+                            </tr>
+                            <tr>
+                                <td>$forms_holder_controls</td>
+                                <td>[ { @starlib_pkg_screen_template.form_template } ]</td>
+                                <td>Control of the forms used. It is usually used for multiforms.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_screen_template.form_template</h3>
                 <p>Starlib advanced form template. Used by default in starlib_pkg_screen_template.screen</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$SCREEN_TEMPLATE_header_control</td>
-                            <td>starlib_pkg_screen_template.header_template</td>
-                            <td>Element to be used as header.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$SCREEN_TEMPLATE_content_control</td>
-                            <td>starlib_pkg_screen_template.content_template</td>
-                            <td>Element to be used as form content.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$SCREEN_TEMPLATE_sub_content_control</td>
-                            <td>global.empty_panel</td>
-                            <td>Element to be used as form subcontent.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$SCREEN_TEMPLATE_background</td>
-                            <td>style.black_alpha</td>
-                            <td>Element to be used as form content background.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$SCREEN_TEMPLATE_between_contents_padding_control</td>
-                            <td>global.empty_panel</td>
-                            <td>Element to be used as padding between header and form content.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$SCREEN_TEMPLATE_between_contents_padding_size</td>
-                            <td>[ 0, 0 ]</td>
-                            <td>Size of the between contents padding.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$SCREEN_TEMPLATE_content_size</td>
-                            <td>[ 100% - 8px, 100% - 8px ]</td>
-                            <td>Size of the form content panel.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$SCREEN_TEMPLATE_header_control</td>
+                                <td>starlib_pkg_screen_template.header_template</td>
+                                <td>Element to be used as header.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$SCREEN_TEMPLATE_content_control</td>
+                                <td>starlib_pkg_screen_template.content_template</td>
+                                <td>Element to be used as form content.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$SCREEN_TEMPLATE_sub_content_control</td>
+                                <td>global.empty_panel</td>
+                                <td>Element to be used as form subcontent.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$SCREEN_TEMPLATE_background</td>
+                                <td>style.black_alpha</td>
+                                <td>Element to be used as form content background.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$SCREEN_TEMPLATE_between_contents_padding_control</td>
+                                <td>global.empty_panel</td>
+                                <td>Element to be used as padding between header and form content.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$SCREEN_TEMPLATE_between_contents_padding_size</td>
+                                <td>[ 0, 0 ]</td>
+                                <td>Size of the between contents padding.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$SCREEN_TEMPLATE_content_size</td>
+                                <td>[ 100% - 8px, 100% - 8px ]</td>
+                                <td>Size of the form content panel.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_screen_template.header_template</h3>
                 <p>Classic header template.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$HEADER_TEMPLATE_size</td>
-                            <td>[ 100%, 24 ]</td>
-                            <td>Header panel size.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$HEADER_TEMPLATE_style_control</td>
-                            <td>style.black</td>
-                            <td>Header style control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$HEADER_TEMPLATE_title_control</td>
-                            <td>starlib_pkg_screen_common.title_template</td>
-                            <td>Title element control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$HEADER_TEMPLATE_close_button_control</td>
-                            <td>starlib_pkg_screen_template.close_button</td>
-                            <td>Close button element control.</td>
-                            <td>string</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$HEADER_TEMPLATE_size</td>
+                                <td>[ 100%, 24 ]</td>
+                                <td>Header panel size.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$HEADER_TEMPLATE_style_control</td>
+                                <td>style.black</td>
+                                <td>Header style control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$HEADER_TEMPLATE_title_control</td>
+                                <td>starlib_pkg_screen_common.title_template</td>
+                                <td>Title element control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$HEADER_TEMPLATE_close_button_control</td>
+                                <td>starlib_pkg_screen_template.close_button</td>
+                                <td>Close button element control.</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_screen_template.close_button</h3>
                 <p>Close button for classic header. Uses @starlib_pkg_screen_common.close_button_template</p>
                     <div class="line"></div>
                 <h3>@starlib_pkg_screen_template.content_template</h3>
                 <p>Content template. Contains scrolling panel.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$scrolling_content</td>
-                            <td>starlib_pkg_screen_template.scrolling_content_template</td>
-                            <td>Scrolling content.</td>
-                            <td>string</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$scrolling_content</td>
+                                <td>starlib_pkg_screen_template.scrolling_content_template</td>
+                                <td>Scrolling content.</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_screen_template.scrolling_content_template</h3>
                 <p>Scrolling content template. Has the form of a stack panel, contains form text and button factory.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$SCROLLING_CONTENT_form_text_control</td>
-                            <td>starlib_pkg_screen_common.form_text_template</td>
-                            <td>Form text template.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$button_item_control</td>
-                            <td>style.nd_b</td>
-                            <td>Button factory item.</td>
-                            <td>string</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$SCROLLING_CONTENT_form_text_control</td>
+                                <td>starlib_pkg_screen_common.form_text_template</td>
+                                <td>Form text template.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$button_item_control</td>
+                                <td>style.nd_b</td>
+                                <td>Button factory item.</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
             <section id="pkg_scr_com" class="tab-content">
@@ -588,42 +602,44 @@
                     <div class="line"></div>
                 <h3>@starlib_pkg_screen_common.close_button_template</h3>
                 <p>Classic close button template. Does not support async styles.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$CLOSE_BUTTON_TEMPLATE_size</td>
-                            <td>[ 15, 15 ]</td>
-                            <td>Close button size.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$CLOSE_BUTTON_TEMPLATE_default</td>
-                            <td>style.close_button_default</td>
-                            <td>Close button default state control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$CLOSE_BUTTON_TEMPLATE_hover</td>
-                            <td>style.close_button_hover</td>
-                            <td>Close button hover state control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$CLOSE_BUTTON_TEMPLATE_pressed</td>
-                            <td>style.close_button_hover</td>
-                            <td>Close button pressed state control.</td>
-                            <td>string</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$CLOSE_BUTTON_TEMPLATE_size</td>
+                                <td>[ 15, 15 ]</td>
+                                <td>Close button size.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$CLOSE_BUTTON_TEMPLATE_default</td>
+                                <td>style.close_button_default</td>
+                                <td>Close button default state control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$CLOSE_BUTTON_TEMPLATE_hover</td>
+                                <td>style.close_button_hover</td>
+                                <td>Close button hover state control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$CLOSE_BUTTON_TEMPLATE_pressed</td>
+                                <td>style.close_button_hover</td>
+                                <td>Close button pressed state control.</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_screen_common.form_text_template</h3>
                 <p>Form text template.</p>
@@ -636,132 +652,142 @@
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_style.common_button_style</h3>
                 <p>Common button style template.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$BUTTON_STYLE_default</td>
-                            <td>starlib_pkg_button_style.button_style_template</td>
-                            <td>Default style element control. Acts as the only and default element in common $BUTTON_STYLE_variables.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$BUTTON_STYLE_default_texture</td>
-                            <td>textures/ui/Black</td>
-                            <td>Texture for $BUTTON_STYLE_default element.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$BUTTON_STYLE_variables</td>
-                            <td>[ { @$BUTTON_STYLE_default } ]</td>
-                            <td>Button style variables controls.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$BUTTON_STYLE_default</td>
+                                <td>starlib_pkg_button_style.button_style_template</td>
+                                <td>Default style element control. Acts as the only and default element in common $BUTTON_STYLE_variables.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$BUTTON_STYLE_default_texture</td>
+                                <td>textures/ui/Black</td>
+                                <td>Texture for $BUTTON_STYLE_default element.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$BUTTON_STYLE_variables</td>
+                                <td>[ { @$BUTTON_STYLE_default } ]</td>
+                                <td>Button style variables controls.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_style.button_style_template</h3>
                 <p>Button style template. Uses @style.image</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$bindings</td>
-                            <td>[]</td>
-                            <td>Bindings.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$bindings</td>
+                                <td>[]</td>
+                                <td>Bindings.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_style.style_variable</h3>
                 <p>Template for style variable. Uses @starlib_pkg_button_style.button_style_template and a binding identical to @global.binding.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$key</td>
-                            <td>""</td>
-                            <td>If $key is in form_button_text, the element is visible.</td>
-                            <td>string</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$key</td>
+                                <td>""</td>
+                                <td>If $key is in form_button_text, the element is visible.</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_style.reverse_style_variable</h3>
                 <p>Template for style variable. Uses @starlib_pkg_button_style.button_style_template and a binding identical to @global.reverse_binding.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$key</td>
-                            <td>""</td>
-                            <td>If $key is NOT in form_button_text, the element is visible.</td>
-                            <td>string</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$key</td>
+                                <td>""</td>
+                                <td>If $key is NOT in form_button_text, the element is visible.</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_style.disabled_variable_button_style</h3>
                 <p>Template for two variations button style. You can see an example of its use in the Dynamic UI example.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$BUTTON_STYLE_disabled_variable_key</td>
-                            <td>""</td>
-                            <td>Key for switch between default variation and disabled variation. If the key is in the form_button_text, disabled variable will be displayed, otherwise default one will be displayed.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$BUTTON_STYLE_default_variable_controls</td>
-                            <td>[]</td>
-                            <td>Elements of the default style variation.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$BUTTON_STYLE_disabled_variable_controls</td>
-                            <td>[]</td>
-                            <td>Elements of the disabled style variation.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$BUTTON_STYLE_disabled_variable_key</td>
+                                <td>""</td>
+                                <td>Key for switch between default variation and disabled variation. If the key is in the form_button_text, disabled variable will be displayed, otherwise default one will be displayed.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$BUTTON_STYLE_default_variable_controls</td>
+                                <td>[]</td>
+                                <td>Elements of the default style variation.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$BUTTON_STYLE_disabled_variable_controls</td>
+                                <td>[]</td>
+                                <td>Elements of the disabled style variation.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
             <section id="pkg_but_temp" class="tab-content">
@@ -770,63 +796,67 @@
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_templates.common_vertical_stack_item</h3>
                 <p>Template for making magrins on the top and the bottom of the button. CAN'T be used for dynamic button.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$VERTICAL_ITEM_button_control</td>
-                            <td>style.nd_vt</td>
-                            <td>The main element.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$VERTICAL_ITEM_top_margin_size</td>
-                            <td>[ 0, 1 ]</td>
-                            <td>Size of the top margin.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$VERTICAL_ITEM_bottom_margin_size</td>
-                            <td>[ 0, 1 ]</td>
-                            <td>Size of the bottom margin.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$VERTICAL_ITEM_button_control</td>
+                                <td>style.nd_vt</td>
+                                <td>The main element.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$VERTICAL_ITEM_top_margin_size</td>
+                                <td>[ 0, 1 ]</td>
+                                <td>Size of the top margin.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$VERTICAL_ITEM_bottom_margin_size</td>
+                                <td>[ 0, 1 ]</td>
+                                <td>Size of the bottom margin.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_templates.bordered_button_template</h3>
                 <p>Template for adding background to a button item.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$BORDERED_BUTTON_background_control</td>
-                            <td>style.black</td>
-                            <td>Button background control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$BORDERED_BUTTON_inner</td>
-                            <td>[]</td>
-                            <td>Controls of the elements inside the background.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$BORDERED_BUTTON_background_control</td>
+                                <td>style.black</td>
+                                <td>Button background control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$BORDERED_BUTTON_inner</td>
+                                <td>[]</td>
+                                <td>Controls of the elements inside the background.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_templates.horizontal_button</h3>
                 <p>@starlib_pkg_button_templates.horizontal_button_template but with applied margins. Uses @starlib_pkg_button_templates.common_vertical_stack_item.</p>
@@ -836,36 +866,38 @@
                 <div class="image-container">
                     <img src="assets/tabs/buttons/horizontal.png" alt="button" width="auto" height="100">
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$HORIZONTAL_BUTTON_size</td>
-                            <td>[ 100%, 32 ]</td>
-                            <td>Button size.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$HORIZONTAL_BUTTON_root_control</td>
-                            <td>starlib_pkg_button_common.common_button</td>
-                            <td>Button root control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$HORIZONTAL_BUTTON_content_control</td>
-                            <td>starlib_pkg_button_common.button_text</td>
-                            <td>Button content control.</td>
-                            <td>string</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$HORIZONTAL_BUTTON_size</td>
+                                <td>[ 100%, 32 ]</td>
+                                <td>Button size.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$HORIZONTAL_BUTTON_root_control</td>
+                                <td>starlib_pkg_button_common.common_button</td>
+                                <td>Button root control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$HORIZONTAL_BUTTON_content_control</td>
+                                <td>starlib_pkg_button_common.button_text</td>
+                                <td>Button content control.</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_templates.cubic_button</h3>
                 <p>Cubic button.</p>
@@ -879,42 +911,44 @@
                         <p>The image in the cubic button has a fill size, that is, it tries to take up the maximum space, but rests on the text field.</p>
                     </div>
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$CUBIC_BUTTON_size</td>
-                            <td>[ 100%, 100%x ]</td>
-                            <td>Button size.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$CUBIC_BUTTON_image_size</td>
-                            <td>[ 100%, 100% ]</td>
-                            <td>Button image size.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$CUBIC_BUTTON_text_control</td>
-                            <td>starlib_pkg_button_common.button_text</td>
-                            <td>Button text control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$CUBIC_BUTTON_bottom_padding_size</td>
-                            <td>[ 0, 2 ]</td>
-                            <td>Bottom button padding. Lifts the text up.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$CUBIC_BUTTON_size</td>
+                                <td>[ 100%, 100%x ]</td>
+                                <td>Button size.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$CUBIC_BUTTON_image_size</td>
+                                <td>[ 100%, 100% ]</td>
+                                <td>Button image size.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$CUBIC_BUTTON_text_control</td>
+                                <td>starlib_pkg_button_common.button_text</td>
+                                <td>Button text control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$CUBIC_BUTTON_bottom_padding_size</td>
+                                <td>[ 0, 2 ]</td>
+                                <td>Bottom button padding. Lifts the text up.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_templates.big_button</h3>
                 <p>Big button.</p>
@@ -928,114 +962,120 @@
                         <p>Similar to cubic button, but image and content are located separately and can take up all the space.</p>
                     </div>
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$BIG_BUTTON_size</td>
-                            <td>[ 100%, 100%x ]</td>
-                            <td>Button size.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$BIG_BUTTON_content</td>
-                            <td>starlib_pkg_button_templates.common_big_button_content</td>
-                            <td>Button content.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$BIG_BUTTON_content_size</td>
-                            <td>[ 100% - 4px, 100% - 4px ]</td>
-                            <td>Button content size.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$BIG_BUTTON_image_size</td>
-                            <td>[ 100% - 4px, 100% - 4px ]</td>
-                            <td>Button image size.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$BIG_BUTTON_size</td>
+                                <td>[ 100%, 100%x ]</td>
+                                <td>Button size.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$BIG_BUTTON_content</td>
+                                <td>starlib_pkg_button_templates.common_big_button_content</td>
+                                <td>Button content.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$BIG_BUTTON_content_size</td>
+                                <td>[ 100% - 4px, 100% - 4px ]</td>
+                                <td>Button content size.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$BIG_BUTTON_image_size</td>
+                                <td>[ 100% - 4px, 100% - 4px ]</td>
+                                <td>Button image size.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_templates.common_big_button_content</h3>
                 <p>Big button content. Uses @starlib_pkg_button_common.button_text.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$BIG_BUTTON_CONTENT_text_alignment</td>
-                            <td>left</td>
-                            <td>Text alignment.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$BIG_BUTTON_CONTENT_font_type</td>
-                            <td>MinecraftTen</td>
-                            <td>Font type.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$BIG_BUTTON_CONTENT_font_scale_factor</td>
-                            <td>1.2</td>
-                            <td>Font scale factor.</td>
-                            <td>float</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$BIG_BUTTON_CONTENT_text_alignment</td>
+                                <td>left</td>
+                                <td>Text alignment.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$BIG_BUTTON_CONTENT_font_type</td>
+                                <td>MinecraftTen</td>
+                                <td>Font type.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$BIG_BUTTON_CONTENT_font_scale_factor</td>
+                                <td>1.2</td>
+                                <td>Font scale factor.</td>
+                                <td>float</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="line"></div>
                 <h3>@starlib_pkg_button_templates.grid_item_template</h3>
                 <p>Grid item template. Creates margins on the sides of the element.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$GRID_ITEM_size</td>
-                            <td>[ 100%, 100%x ]</td>
-                            <td>Size.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$GRID_ITEM_root_control</td>
-                            <td>global.empty_panel</td>
-                            <td>Root element in grid item template.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$GRIM_ITEM_root_size</td>
-                            <td>[ 100% - 2px, 100% - 2px ]</td>
-                            <td>Size of the root element. It is reduced because we need to create margins from other elements in the grid.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$GRID_ITEM_BINDINGS</td>
-                            <td>[]</td>
-                            <td>Grid item root bindings. Mainly used to hide unnecessary buttons.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$GRID_ITEM_size</td>
+                                <td>[ 100%, 100%x ]</td>
+                                <td>Size.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$GRID_ITEM_root_control</td>
+                                <td>global.empty_panel</td>
+                                <td>Root element in grid item template.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$GRIM_ITEM_root_size</td>
+                                <td>[ 100% - 2px, 100% - 2px ]</td>
+                                <td>Size of the root element. It is reduced because we need to create margins from other elements in the grid.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$GRID_ITEM_BINDINGS</td>
+                                <td>[]</td>
+                                <td>Grid item root bindings. Mainly used to hide unnecessary buttons.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
             <section id="pkg_but_com" class="tab-content">
@@ -1044,129 +1084,137 @@
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_common.common_button_panel</h3>
                 <p>Button panel. Uses @common.button. Supports async styles.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$COMMON_BUTTON_hover_control</td>
-                            <td>style.hightlight</td>
-                            <td>Async hover state element control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$COMMON_BUTTON_pressed_control</td>
-                            <td>$COMMON_BUTTON_hover_control</td>
-                            <td>Async pressed state element control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$COMMON_BUTTON_bindings</td>
-                            <td>[ { "binding_collection_name": "form_buttons", "binding_type": "collection_details" } ]</td>
-                            <td>Button bindings.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$COMMON_BUTTON_hover_control</td>
+                                <td>style.hightlight</td>
+                                <td>Async hover state element control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$COMMON_BUTTON_pressed_control</td>
+                                <td>$COMMON_BUTTON_hover_control</td>
+                                <td>Async pressed state element control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$COMMON_BUTTON_bindings</td>
+                                <td>[ { "binding_collection_name": "form_buttons", "binding_type": "collection_details" } ]</td>
+                                <td>Button bindings.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_common.sensible_button_template</h3>
                 <p>Sync controls button panel. Used for buttons that increase when hovering. Don't support async styles.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$SENSIBLE_BUTTON_default_control</td>
-                            <td>global.empty_panel</td>
-                            <td>Default state element control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$SENSIBLE_BUTTON_hover_control</td>
-                            <td>global.empty_panel</td>
-                            <td>Hover state element control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$SENSIBLE_BUTTON_pressed_control</td>
-                            <td>$SENSIBLE_BUTTON_hover_control</td>
-                            <td>Pressed state element control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$SENSIBLE_BUTTON_bindings</td>
-                            <td>[ { "binding_collection_name": "form_buttons", "binding_type": "collection_details" } ]</td>
-                            <td>Button bindings.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$SENSIBLE_BUTTON_hover_size</td>
-                            <td>[ 100% + 2px, 100% + 2px ]</td>
-                            <td>Hover state size.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$SENSIBLE_BUTTON_default_control</td>
+                                <td>global.empty_panel</td>
+                                <td>Default state element control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$SENSIBLE_BUTTON_hover_control</td>
+                                <td>global.empty_panel</td>
+                                <td>Hover state element control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$SENSIBLE_BUTTON_pressed_control</td>
+                                <td>$SENSIBLE_BUTTON_hover_control</td>
+                                <td>Pressed state element control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$SENSIBLE_BUTTON_bindings</td>
+                                <td>[ { "binding_collection_name": "form_buttons", "binding_type": "collection_details" } ]</td>
+                                <td>Button bindings.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$SENSIBLE_BUTTON_hover_size</td>
+                                <td>[ 100% + 2px, 100% + 2px ]</td>
+                                <td>Hover state size.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_common.common_button</h3>
                 <p>Common button root template.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$COMMON_BUTTON_panel_control</td>
-                            <td>starlib_pkg_button_common.common_button_panel</td>
-                            <td>Button panel control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$COMMON_BUTTON_style_control</td>
-                            <td>starlib_pkg_button_style.common_button_style</td>
-                            <td>Button style control.</td>
-                            <td>string</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$COMMON_BUTTON_panel_control</td>
+                                <td>starlib_pkg_button_common.common_button_panel</td>
+                                <td>Button panel control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$COMMON_BUTTON_style_control</td>
+                                <td>starlib_pkg_button_style.common_button_style</td>
+                                <td>Button style control.</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_common.disabled_variable_button_panel</h3>
                 <p>Custom bindings for disabling button panel if disabled style key exists. You can see an example of its usage in Dynamic UI example. Uses @starlib_pkg_button_common.common_button_panel.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$BUTTON_STYLE_disabled_variable_key</td>
-                            <td>""</td>
-                            <td>Disabled style variable key.</td>
-                            <td>string</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$BUTTON_STYLE_disabled_variable_key</td>
+                                <td>""</td>
+                                <td>Disabled style variable key.</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_button_common.button_image</h3>
                 <p>Button image template. Uses @style.image</p>
@@ -1183,30 +1231,32 @@
                         <p>range_selection_button_text uses \t as a space in the text. That is, it takes it into account in the size of the field, but in the final version it removes it.</p>
                     </div>
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$from</td>
-                            <td>""</td>
-                            <td>Specifies from which point the text selection field starts.</td>
-                            <td>float</td>
-                        </tr>
-                        <tr>
-                            <td>$to</td>
-                            <td>""</td>
-                            <td>Specifies the point to which the text selection field will go.</td>
-                            <td>float</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$from</td>
+                                <td>""</td>
+                                <td>Specifies from which point the text selection field starts.</td>
+                                <td>float</td>
+                            </tr>
+                            <tr>
+                                <td>$to</td>
+                                <td>""</td>
+                                <td>Specifies the point to which the text selection field will go.</td>
+                                <td>float</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
             <section id="pkg_dyn_struct" class="tab-content">
@@ -1215,93 +1265,97 @@
                     <div class="line"></div>
                 <h3>@starlib_pkg_dynamic_structure.dynamic_item_with_background</h3>
                 <p>Strucute template for dynamic button elements with background and background separators. Similar to Galaxite's UI button background layout.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$DYNAMIC_ITEM_top_padding_key</td>
-                            <td>""</td>
-                            <td>Key for top padding. If the key exists in form_button_text, separator in visible.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$DYNAMIC_ITEM_bottom_padding_key</td>
-                            <td>""</td>
-                            <td>Key for bottom padding. If the key exists in form_button_text, separator in visible.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$DYNAMIC_ITEM_top_padding_size</td>
-                            <td>[ 100%, 3 ]</td>
-                            <td>Top padding size.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$DYNAMIC_ITEM_bottom_padding_size</td>
-                            <td>[ 100%, 3 ]</td>
-                            <td>Bottom padding size.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$DYNAMIC_ITEM_top_padding_texture</td>
-                            <td>""</td>
-                            <td>Top padding texture.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$DYNAMIC_ITEM_bottom_padding_texture</td>
-                            <td>""</td>
-                            <td>Bottom padding texture.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$DYNAMIC_ITEM_background_texture</td>
-                            <td>""</td>
-                            <td>Background texture.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$DYNAMIC_ITEM_background_bindings</td>
-                            <td>[]</td>
-                            <td>Background bindings.</td>
-                            <td>array</td>
-                        </tr>
-                        <tr>
-                            <td>$DYNAMIC_ITEM_root_control</td>
-                            <td>starlib_pkg_dynamic_structure.dynamic_item_template</td>
-                            <td>Root element control.</td>
-                            <td>string</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$DYNAMIC_ITEM_top_padding_key</td>
+                                <td>""</td>
+                                <td>Key for top padding. If the key exists in form_button_text, separator in visible.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$DYNAMIC_ITEM_bottom_padding_key</td>
+                                <td>""</td>
+                                <td>Key for bottom padding. If the key exists in form_button_text, separator in visible.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$DYNAMIC_ITEM_top_padding_size</td>
+                                <td>[ 100%, 3 ]</td>
+                                <td>Top padding size.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$DYNAMIC_ITEM_bottom_padding_size</td>
+                                <td>[ 100%, 3 ]</td>
+                                <td>Bottom padding size.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$DYNAMIC_ITEM_top_padding_texture</td>
+                                <td>""</td>
+                                <td>Top padding texture.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$DYNAMIC_ITEM_bottom_padding_texture</td>
+                                <td>""</td>
+                                <td>Bottom padding texture.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$DYNAMIC_ITEM_background_texture</td>
+                                <td>""</td>
+                                <td>Background texture.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$DYNAMIC_ITEM_background_bindings</td>
+                                <td>[]</td>
+                                <td>Background bindings.</td>
+                                <td>array</td>
+                            </tr>
+                            <tr>
+                                <td>$DYNAMIC_ITEM_root_control</td>
+                                <td>starlib_pkg_dynamic_structure.dynamic_item_template</td>
+                                <td>Root element control.</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_dynamic_structure.dynamic_item_template</h3>
                 <p>Dynamic item entry template.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$DYNAMIC_ITEM_entry</td>
-                            <td>style.nd_et</td>
-                            <td>Dynamic item sizer entry control.</td>
-                            <td>string</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$DYNAMIC_ITEM_entry</td>
+                                <td>style.nd_et</td>
+                                <td>Dynamic item sizer entry control.</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_dynamic_structure.vertical_processing_panel</h3>
                 <p>Vertical processing panel.</p>
@@ -1312,63 +1366,67 @@
                         <p>Because the final vertical size is determined in vertical size element, you will no longer be able to use child size in the output element.</p>
                     </div>
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$VERTICAL_PROCESSING_sizer_template_control</td>
-                            <td>starlib_pkg_dynamic_structure.vertical_sizer_template</td>
-                            <td>Vertical sizer element control.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$VERTICAL_PROCESSING_output_control</td>
-                            <td>global.empty_panel</td>
-                            <td>Output element of vertical processing panel.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$VERTICAL_PROCESSING_output_control</td>
-                            <td>global.empty_panel</td>
-                            <td>Output element of vertical processing panel.</td>
-                            <td>string</td>
-                        </tr>
-                        <tr>
-                            <td>$VERTICAL_PROCESSING_no_height_key</td>
-                            <td>""</td>
-                            <td>The key that is needed to disable main vertical sizer. That is, disabling the element collision.</td>
-                            <td>string</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$VERTICAL_PROCESSING_sizer_template_control</td>
+                                <td>starlib_pkg_dynamic_structure.vertical_sizer_template</td>
+                                <td>Vertical sizer element control.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$VERTICAL_PROCESSING_output_control</td>
+                                <td>global.empty_panel</td>
+                                <td>Output element of vertical processing panel.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$VERTICAL_PROCESSING_output_control</td>
+                                <td>global.empty_panel</td>
+                                <td>Output element of vertical processing panel.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td>$VERTICAL_PROCESSING_no_height_key</td>
+                                <td>""</td>
+                                <td>The key that is needed to disable main vertical sizer. That is, disabling the element collision.</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="line"></div>
                 <h3>@starlib_pkg_dynamic_structure.vertical_sizer_template</h3>
                 <p>Vertical sizer template. Takes into account the size of all visible child elements.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Default value</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$VERTICAL_SIZER_controls</td>
-                            <td>[ { default_default: { size: [ 0, 32 ] } } ]</td>
-                            <td>Vertical sizer controls.</td>
-                            <td>array</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$VERTICAL_SIZER_controls</td>
+                                <td>[ { default_default: { size: [ 0, 32 ] } } ]</td>
+                                <td>Vertical sizer controls.</td>
+                                <td>array</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
             <section id="pkg_dyn_siz" class="tab-content">
@@ -1377,109 +1435,115 @@
                 <div class="line"></div>
             <h3>@starlib_pkg_dynamic_sizer.third_sizer_template</h3>
             <p>Third sizer template. That is, 33.3% size of paddings.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Index</th>
-                        <th>Default value</th>
-                        <th>Description</th>
-                        <th>Type</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>$BUTTON_SIZER_third_output</td>
-                        <td>global.empty_panel</td>
-                        <td>Output of the sizer.</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>$BUTTON_SIZER_left_third</td>
-                        <td>""</td>
-                        <td>Key for enabling left padding.</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>$BUTTON_SIZER_right_third</td>
-                        <td>""</td>
-                        <td>Key for enabling right padding.</td>
-                        <td>string</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="responsive-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$BUTTON_SIZER_third_output</td>
+                            <td>global.empty_panel</td>
+                            <td>Output of the sizer.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BUTTON_SIZER_left_third</td>
+                            <td>""</td>
+                            <td>Key for enabling left padding.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BUTTON_SIZER_right_third</td>
+                            <td>""</td>
+                            <td>Key for enabling right padding.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
                 <div class="line"></div>
             <h3>@starlib_pkg_dynamic_sizer.half_sizer_template</h3>
             <p>Half sizer template. That is, 50% size of paddings.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Index</th>
-                        <th>Default value</th>
-                        <th>Description</th>
-                        <th>Type</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>$BUTTON_SIZER_half_output</td>
-                        <td>global.empty_panel</td>
-                        <td>Output of the sizer.</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>$BUTTON_SIZER_left_half</td>
-                        <td>""</td>
-                        <td>Key for enabling left padding.</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>$BUTTON_SIZER_right_half</td>
-                        <td>""</td>
-                        <td>Key for enabling right padding.</td>
-                        <td>string</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="responsive-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$BUTTON_SIZER_half_output</td>
+                            <td>global.empty_panel</td>
+                            <td>Output of the sizer.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BUTTON_SIZER_left_half</td>
+                            <td>""</td>
+                            <td>Key for enabling left padding.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BUTTON_SIZER_right_half</td>
+                            <td>""</td>
+                            <td>Key for enabling right padding.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
                 <div class="line"></div>
             <h3>@starlib_pkg_dynamic_sizer.custom_sizer_template</h3>
             <p>Custom sizer template. That is, custom size of paddings.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Index</th>
-                        <th>Default value</th>
-                        <th>Description</th>
-                        <th>Type</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>$BUTTON_SIZER_custom_output</td>
-                        <td>global.empty_panel</td>
-                        <td>Output of the sizer.</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>$BUTTON_SIZER_left_custom</td>
-                        <td>""</td>
-                        <td>Key for enabling left padding.</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>$BUTTON_SIZER_right_custom</td>
-                        <td>""</td>
-                        <td>Key for enabling right padding.</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>$BUTTON_SIZER_custom_size</td>
-                        <td>[ 0, 0 ]</td>
-                        <td>Size of paddings.</td>
-                        <td>array</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+            <div class="responsive-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$BUTTON_SIZER_custom_output</td>
+                            <td>global.empty_panel</td>
+                            <td>Output of the sizer.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BUTTON_SIZER_left_custom</td>
+                            <td>""</td>
+                            <td>Key for enabling left padding.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BUTTON_SIZER_right_custom</td>
+                            <td>""</td>
+                            <td>Key for enabling right padding.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$BUTTON_SIZER_custom_size</td>
+                            <td>[ 0, 0 ]</td>
+                            <td>Size of paddings.</td>
+                            <td>array</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </section>
 
         <section id="pkg_dyn_com" class="tab-content">
             <h1>common_dynamic.json</h1>
@@ -1494,54 +1558,56 @@
                     <p>The elements of a dynamic header cannot touch each other. Dynamic header also supports additional content.</p>
                 </div>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Index</th>
-                        <th>Default value</th>
-                        <th>Description</th>
-                        <th>Type</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>$DYNAMIC_HEADER_size</td>
-                        <td>[ 100%, 24 ]</td>
-                        <td>Size.</td>
-                        <td>array</td>
-                    </tr>
-                    <tr>
-                        <td>$DYNAMIC_HEADER_background_control</td>
-                        <td>style.black</td>
-                        <td>Background element control.</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>$DYNAMIC_HEADER_root_size</td>
-                        <td>[ 100% - 2px, 100% - 2px ]</td>
-                        <td>Dynamic header root element size.</td>
-                        <td>array</td>
-                    </tr>
-                    <tr>
-                        <td>$DYNAMIC_HEADER_header_contents_control</td>
-                        <td>global.empty_panel</td>
-                        <td>Additional header contents control. Usually used for header buttons.</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>$DYNAMIC_HEADER_style_control</td>
-                        <td>style.black_alpha</td>
-                        <td>Style control.</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>$DYNAMIC_HEADER_title_control</td>
-                        <td>starlib_pkg_screen_common.title_template</td>
-                        <td>Title element control.</td>
-                        <td>string</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="responsive-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$DYNAMIC_HEADER_size</td>
+                            <td>[ 100%, 24 ]</td>
+                            <td>Size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$DYNAMIC_HEADER_background_control</td>
+                            <td>style.black</td>
+                            <td>Background element control.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$DYNAMIC_HEADER_root_size</td>
+                            <td>[ 100% - 2px, 100% - 2px ]</td>
+                            <td>Dynamic header root element size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$DYNAMIC_HEADER_header_contents_control</td>
+                            <td>global.empty_panel</td>
+                            <td>Additional header contents control. Usually used for header buttons.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$DYNAMIC_HEADER_style_control</td>
+                            <td>style.black_alpha</td>
+                            <td>Style control.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$DYNAMIC_HEADER_title_control</td>
+                            <td>starlib_pkg_screen_common.title_template</td>
+                            <td>Title element control.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
                 <div class="line"></div>
             <h1>Work in progress...</h1>
         </section>
@@ -1552,75 +1618,79 @@
             <div class="line"></div>
             <h3>@starlib_pkg_custom_toggles.common_toggle</h3>
             <p>Custom toggle for form tabs.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Index</th>
-                        <th>Default value</th>
-                        <th>Description</th>
-                        <th>Type</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>$COMMON_TOGGLE_size</td>
-                        <td>[ 100%, 24 ]</td>
-                        <td>Size.</td>
-                        <td>array</td>
-                    </tr>
-                    <tr>
-                        <td>$COMMON_TOGGLE_toggle_text</td>
-                        <td>""</td>
-                        <td>Toggle panel text.</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>$COMMON_TOGGLE_enable_radio</td>
-                        <td>true</td>
-                        <td>Enable toggle radio group.</td>
-                        <td>boolean</td>
-                    </tr>
-                    <tr>
-                        <td>$COMMON_TOGGLE_toggle_name</td>
-                        <td>common_toggle</td>
-                        <td>Toggle view binding name.</td>
-                        <td>string</td>
-                    </tr>
-                    <tr>
-                        <td>$COMMON_TOGGLE_toggle_index</td>
-                        <td>0</td>
-                        <td>Toggle index. Usually needed for radio groups.</td>
-                        <td>float</td>
-                    </tr>
-                    <tr>
-                        <td>$COMMON_TOGGLE_default_state</td>
-                        <td>1</td>
-                        <td>Default toggle state.</td>
-                        <td>float</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="responsive-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$COMMON_TOGGLE_size</td>
+                            <td>[ 100%, 24 ]</td>
+                            <td>Size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$COMMON_TOGGLE_toggle_text</td>
+                            <td>""</td>
+                            <td>Toggle panel text.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$COMMON_TOGGLE_enable_radio</td>
+                            <td>true</td>
+                            <td>Enable toggle radio group.</td>
+                            <td>boolean</td>
+                        </tr>
+                        <tr>
+                            <td>$COMMON_TOGGLE_toggle_name</td>
+                            <td>common_toggle</td>
+                            <td>Toggle view binding name.</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>$COMMON_TOGGLE_toggle_index</td>
+                            <td>0</td>
+                            <td>Toggle index. Usually needed for radio groups.</td>
+                            <td>float</td>
+                        </tr>
+                        <tr>
+                            <td>$COMMON_TOGGLE_default_state</td>
+                            <td>1</td>
+                            <td>Default toggle state.</td>
+                            <td>float</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div class="line"></div>
             <h3>@starlib_pkg_custom_toggles.tab_view_binding</h3>
             <p>Binding to show element only if specific toggle enabled.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Index</th>
-                        <th>Default value</th>
-                        <th>Description</th>
-                        <th>Type</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>$toggle_name</td>
-                        <td>common_toggle</td>
-                        <td>The name of the toggle that the element is linked to.</td>
-                        <td>string</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="responsive-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$toggle_name</td>
+                            <td>common_toggle</td>
+                            <td>The name of the toggle that the element is linked to.</td>
+                            <td>string</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
                 <div class="line"></div>
             <h1>Work in progress...</h1>
         </section>
