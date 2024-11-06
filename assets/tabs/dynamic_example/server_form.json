@@ -91,8 +91,8 @@
   },
   "button@starlib_pkg_dynamic_structure.dynamic_item_template": {
     "$DYNAMIC_ITEM_entry": "starlib_pkg_dynamic_sizer.third_sizer_template",
-    "$DYNAMIC_SIZER_third_output": "starlib_pkg_dynamic_sizer.half_sizer_template",
-    "$DYNAMIC_SIZER_half_output": "starlib_pkg_dynamic_structure.vertical_processing_panel",
+    "$BUTTON_SIZER_third_output": "starlib_pkg_dynamic_sizer.half_sizer_template",
+    "$BUTTON_SIZER_half_output": "starlib_pkg_dynamic_structure.vertical_processing_panel",
     "$VERTICAL_PROCESSING_output_control": "starlib_pkg_button_templates.horizontal_button_template",
     "$BORDERED_BUTTON_background_control": "server_form.black",
     "$COMMON_BUTTON_hover_control": "server_form.hightlight",
