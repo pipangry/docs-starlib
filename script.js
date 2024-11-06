@@ -4,6 +4,7 @@ function showTab(tabId) {
         tab.style.display = 'none';
     });
     document.getElementById(tabId).style.display = 'block';
+    document.querySelector('.sidebar').classList.toggle('visible');
 }
 
 showTab('home');
