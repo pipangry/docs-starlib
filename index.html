@@ -54,6 +54,7 @@
             <ul>
                 <li><a href="#" onclick="showTab('pkg_cus_togl')">custom_toggles.json</a></li>
                 <li><a href="#" onclick="showTab('pkg_cus_com')">common_custom.json</a></li>
+                <li><a href="#" onclick="showTab('pkg_cus_edit')">custom_edit_box.json</a></li>
             </ul>
             <div class="line"></div>
         </div>
@@ -605,6 +606,18 @@
                             <td>Button factory item.</td>
                             <td>string</td>
                         </tr>
+                        <tr>
+                            <td>$SCROLLING_CONTENT_additional_content_margins_size</td>
+                            <td>[ 0, 0 ]</td>
+                            <td>Additional scrolling content margins size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$SCROLLING_CONTENT_additional_content_root_control</td>
+                            <td>global.empty_panel</td>
+                            <td>Additional content root element control.</td>
+                            <td>string</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -912,6 +925,18 @@
                             <td>Button content control.</td>
                             <td>string</td>
                         </tr>
+                        <tr>
+                            <td>$HORIZONTAL_BUTTON_image_size</td>
+                            <td>[ 100%y, 100% ]</td>
+                            <td>Button image size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$HORIZONTAL_BUTTON_image_bindings</td>
+                            <td>$BUTTON_IMAGE_bindings</td>
+                            <td>Button image bindings. Uses $BUTTON_IMAGE_bindings as default from common button image.</td>
+                            <td>array</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -949,6 +974,12 @@
                             <td>$CUBIC_BUTTON_image_size</td>
                             <td>[ 100%, 100% ]</td>
                             <td>Button image size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$CUBIC_BUTTON_image_bindings</td>
+                            <td>$BUTTON_IMAGE_bindings</td>
+                            <td>Button image bindings. Uses $BUTTON_IMAGE_bindings as default from common button image.</td>
                             <td>array</td>
                         </tr>
                         <tr>
@@ -1012,6 +1043,12 @@
                             <td>$BIG_BUTTON_image_size</td>
                             <td>[ 100% - 4px, 100% - 4px ]</td>
                             <td>Button image size.</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$BIG_BUTTON_image_bindings</td>
+                            <td>$BUTTON_IMAGE_bindings</td>
+                            <td>Button image bindings. Uses $BUTTON_IMAGE_bindings as default from common button image.</td>
                             <td>array</td>
                         </tr>
                     </tbody>
@@ -1560,6 +1597,10 @@
                 </tbody>
             </table>
         </div>
+            <div class="line"></div>
+        <h3>@starlib_pkg_dynamic_sizer.common_auto_sizer</h3>
+        <p>Auto sizer using @starlib_pkg_dynamic_sizer.third_sizer_template and @starlib_pkg_dynamic_sizer.half_sizer_template. Default output is starlib_pkg_dynamic_structure.vertical_processing_panel</p>
+            <div class="line"></div>
         </section>
 
         <section id="pkg_dyn_com" class="tab-content">
@@ -1713,7 +1754,116 @@
         </section>
 
         <section id="pkg_cus_com" class="tab-content">
-            <h1>Work in progress...</h1>
+            <h1>common_custom.json</h1>
+            <h3>@starlib_pkg_custom_common.search_conditions_element_binding</h3>
+            <p>Bindings for searchable element. Usually used with search bar.</p>
+            <div class="responsive-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Default value</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$search_binding_name</td>
+                        <td>search_field</td>
+                        <td>Binding name of the edit box text. In @starlib_pkg_custom_edit_box.common_search_box is $COMMON_SEARCH_BOX_name</td>
+                        <td>string</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="line"></div>
+        <h3>@starlib_pkg_custom_common.text_range_search_conditions_element_binding</h3>
+        <p>Bindings for searchable element, but with using text range binding. Usually used with search bar.</p>
+        <div class="responsive-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>$search_binding_name</td>
+                    <td>search_field</td>
+                    <td>Binding name of the edit box text. In @starlib_pkg_custom_edit_box.common_search_box is $COMMON_SEARCH_BOX_name</td>
+                    <td>string</td>
+                </tr>
+                <tr>
+                    <td>$from</td>
+                    <td>""</td>
+                    <td>Specifies from which point the text selection field starts.</td>
+                    <td>float</td>
+                </tr>
+                <tr>
+                    <td>$to</td>
+                    <td>""</td>
+                    <td>Specifies the point to which the text selection field will go.</td>
+                    <td>float</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="line"></div>
+        </section>
+
+        <section id="pkg_cus_edit" class="tab-content">
+            <h1>custom_edit_box.json</h1>
+            <h3>@starlib_pkg_custom_edit_box.common_search_box</h3>
+            <p>Common search bar. Uses @common.text_edit_box. Use with @starlib_pkg_custom_common.search_conditions_element_binding</p>
+            <div class="responsive-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Default value</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$COMMON_SEARCH_BOX_size</td>
+                        <td>[ 100%, 32 ]</td>
+                        <td>Size.</td>
+                        <td>array</td>
+                    </tr>
+                    <tr>
+                        <td>$COMMON_SEARCH_BOX_place_holder_text</td>
+                        <td>Search</td>
+                        <td>Edit box place holder text.</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>$COMMON_SEARCH_BOX_name</td>
+                        <td>search_field</td>
+                        <td>Edit box name. Uses for text binding in @starlib_pkg_custom_common.search_conditions_element_binding.</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>$COMMON_SEARCH_BOX_clear_button_enabled</td>
+                        <td>false</td>
+                        <td>Clear button.</td>
+                        <td>boolean</td>
+                    </tr>
+                    <tr>
+                        <td>$COMMON_SEARCH_BOX_clear_button_control</td>
+                        <td>button.search_bar_clear</td>
+                        <td>Clear button thing.</td>
+                        <td>string</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="line"></div>
         </section>
         </div>
     </div>
