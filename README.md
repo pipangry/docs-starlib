@@ -1,2 +1,3 @@
 # docs-starlib
-StarLibV2 documentation/
+StarLibV2 documentation
+https://github.com/pipangry/StarLibV2
