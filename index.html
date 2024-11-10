@@ -1379,10 +1379,22 @@
                             <td>string</td>
                         </tr>
                         <tr>
+                            <td>$DYNAMIC_ITEM_background_size</td>
+                            <td>[ 100%, 100%sm + 4px ]</td>
+                            <td>Background size. Use sibiling size parameter in Y size because background linked to root element by default!</td>
+                            <td>array</td>
+                        </tr>
+                        <tr>
                             <td>$DYNAMIC_ITEM_background_bindings</td>
                             <td>[]</td>
                             <td>Background bindings.</td>
                             <td>array</td>
+                        </tr>
+                        <tr>
+                            <td>$DYNAMIC_ITEM_side_paddings_size</td>
+                            <td>[ 3, 0 ]</td>
+                            <td>Size of the paddings on the sides that will reduce the size of the root element.</td>
+                            <td>string</td>
                         </tr>
                         <tr>
                             <td>$DYNAMIC_ITEM_root_control</td>
@@ -1658,6 +1670,12 @@
                         <td>string</td>
                     </tr>
                     <tr>
+                        <td>$DYNAMIC_HEADER_right_header_contents_control</td>
+                        <td>global.empty_panel</td>
+                        <td>Additional header contents on right side control. Located next to the close button.</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
                         <td>$DYNAMIC_HEADER_style_control</td>
                         <td>style.black_alpha</td>
                         <td>Style control.</td>
@@ -1672,6 +1690,34 @@
                 </tbody>
             </table>
         </div>
+        <h3>@starlib_pkg_dynamic_common.uncollizeble_content_dynamic_item</h3>
+        <p>Dynamic item but with element on the top that works async with vertical_processing_panel so size of top element can't be disabled.</p>
+        <div class="responsive-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>$DYNAMIC_ITEM_uncollizeble_content_control</td>
+                    <td>global.empty_panel</td>
+                    <td>Top element control which size works async so it can't be disabled.</td>
+                    <td>string</td>
+                </tr>
+                <tr>
+                    <td>$DYNAMIC_ITEM_collizeble_root_control</td>
+                    <td>global.empty_panel</td>
+                    <td>Main dynamic item element. It is usually used for elements that are inserted into $DYNAMIC_ITEM_entry</td>
+                    <td>string</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
                 <div class="line"></div>
             <h1>Work in progress...</h1>
         </section>
