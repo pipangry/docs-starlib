@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <td>$CLOSE_BUTTON_pressed_control</td>
-                <td>style.close_button_hover</td>
+                <td>$CLOSE_BUTTON_hover_control</td>
                 <td>Control of the pressed state element.</td>
                 <td>string (annonation)</td>
             </tr>
