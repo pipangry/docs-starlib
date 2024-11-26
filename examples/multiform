@@ -186,7 +186,7 @@
                             235
                         ],
                         "$scrolling_content": "server_form.buttons_grid",
-                        //Here I am defining scrolling content to our custom button grid,
+                        /*Here I am defining scrolling content to our custom button grid,
                         which you can see in the element below*/
 
                         //Paperdoll panel size in form content template
