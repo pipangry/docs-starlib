@@ -36,7 +36,7 @@
             <tr>
                 <td>$label_layer</td>
                 <td>58</td>
-                <td>Label layer.</td>
+                <td>Label layer. Just debug feature.</td>
                 <td>float</td>
             </tr>
     </table>
