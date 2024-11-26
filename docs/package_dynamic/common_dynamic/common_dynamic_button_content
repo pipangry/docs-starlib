@@ -1,0 +1,101 @@
+<h1>@starlib_pkg_dynamic_common.common_dynamic_button_content</h1>
+<p>starlib_pkg_dynamic_common.common_dynamic_button_content is a pre-made element for dynamic button content.</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>This element is still in beta testing. Be careful when using this element. It may change in the near future.</p>
+    </div>
+</div>
+<h2>How does it work?</h2>
+<p>common_dynamic_button_content is the content for the button, which contains the image and text of the button in one vertical stack panel. It works on the principle that the image tries to fill all the space in the button, thereby pushing the text down, but if we give a certain switch, the image will disappear and the text will stand in the center. Similar content work is used in common_cubic_button_content, but there, if the image disappears, the text will be located at the very top of the stack panel.</p>
+<span class="load-content" data-file="docs/package_button/button_templates/common_cubic_button_content">@starlib_pkg_button_templates.common_cubic_button_content</span>
+<div class="image-container">
+    <div class="image-item">
+        <p>Default (Unswitched)</p>
+        <img src="assets/pages/dynamic_common/no_switch.png" alt="Image 1">
+    </div>
+    <div class="image-item">
+        <p>Switched</p>
+        <img src="assets/pages/dynamic_common/switch.png" alt="Image 2">
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$DYNAMIC_CONTENT_image_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_button/common_button/button_image">starlib_pkg_button_common.button_image</span></td>
+                <td>Control of the main flexible image element.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_CONTENT_text_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_button/common_button/button_text">starlib_pkg_button_common.button_text</span></td>
+                <td>Control of the bottom button text element.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_CONTENT_switch_key</td>
+                <td>""</td>
+                <td>Key to switch content and show button image.</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_CONTENT_image_size</td>
+                <td>[ 100%, 100% ]</td>
+                <td>Size of the $DYNAMIC_CONTENT_image_control in flexible image panel.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_CONTENT_soft_padding_size</td>
+                <td>[ 0, 2 ]</td>
+                <td>Size of the bottom soft placement padding. Used to raise the text element a little, because it may look bad right next to the border of the button.</td>
+                <td>array (size)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        //...Let's setup our custom button
+        "my_button": {
+            "type": "panel",
+            "size": [ //Button size
+                64,
+                64
+            ],
+            "controls": [
+                {
+                    "root@starlib_pkg_button_common.common_button": {
+                        /*Here I using common StarLibV2 async button template
+                        annotation as root*/
+                    }
+                },
+                {
+                    "content@starlib_pkg_dynamic_common.common_dynamic_button_content": {
+                        //Our dynamic content annotation
+                        "$DYNAMIC_CONTENT_switch_key": "switch", //Key to switch
+                        "$DYNAMIC_CONTENT_image_size": [
+                            "100% - 4px",
+                            "100% - 4px"
+                        ]
+                        //Reducing image size to it look better
+                    }
+                }
+            ]
+        }
+    </div>
+</div>

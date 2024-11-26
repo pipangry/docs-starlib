@@ -1,0 +1,63 @@
+<h1>@starlib_pkg_dynamic_structure.uncollizeble_content_dynamic_item</h1>
+<p>uncollizeble_content_dynamic_item is a template for a dynamic item that includes asynchronous additional content on the top, which will not be affected by the dynamic structure. Has a form of vertical stack panel.</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Important</h3>
+        <p>Due to the fact that this element uses starlib_pkg_dynamic_structure.dynamic_item_template as the main element of the dynamic item, you will need to specify $DYNAMIC_ITEM_entry.</p>
+    </div>
+</div>
+<span class="load-content" data-file="docs/package_dynamic/dynamic_structure/dynamic_item_template">starlib_pkg_dynamic_structure.dynamic_item_template</span>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$DYNAMIC_ITEM_uncollizeble_content_control</td>
+                <td><span style="font-style: italic;">Debug message<span></td>
+                <td>Asynchronous additional content control.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_between_contents_padding_size</td>
+                <td>[ 0, 1 ]</td>
+                <td>Size of the padding between $DYNAMIC_ITEM_uncollizeble_content_control and the main dynamic item element, which is specified in $DYNAMIC_ITEM_entry.</td>
+                <td>array (size)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "button@starlib_pkg_dynamic_structure.uncollizeble_content_dynamic_item": { //Annotation
+        "$DYNAMIC_ITEM_entry": "starlib_pkg_dynamic_sizer.common_auto_sizer",
+        /*Here, for example, i use common_auto_sizer as entry element,
+        it also can be third_sizer_template and others.*/
+
+        "$DYNAMIC_ITEM_uncollizeble_content_control": "server_form.tip",
+        //Defining my additional content
+
+        "$DYNAMIC_ITEM_between_contents_padding_size": [
+            0,
+            2
+        ]
+        //Increasing the padding size between the contents
+    },
+
+    "tip": {
+        //...
+    }
+    </div>
+</div>

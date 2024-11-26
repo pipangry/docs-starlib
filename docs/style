@@ -1,0 +1,57 @@
+<h1>style.image</h1>
+<p>style.image is a classic image template. The default size is [ 100%, 100% ]</p>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "my_img@style.image": { //Annotation
+        "texture": "textures/my_ui/img"
+    }
+    //...
+    </div>
+</div>
+<h1>style.label</h1>
+<p>style.label is a classic template for label (text). The default size is [ 100%, default ], does not have a maximum size default value.</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Default text values</h3>
+        <p>Text alingment: center; Font type: MinecraftSeven;</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$label_layer</td>
+                <td>58</td>
+                <td>Label layer.</td>
+                <td>float</td>
+            </tr>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "my_text@style.label": { //Annotation
+        "text": "My text",
+        "font_type": "MinecraftTen"
+    }
+    //...
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<span class="load-content" data-file="docs/package_dynamic/dynamic_structure/vertical_sizer_template">Back</span>
+<p style="white-space: pre-wrap;" >"$VERTICAL_SIZER_controls|default": [
+    {
+        "default_default": {
+            "type": "panel",
+            "size": [
+                "100%",
+                32
+            ]
+        }
+    }
+]</p>

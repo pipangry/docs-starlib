@@ -1,0 +1,48 @@
+<h1>@starlib_pkg_button_common.common_button</h1>
+<p>starlib_pkg_button_common.common_button is the standard root element of the button, made for an asynchronous structure. If you are using a synchronous structure like starlib_pkg_button_common.sensible_button_panel, you can skip this element and immediately redirect root control to your element. Mostly, you don't need to touch any variables here.</p>
+<span class="load-content" data-file="docs/package_button/common_button/sensible_button_template">starlib_pkg_button_common.sensible_button_panel</span>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$COMMON_BUTTON_panel_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_button/common_button/common_button_panel">starlib_pkg_button_common.common_button_panel</span></td>
+                <td>Control for the button panel (Clickable panel) element.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$COMMON_BUTTON_style_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_button/button_style/common_button_style">starlib_pkg_button_style.common_button_style</span></td>
+                <td>Control for the button style element. If you are using a synchronous button structure, you can set this parameter to global.empty_panel or just go straight to your button_panel element.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$COMMON_BUTTON_content_control</td>
+                <td>global.empty_panel</td>
+                <td>Control of the button content element. It is mostly not used because the content is defined separately from the root panel, as for example in the StarLibV2 button templates. Has a maximum size of [ 100%, 100% ].</td>
+                <td>string (annotation)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "button_panel@starlib_pkg_button_common.common_button": { //Annotation
+        "$COMMON_BUTTON_style_control": "starlib_pkg_button_style.disabled_variable_button_style"
+        //Changing style
+    }
+    </div>
+</div>

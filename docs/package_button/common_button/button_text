@@ -1,0 +1,9 @@
+<h1>@starlib_pkg_button_common.button_text</h1>
+<p>starlib_pkg_button_common.button_text is a classic binding for #form_button_text. Uses style.label</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Additional info</h3>
+        <p>If #form_button_text is empty, the element is not visible.</p>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<h1>@starlib_pkg_custom_edit_box.common_search_box</h1>
+<p>starlib_pkg_custom_edit_box.common_search_box is a common template for the search bar. Uses @common.edit_box annotatiom. It usually works together with search_conditions_element_binding to hide searched items.</p>
+<span class="load-content" data-file="docs/package_custom/common_custom/search_conditions_element_binding">@starlib_pkg_custom_common.search_conditions_element_binding</span>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$COMMON_SEARCH_BOX_size</td>
+                <td>[ 100%, 32 ]</td>
+                <td>Search box size.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$COMMON_SEARCH_BOX_place_holder_text</td>
+                <td>Search</td>
+                <td>Place holder.</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>$COMMON_SEARCH_BOX_name</td>
+                <td>search_field</td>
+                <td>The name of the edit box. Mainly used to link the entered text with the binding to hide the elements.</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>$COMMON_SEARCH_BOX_clear_button_enabled</td>
+                <td><h4>false</h4></td>
+                <td>Common edit_box clear button.</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <td>$COMMON_SEARCH_BOX_clear_button_control</td>
+                <td>button.search_bar_clear</td>
+                <td>Close button element control. By default is common clear button.</td>
+                <td>string (annotation)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

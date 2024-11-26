@@ -1,0 +1,70 @@
+<h1>@starlib_pkg_screen_template.scrolling_content_template</h1>
+<p>starlib_pkg_screen_template.scrolling_content_template is used as the main template for StarLibV2 form scrolling content. It includes a built-in form_text, an additional content panel (for example, for the search bar) and a vertical stack button factory. Used as a standard scrolling content element for starlib_pkg_screen_template.content_template</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>You always need to define $button_item_control for the main factory buttons, otherwise there may be errors.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$SCROLLING_CONTENT_form_text_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_screen/screen_common/form_text_template">starlib_pkg_screen_common.form_text_template</span></td>
+                <td>Form text element control.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$SCROLLING_CONTENT_main_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/global/button_factory">global.button_factory</span></td>
+                <td>Main content element control. By default it is classic vertical button factory with $factory_item set to $button_item_control.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$button_item_control</td>
+                <td><span style="font-style: italic;">Debug message<span></td>
+                <td>Default button factory item element contol.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$SCROLLING_CONTENT_additional_content_margins_size</td>
+                <td>[ 0, 0 ]</td>
+                <td>The size of the upper and lower margins of the additional content.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$SCROLLING_CONTENT_additional_content_root_control</td>
+                <td>global.empty_panel</td>
+                <td>Additional content root element control. Basically, the additional content is used for another button factory (or grid) or for the search bar.</td>
+                <td>string (annotation)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "my_scrolling_content@starlib_pkg_screen_template.scrolling_content_template": { //Annotation
+        "$button_item_control": "server_form.my_button", //Defining button factory item
+        "$SCROLLING_CONTENT_additional_content_margins_size": [ /*You can also use $SCROLLING_CONTENT_additional_content_margins_size
+        without defined content as an additional overhead padding.*/
+            0,
+            2
+        ]
+    }
+    </div>
+</div>

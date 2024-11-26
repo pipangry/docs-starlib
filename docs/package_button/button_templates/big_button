@@ -1,0 +1,101 @@
+<h1>@starlib_pkg_button_templates.big_button</h1>
+<p>starlib_pkg_button_templates.big_button is a button structure template, an example of which you can see below. By default, the starlib_pkg_button_common.common_button root panel is used.</p>
+<span class="load-content" data-file="docs/package_button/common_button/common_button">@starlib_pkg_button_common.common_button</span>
+<h3>Classic big button example (No changes)</h3>
+<div class="image-container">
+    <img src="assets/pages/button_templates/big_classic.png" alt="Big button"><img>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Structure description</h3>
+        <p>As you can see, in this button, the image is superimposed on the root panel, and the text is superimposed on the image. Big button text uses style.label so you can edit it how you want.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$BIG_BUTTON_size</td>
+                <td>[ 100%, 100%x ]</td>
+                <td>Size of the button.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$BIG_BUTTON_content_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_button/button_templates/common_big_button_content">starlib_pkg_button_templates.common_big_button_content</span></td>
+                <td>Big button content. By default it is just text with variables.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$BIG_BUTTON_image_size</td>
+                <td>[ 100% - 4px, 100% - 4px ]</td>
+                <td>Size of the big button image.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$BIG_BUTTON_enable_image_fill</td>
+                <td><h4>false</h4></td>
+                <td>If true, fill property will be enabled for big button image.</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <td>$BIG_BUTTON_image_bindings</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/big_button">View bindings</span></td>
+                <td>Big button image bindings.</td>
+                <td>array (bindings)</td>
+            </tr>
+            <tr>
+                <td>$BIG_BUTTON_image_overlap_control</td>
+                <td>global.empty_panel</td>
+                <td>Big button image overlap element control.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$BIG_BUTTON_overlap_size</td>
+                <td>$BIG_BUTTON_image_size</td>
+                <td>Size of the image overlap element. By default similar to big button image size.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$BIG_BUTTON_content_size</td>
+                <td>[ 100% - 4px, 100% - 4px ]</td>
+                <td>Size of the $BIG_BUTTON_content</td>
+                <td>array (size)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "grid@global.grid": { //Using StarLibV2 classic grid template annotation
+        "$grid_item": "server_form.button" //Using our big button
+    },
+    //...
+    "button@starlib_pkg_button_templates.big_button": { //Annotation
+        "$BIG_BUTTON_size": [ //Changing size
+            64,
+            64
+        ],
+        "$BIG_BUTTON_image_size": [ //Changing image size
+            "100% - 16px",
+            "100% - 16px"
+        ],
+        "$BIG_BUTTON_CONTENT_font_type": "MinecraftSeven" /*This variable is located in
+        @starlib_pkg_button_templates.common_big_button_content, we can use it,
+        since this element is the default for big button content*/
+    }
+    </div>
+</div>

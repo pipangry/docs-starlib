@@ -1,0 +1,20 @@
+<span class="load-content" data-file="docs/package_button/button_templates/big_button">Back</span>
+<p style="white-space: pre-wrap;" >"$BIG_BUTTON_image_bindings|default": [
+    {
+        "binding_name": "#form_button_texture",
+        "binding_name_override": "#texture",
+        "binding_type": "collection",
+        "binding_collection_name": "form_buttons"
+    },
+    {
+        "binding_name": "#form_button_texture_file_system",
+        "binding_name_override": "#texture_file_system",
+        "binding_type": "collection",
+        "binding_collection_name": "form_buttons"
+    },
+    {
+        "binding_type": "view",
+        "source_property_name": "(not((#texture = '') or (#texture = 'loading')))",
+        "target_property_name": "#visible"
+    }
+]</p>

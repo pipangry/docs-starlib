@@ -1,0 +1,29 @@
+<div class="logo-container">
+    <img src="assets/logo.png" alt="Логотип" class="logo">
+</div>
+<h2 style="text-align: center;">StarLib - Library to help you create a JsonUI forms. Supports multi-forming, dynamic structure, custom tabs, styles and much more!<h2>
+<div class="contributors-panel">
+    <h3>Contributors</h3>
+    <div class="contributors">
+        <div class="contributor" onclick="openProfile('https://github.com/pipangry')">
+            <img src="assets/contributors/pipangry.png" alt="Contributor 1" class="contributor-icon">
+            <span>Pipa_ngry</span>
+        </div>
+    </div>
+</div>
+<div class="billboard">
+    <div class="billboard-content">
+        <h2 class="billboard-title">Also check GrimUI</h2>
+        <div class="billboard-description">
+            <p>GrimUI - the most complex and probably the most powerful Form UI. Uses dynamic structure. Highly optimized and customizable.</p>
+            <a class="load-content-no-bg" style="font-size: 18px;" href="https://discord.com/channels/523663022053392405/1300103021035786260" target="_blank">Bedrock Addons post</a>
+        </div>
+
+    </div>
+    <div class="billboard-images">
+        <img src="assets/pages/home/FriendsSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/MarketplaceSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/ServersSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/PlaySW.png" alt="GrimUI showcase" class="billboard-image">
+    </div>
+</div>

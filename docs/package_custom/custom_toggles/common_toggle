@@ -1,0 +1,77 @@
+<h1>@starlib_pkg_custom_toggles.common_toggle</h1>
+<p>starlib_pkg_custom_toggles.common_toggle is the standard template for toggles in StarLibV2. Mainly used as a base element. Annotation @common_toggles.light_text_toggle is used. You can also use the starlib_pkg_custom_toggles.tab_view_binding element to hide elements depending on the state of the toggle.</p>
+<span class="load-content" data-file="docs/package_custom/custom_toggles/tab_view_binding">@starlib_pkg_custom_toggles.tab_view_binding</span>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>This toggle will not work if you put it in the button factory. But you can use collection_index to take parameters from buttons.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$COMMON_TOGGLE_size</td>
+                <td>[ 100%, 24 ]</td>
+                <td>Toggle panel size.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$COMMON_TOGGLE_toggle_text</td>
+                <td>""</td>
+                <td>Toggle text. Uses $button_text from @common_toggles.light_text_toggle.</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>$COMMON_TOGGLE_enable_radio</td>
+                <td><h4>true</h4></td>
+                <td>If true, toggle radio will be enabled. To make the radio work correctly, do not forget to specify $COMMON_TOGGLE_toggle_index.</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <td>$COMMON_TOGGLE_toggle_name</td>
+                <td>common_toggle</td>
+                <td>Toggle name. Identical to $toggle_view_binding_name and is used to link toggle state to bindings of other elements.</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>$COMMON_TOGGLE_toggle_index</td>
+                <td>0</td>
+                <td>Toggle index. Mainly used for radio groups.</td>
+                <td>float</td>
+            </tr>
+            <tr>
+                <td>$COMMON_TOGGLE_default_state</td>
+                <td>1</td>
+                <td>Default toggle state.</td>
+                <td>float</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "my_toggle@starlib_pkg_custom_toggles.common_toggle": { //Annotation
+            "$COMMON_TOGGLE_toggle_text": "Hide buttons", //Defining text
+            "$COMMON_TOGGLE_toggle_name": "my_toggle" //Toggle name
+        },
+        //...
+        "my_button@starlib_pkg_custom_toggles.tab_view_binding": {
+            "$toggle_name": "my_toggle" //Linking my button to toggle.
+            //...
+        }
+    </div>
+</div>

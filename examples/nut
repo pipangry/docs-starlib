@@ -1,0 +1,268 @@
+<h1>Dynamic UI example | NutUI V2</h1>
+<p>Hi! In this example, we will analyze an common dynamic structure, the use of a dynamic header, as well as several StarLibV2 button templates.</p>
+<p>This example is not easy, I also recommend that you read the articles about the work of the dynamic structure at the links below.</p>
+<div>
+    <span class="load-content" data-file="docs/how/sizers">How Dynamic sizers works?</span>
+    <span class="load-content" data-file="docs/how/vertical_processing">How Vertical processing works?</span>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>What is dynamic UI?</h3>
+        <p>A dynamic UI is a UI whose form appearance is controlled using special text tags inserted from your script (or plugin) into the text of the button, which is how you build the appearance of your form with buttons.</p>
+    </div>
+</div>
+<a href="assets/examples/nut/download/server_form.jsonc" download>
+	<button>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 2.5a.25.25 0 0 0-.25-.25H7A2.75 2.75 0 0 0 4.25 5v14A2.75 2.75 0 0 0 7 21.75h10A2.75 2.75 0 0 0 19.75 19V9.147a.25.25 0 0 0-.25-.25H15a.75.75 0 0 1-.75-.75zm-.219 10.664a.75.75 0 0 1 .938 1.172l-2.494 1.995a.747.747 0 0 1-.473.169h-.008a.747.747 0 0 1-.465-.166l-2.497-1.998a.75.75 0 0 1 .937-1.172l1.281 1.026v-3.44a.75.75 0 1 1 1.5 0v3.44z" clip-rule="evenodd"/><path fill="currentColor" d="M15.75 2.824c0-.184.193-.301.336-.186c.121.098.23.212.323.342l3.013 4.197c.068.096-.006.22-.124.22H16a.25.25 0 0 1-.25-.25z"/></svg>
+        Download code of this example
+    </button>
+</a>
+<div class="image-container">
+    <div class="image-item">
+        <img src="assets/examples/nut/1.png" alt="Image 1">
+    </div>
+</div>
+<h2>Let's start with screen and form assembling!</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "long_form@starlib_pkg_screen_template.screen": { //Annotation
+            "$FORM_TEMPLATE_header_control": "starlib_pkg_dynamic_common.common_dynamic_header",
+            //Defining header as common dynamic header
+
+            "$FORM_TEMPLATE_background_texture": "textures/example/background",
+            //Defining our form content background texture
+
+            "$FORM_TEMPLATE_content_size": [ /*Reducing form content size to fit it better into
+            our frame-style content background*/
+                "100% - 20px",
+                "100% - 16px"
+            ],
+            //Dynamic header variables
+            "$DYNAMIC_HEADER_background_control": "style.black", //Dynamic header background element
+
+            "$DYNAMIC_HEADER_style_control": "server_form.header",
+            /*Here we defining header style element on which the title will be located and which
+            will fill all the free space in the dynamic header*/
+
+            "$DYNAMIC_HEADER_close_button_control": "server_form.close_button",
+            //Using our custom close button
+
+            "$DYNAMIC_HEADER_header_contents_control": "server_form.header_buttons_factory",
+            //Adding header buttons as dynamic header contents
+    
+            "$button_item_control": "starlib_pkg_dynamic_structure.dynamic_item_template",
+            //Defining our button factory item. Since our UI is dynamic, I use dynamic item template.
+        },
+        "header@style.image": {
+            "texture": "textures/example/header"
+        },
+    </div>
+</div>
+<p>Form assembled! But now we need to make custom header buttons and beautiful close button.</p>
+<p>For the close button, I will use the async close button in StarLibV2, since we still need to add an icon. And in general, async close button fits the structure itself to our requirements for close button. For the header button, I will use the hover button template, but we will also need to add padding to the right of the button for a better style.</p>
+<h2>Header contents assembling</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "header_buttons_factory@global.button_factory": {
+            //Here I will use StarLibV2 button factory template
+            "orientation": "horizontal", /*Switch from default vertical
+            orientation to horizontal*/
+            "size": [ /*Due to the fact that we are changing the orientation,
+            we also need to change the size*/
+                "100%c",
+                "100%"
+            ],
+            "$factory_item": "server_form.header_button"
+            //Defining button factory item
+        },
+        "header_button@global.binding": {
+            /*As you can see we using global.binding to show button only if
+            special key exists in form_button_text*/
+
+            "type": "stack_panel",
+            /*We using horizontal stack_panel to add padding on the right
+            side next to the button*/
+            "orientation": "horizontal",
+
+            "size": [ //To make buttons square we changing size
+                "100%y + 1px", //Adding 1px for right padding
+                "100%"
+            ],
+            "$key": "§p§4§0", //Key for binding
+
+            "$COMMON_BUTTON_style_control": "starlib_pkg_button_style.common_button_style",
+            //Due to the fact that this variable is defined in the main element of the
+            form above (You will see further), we need to reset the parameter to default*/
+
+            "controls": [
+                {
+                    "button@starlib_pkg_button_templates.hover_button": {
+                        //Here we using StarLibV2 hover button template
+
+                        "$HOVER_BUTTON_size": [ //Changing size
+                            "fill",
+                            "100%"
+                        ],
+                        "$BUTTON_STYLE_default_texture": "textures/example/header_button",
+                        //Default style texture
+
+                        "$HOVER_BUTTON_hover_control": "server_form.hover",
+                        /*Due to the hover button structure, instead of $COMMON_BUTTON_hover_control,
+                        we use $hoverbutton_hover_control (See the documentation)*/
+
+                        "$HOVER_BUTTON_image_size": [ //Image size
+                            13,
+                            13
+                        ]
+                    }
+                },
+                {
+                    "padding": { //Right padding next to the main button
+                        "type": "panel",
+                        "size": [ //Padding size
+                            1, /You probably remember that we added one pixel, which is now used
+                            by this padding*/
+                            0
+                        ]
+                    }
+                }
+            ]
+        },
+        //Close button
+        "close_button@starlib_pkg_screen_common.async_close_button": {
+            //We using async close button structure annotation
+
+            "$CLOSE_BUTTON_size": [ //Changing size
+                "100%y", /*We don't need to add one pixel for padding, as we did in header_button,
+                because this padding is already included in the dynamic header*/
+                "100%"
+            ],
+            "$CLOSE_BUTTON_icon_size": [ //Changing button icon size
+                15,
+                15
+            ],
+            "$CLOSE_BUTTON_icon_texture": "textures/ui/close_button_default_light",
+            //Defining our icon texture path
+
+            //Button panel variables
+            "$CLOSE_BUTTON_default_control": "server_form.close_button_default",
+            "$CLOSE_BUTTON_hover_control": "server_form.hover",
+            "$CLOSE_BUTTON_pressed_control": "server_form.hover"
+        },
+        "close_button_default@style.image": { //Using StarLibV2 classic image template
+            "texture": "textures/example/close_button"
+        },
+        "hover@style.image": { //Using StarLibV2 classic image template
+            "texture": "textures/example/hover",
+            "size": [ //Increasing size
+                "100% + 2px",
+                "100% + 2px"
+            ]
+        }
+    </div>
+</div>
+<p>Now let's get to the most difficult part. A dynamic button! The StarLibV2 structure allows us to assemble this button in the form element itself! Cool, isn't it?</p>
+<h2>Dynamic button assembling</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "long_form@starlib_pkg_screen_template.screen": { //Annotation
+            //...Form assembling
+            
+            //We have specified our dynamic_item_template element in the form assembling
+            "$DYNAMIC_ITEM_entry": "starlib_pkg_dynamic_sizer.common_auto_sizer",
+            /*Dynamic item entry element, i will use common auto sizer that already contains
+            third and half sizers*/
+
+            //Button panel controls
+            "$COMMON_BUTTON_hover_control": "server_form.hover", //Using our hover element
+            "$COMMON_BUTTON_panel_control": "starlib_pkg_button_common.disabled_variable_button_panel",
+            //Here we change button panel to pre-made one with bindings to disable the button panel
+            "$COMMON_BUTTON_style_control": "starlib_pkg_button_style.disabled_variable_button_style",
+            //Changing style control to pre-made one with default and disabled variables
+
+            //Style controls
+            "$BUTTON_STYLE_disabled_variable_key": "§p§3§0", /*Key to switch styles, also
+            will used as key to disable button panel*/
+
+            "$BUTTON_STYLE_default_variable_texture": "textures/example/button",
+            "$BUTTON_STYLE_disabled_variable_texture": "textures/example/button_disabled",
+
+            //Adding background to button image
+            "$HORIZONTAL_BUTTON_image_background_texture": "textures/example/black",
+
+            //Adding margins between our buttons by reducing final button size
+            "$HORIZONTAL_BUTTON_size": [
+                "100% - 2px",
+                "100% - 2px"
+            ],
+
+            //Dynamic button sizers keys
+            "$BUTTON_SIZER_left_third": "§p§1§1",
+            "$BUTTON_SIZER_right_third": "§p§2§1",
+            "$BUTTON_SIZER_left_half": "§p§1§2",
+            "$BUTTON_SIZER_right_half": "§p§2§2",
+
+            "$VERTICAL_PROCESSING_no_height_key": "§p§0§0", /*No height key
+            (Key to disable vertical button collision)*/
+
+            "$VERTICAL_PROCESSING_output_control": "starlib_pkg_button_templates.horizontal_button_template",
+            /*Defining vertical processing output, i will use StarLibV2 horizontal button template.
+            Also we can't use horizontal_button because it uses vertical stack item annotation which does
+            not work correctly in a dynamic structure*/
+
+            /*Due to the fact that we added a header button, we need to hide the buttons that
+            are used as a header button*/
+            "$DYNAMIC_ITEM_bindings": [
+                {
+                    "binding_collection_name": "form_buttons",
+                    "binding_name": "#form_button_text",
+                    "binding_type": "collection"
+                },
+                {
+                    "binding_type": "view",
+                    "source_property_name": "((#form_button_text - '§p§4§0') = #form_button_text)",
+                    "target_property_name": "#visible"
+                },
+                {
+                    "binding_type": "view",
+                    "source_property_name": "((#form_button_text - '§p§4§0') = #form_button_text)",
+                    "target_property_name": "#enabled"
+                }
+            ]
+        },
+    </div>
+</div>
+<h2>UI is done!</h2>
+<h1>Conclusion</h1>
+<p>From this example, you could learn simple dynamic structure, usage of custom style variables and dynamic header. I hope this example was useful to you.</p>
+<p>You can always request additional information from me. I also ask you very much not to use this example on servers or realms, because it was created only for educational purposes.</p>
+<h1>Off topic</h1>
+<div class="billboard">
+    <div class="billboard-content">
+        <h2 class="billboard-title">GrimUI</h2>
+        <div class="billboard-description">
+            <p>GrimUI - the most complex and the most powerful Form UI. Uses dynamic structure. Highly optimized and customizable.</p>
+            <a class="load-content-no-bg" style="font-size: 18px;" href="https://discord.com/channels/523663022053392405/1300103021035786260" target="_blank">Bedrock Addons post</a>
+        </div>
+
+    </div>
+    <div class="billboard-images">
+        <img src="assets/pages/home/FriendsSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/MarketplaceSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/ServersSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/PlaySW.png" alt="GrimUI showcase" class="billboard-image">
+    </div>
+</div>

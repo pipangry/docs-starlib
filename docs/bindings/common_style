@@ -1,0 +1,8 @@
+<span class="load-content" data-file="docs/package_button/button_style/common_button_style">Back</span>
+<p style="white-space: pre-wrap;">"$BUTTON_STYLE_variables|default": [
+    {
+        "default_default@$BUTTON_STYLE_default": {
+            "texture": "$BUTTON_STYLE_default_texture"
+        }
+    }
+]</p>

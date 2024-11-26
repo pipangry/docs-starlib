@@ -1,0 +1,162 @@
+//=======================================
+//
+//   Website & Documentation - https://pipangry.github.io/docs-starlib
+//
+//   StarLibV2 NutUI V2 example | by pipa_ngry
+//   Use it only for educational purposes!
+//   Thanks =)
+//
+//=======================================
+{
+    "namespace": "server_form",
+    "third_party_server_screen@common.base_screen": {
+        "$screen_content": "server_form.server_form",
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_cancel",
+                "to_button_id": "button.menu_exit",
+                "mapping_type": "global"
+            }
+        ]
+    },
+    "server_form": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            {
+                "server_form_factory": {
+                    "type": "factory",
+                    "control_ids": {
+                        "long_form": "@server_form.long_form",
+                        "custom_form": "@server_form.custom_form"
+                    }
+                }
+            }
+        ]
+    },
+    "long_form@starlib_pkg_screen_template.screen": {
+        "$FORM_TEMPLATE_header_control": "starlib_pkg_dynamic_common.common_dynamic_header",
+        "$FORM_TEMPLATE_background_texture": "textures/example/background",
+        "$FORM_TEMPLATE_content_size": [
+            "100% - 20px",
+            "100% - 16px"
+        ],
+        "$HORIZONTAL_BUTTON_size": [
+            "100% - 2px",
+            "100% - 2px"
+        ],
+        "$DYNAMIC_HEADER_background_control": "style.black",
+        "$DYNAMIC_HEADER_style_control": "server_form.header",
+        "$DYNAMIC_HEADER_close_button_control": "server_form.close_button",
+        "$DYNAMIC_HEADER_header_contents_control": "server_form.header_buttons_factory",
+
+        "$button_item_control": "starlib_pkg_dynamic_structure.dynamic_item_template",
+
+        "$COMMON_BUTTON_hover_control": "server_form.hover",
+        "$COMMON_BUTTON_panel_control": "starlib_pkg_button_common.disabled_variable_button_panel",
+        "$COMMON_BUTTON_style_control": "starlib_pkg_button_style.disabled_variable_button_style",
+        
+        "$BUTTON_STYLE_disabled_variable_key": "§p§3§0",
+        "$BUTTON_STYLE_default_variable_texture": "textures/example/button",
+        "$BUTTON_STYLE_disabled_variable_texture": "textures/example/button_disabled",
+        "$HORIZONTAL_BUTTON_image_background_texture": "textures/example/black",
+
+        "$BUTTON_SIZER_left_third": "§p§1§1",
+        "$BUTTON_SIZER_right_third": "§p§2§1",
+        "$BUTTON_SIZER_left_half": "§p§1§2",
+        "$BUTTON_SIZER_right_half": "§p§2§2",
+        "$VERTICAL_PROCESSING_no_height_key": "§p§0§0",
+        "$DYNAMIC_ITEM_entry": "starlib_pkg_dynamic_sizer.common_auto_sizer",
+        "$VERTICAL_PROCESSING_output_control": "starlib_pkg_button_templates.horizontal_button_template",
+        "$DYNAMIC_ITEM_bindings": [
+            {
+                "binding_collection_name": "form_buttons",
+                "binding_name": "#form_button_text",
+                "binding_type": "collection"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#form_button_text - '§p§4§0') = #form_button_text)",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#form_button_text - '§p§4§0') = #form_button_text)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "header_buttons_factory@global.button_factory": {
+        "orientation": "horizontal",
+        "size": [
+            "100%c",
+            "100%"
+        ],
+        "$factory_item": "server_form.header_button"
+    },
+    "header_button@global.binding": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "size": [
+            "100%y + 1px",
+            "100%"
+        ],
+        "$key": "§p§4§0",
+        "$COMMON_BUTTON_style_control": "starlib_pkg_button_style.common_button_style",
+        "controls": [
+            {
+                "button@starlib_pkg_button_templates.hover_button": {
+                    "$HOVER_BUTTON_size": [
+                        "fill",
+                        "100%"
+                    ],
+                    "$BUTTON_STYLE_default_texture": "textures/example/header_button",
+                    "$HOVER_BUTTON_hover_control": "server_form.hover",
+                    "$HOVER_BUTTON_image_size": [
+                        13,
+                        13
+                    ]
+                }
+            },
+            {
+                "padding": {
+                    "type": "panel",
+                    "size": [
+                        1,
+                        0
+                    ]
+                }
+            }
+        ]
+    },
+    "header@style.image": {
+        "texture": "textures/example/header"
+    },
+    "close_button@starlib_pkg_screen_common.async_close_button": {
+        "$CLOSE_BUTTON_size": [
+            "100%y",
+            "100%"
+        ],
+        "$CLOSE_BUTTON_icon_size": [
+            15,
+            15
+        ],
+        "$CLOSE_BUTTON_icon_texture": "textures/ui/close_button_default_light",
+        "$CLOSE_BUTTON_default_control": "server_form.close_button_default",
+        "$CLOSE_BUTTON_hover_control": "server_form.hover",
+        "$CLOSE_BUTTON_pressed_control": "server_form.hover"
+    },
+    "hover@style.image": {
+        "texture": "textures/example/hover",
+        "size": [
+            "100% + 2px",
+            "100% + 2px"
+        ]
+    },
+    "close_button_default@style.image": {
+        "texture": "textures/example/close_button"
+    }
+}

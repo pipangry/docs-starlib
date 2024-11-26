@@ -1,0 +1,38 @@
+<h1>@starlib_pkg_button_templates.common_big_button_content</h1>
+<p>starlib_pkg_button_templates.common_big_button_content is the common text content for starlib_pkg_button_templates.big_button just with little style changes. @starlib_pkg_button_common.button_text annotation is used</p>
+<div>
+    <span class="load-content" data-file="docs/package_button/button_templates/big_button">@starlib_pkg_button_templates.big_button</span>
+    <span class="load-content" data-file="docs/package_button/common_button/button_text">@starlib_pkg_button_common.button_text</span>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$BIG_BUTTON_CONTENT_text_alignment</td>
+                <td>left</td>
+                <td>Text alignment.</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>$BIG_BUTTON_CONTENT_font_type</td>
+                <td>MinecraftTen</td>
+                <td>Font type.</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>$BIG_BUTTON_CONTENT_font_scale_factor</td>
+                <td>1.2</td>
+                <td>Font scale factor.</td>
+                <td>float</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

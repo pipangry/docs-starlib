@@ -1,0 +1,59 @@
+<h1>Getting started</h1>
+<p>StarLib created to help make Forms in JsonUI, you can use this library in non-complex UI, and at the same time in very complex ones. The library supports dynamic structure, multiform optimization, custom tabs and much more!</p>
+<h2>Little introduction</h2>
+<p>StarLibV2 uses an annotation system using @ and variables of type $HEADER_TEMPLATE_size. To use StarLibV2, you need to know the basics of JsonUI.</p>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Structure example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "my_screen@starlib_pkg_screen_template.screen": { //Annotation
+        "$HEADER_TEMPLATE_size": [ //We define variable using the $ symbol
+            "100%",
+            32
+        ]
+    }
+    </div>
+</div>
+<p>In JsonUI, annotations work like using code or functions from another element. In our example @ this is an annotation symbol, starlib_pkg_screen_template is the namespace of the file from where we take the screen_template as template element.</p>
+<p>Variables allow you to change the values of certain elements. Since you can also specify the control of other elements in variables, you can create a UI using StarLibV2 in just one Json element.</p>
+<h2>Installing</h2>
+<div style="font-size: 18px;">
+<div>
+    1. Download the latest StarLibV2 release from Github:
+    <a class="load-content-no-bg" href="https://github.com/pipangry/StarLibV2/releases" target="_blank">Download latest release</a>
+</div>
+2. Put StarLibV2 files from source code .zip file into your ui folder. If your _ui_defs.json file already exists, you can copy and paste lines below to it.
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>_ui_defs.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "ui/starlib2/global.jsonc",
+    "ui/starlib2/style.jsonc",
+    "ui/starlib2/package_screen/screen_template.jsonc",
+    "ui/starlib2/package_screen/screen_common.jsonc",
+    "ui/starlib2/package_button/common_button.jsonc",
+    "ui/starlib2/package_button/button_templates.jsonc",
+    "ui/starlib2/package_button/button_style.jsonc",
+    "ui/starlib2/package_dynamic/common_dynamic.jsonc",
+    "ui/starlib2/package_dynamic/dynamic_sizer.jsonc",
+    "ui/starlib2/package_dynamic/dynamic_structure.jsonc",
+    "ui/starlib2/package_custom/custom_toggles.jsonc",
+    "ui/starlib2/package_custom/common_custom.jsonc",
+    "ui/starlib2/package_custom/custom_edit_box.jsonc",
+    "ui/starlib2/package_custom/custom_renders.jsonc"
+    </div>
+</div>
+<h3>Installation is done.</h3>
+<p>Then you can look at the examples and read the documentation. Good luck!</p>
+<h3 style="margin: 0;">Pathway</h3>
+<h1 style="margin: 0;">What should I do next?</h1>
+<p>So... You have installed StarLibV2. And now you're wondering what should I do next? To begin with, I advise you to look at the available UI examples. You can put them on yourself, poke something and generally experiment. But the most important thing at this point is to understand how it all works.</p>
+<p>I would start by looking at which elements are used in a particular example. You can freely find these examples in the search bar on the documentation site. When you have found the item you were looking for, you can look at the documentation for it. I recommend to start by looking at the Simple UI example.</p>
+<span class="load-content" data-file="examples/simple">Simple UI example</span>
+<p>And don't rush to create your UI from scratch right away. Use examples. When you have already understood the basic elements and how StarLibV2 works, start creating your UI from scratch.</p>
+<p>I am also always ready to help you. You can apply via Github issues or via Discord.</p>

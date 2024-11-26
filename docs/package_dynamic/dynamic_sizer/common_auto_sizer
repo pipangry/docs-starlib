@@ -1,0 +1,25 @@
+<h1>@starlib_pkg_dynamic_sizer.common_auto_sizer</h1>
+<p>starlib_pkg_dynamic_sizer.common_auto_sizer is an assembly of half_sizer_template and third_sizer_template, which output is vertical_processing_panel</p>
+<div class="load-content-container">
+    <span class="load-content" data-file="docs/package_dynamic/dynamic_sizer/half_sizer_template">@starlib_pkg_dynamic_sizer.half_sizer_template</span>
+    <span class="load-content" data-file="docs/package_dynamic/dynamic_sizer/third_sizer_template">@starlib_pkg_dynamic_sizer.third_sizer_template</span>
+    <span class="load-content" data-file="docs/package_dynamic/dynamic_structure/vertical_processing_panel">@starlib_pkg_dynamic_structure.vertical_processing_panel</span>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "button@starlib_pkg_dynamic_structure.dynamic_item_template": { /*Here we using
+        dynamic item template as dynamic sizing entry element*/
+        "$DYNAMIC_ITEM_entry": "starlib_pkg_dynamic_sizer.common_auto_sizer",
+        //Defining our auto sizer as entry sizer
+
+        //...Sizers variables
+        //Like "$BUTTON_SIZER_left_half": "key_left"
+
+        //...Vertical processing variables
+    }
+    </div>
+</div>

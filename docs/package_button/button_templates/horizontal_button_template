@@ -1,0 +1,75 @@
+<h1>@starlib_pkg_button_templates.horizontal_button_template</h1>
+<p>starlib_pkg_button_templates.horizontal_button_template is a pre-made template for the horizontal button structure. Used in starlib_pkg_button_templates.horizontal_button. You can see an example of the structure below. Uses the starlib_pkg_button_templates.bordered_button_template annotation.</p>
+<div class="load-content-container">
+    <span class="load-content" data-file="docs/package_button/button_templates/horizontal_button">@starlib_pkg_button_templates.horizontal_button</span>
+    <span class="load-content" data-file="docs/package_button/button_templates/common_vertical_stack_item">@starlib_pkg_button_templates.common_vertical_stack_item</span>
+    <span class="load-content" data-file="docs/package_button/button_templates/bordered_button_template">@starlib_pkg_button_templates.bordered_button_template</span>
+</div>
+<h3>Classic horizontal button example (No changes)</h3>
+<div class="image-container">
+    <img src="assets/pages/button_templates/horizontal.png" alt="Horizontal button"><img>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Info</h3>
+        <p>starlib_pkg_button_templates.horizontal_button_template differs from starlib_pkg_button_templates.horizontal_button only in that the annotation starlib_pkg_button_templates.common_vertical_stack_item is not used here, which allows you to use this button structure template in dynamic button structures.</p>
+    </div>
+</div>
+<div style="font-size: 18px;">
+    <span>As image element is used</span>
+    <span class="load-content-no-bg" data-file="docs/package_button/button_templates/horizontal_button_image">starlib_pkg_button_templates.horizontal_button_image</span>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$HORIZONTAL_BUTTON_size</td>
+                <td>[ 100%, 32 ]</td>
+                <td>Size of the button.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$HORIZONTAL_BUTTON_root_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_button/common_button/common_button">starlib_pkg_button_common.common_button</span></td>
+                <td>Button root element control.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$HORIZONTAL_BUTTON_content_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_button/common_button/button_text">starlib_pkg_button_common.button_text</span></td>
+                <td>Control of the button content element.</td>
+                <td>string (annotation)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "button_factory@global.button_factory": { //Using StarLibV2 classic button factory template annotation
+        "$factory_item": "server_form.long_button" //Using our button
+    },
+    //...
+    "long_button@starlib_pkg_button_templates.horizontal_button_template": { //Annotation
+        "$HORIZONTAL_BUTTON_root_control": "starlib_pkg_button_common.sensible_button_panel",
+        //Here I changing root panel control
+
+        "$HORIZONTAL_BUTTON_enable_image_background": true,
+        /*This variable is located in
+        @starlib_pkg_button_templates.horizontal_button_image, we can use it,
+        since this element is default horizontal button template image element*/
+    }
+    </div>
+</div>

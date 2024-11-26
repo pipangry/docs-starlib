@@ -1,0 +1,43 @@
+<h1>@starlib_pkg_button_common.disabled_variable_button_panel</h1>
+<p>starlib_pkg_button_common.disabled_variable_button_panel is used as a ready-made binding for a button with a disabled variation. You can see an example of using this element in the DynamicUI example. Uses the starlib_pkg_button_common.common_button_panel annotation.</p>
+<span class="load-content" data-file="docs/package_button/common_button/common_button_panel">@starlib_pkg_button_common.common_button_panel</span>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>How it works?</h3>
+        <p>This binding edits $COMMON_BUTTON_bindings in the starlib_pkg_button_common.common_button_panel annotation. If $BUTTON_STYLE_disabled_variable_key exists in #form_button_text, then the button panel is not visible, that is, the ability to click on the button is disabled.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$BUTTON_STYLE_disabled_variable_key</td>
+                <td>""</td>
+                <td>Key to disable button panel.</td>
+                <td>string</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "my_button_panel@starlib_pkg_button_common.disabled_variable_button_panel": { //Annotation
+        "$BUTTON_STYLE_disabled_variable_key": "disable_button" //Defining key
+    }
+    //...Usually used with disabled variable button styles
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<h1>@starlib_pkg_button_templates.common_cubic_button_content</h1>
+<p>starlib_pkg_button_templates.common_cubic_button_content is the main content of starlib_pkg_button_templates.cubic_button. It is a structure that the button text is in the stack panel along with the button image, which tries to take up the entire remaining size.</p>
+<span class="load-content" data-file="docs/package_button/button_templates/cubic_button">@starlib_pkg_button_templates.cubic_button</span>
+<h3>Example</h3>
+<div class="image-container">
+    <img src="assets/pages/button_templates/cubic.png" alt="Cubic button"><img>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$CUBIC_BUTTON_content_size</td>
+                <td>[ 100%, 100% ]</td>
+                <td>Size of the cubic button content. Mainly used in unusual shape buttons.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$CUBIC_BUTTON_content_offset</td>
+                <td>[ 0, 0 ]</td>
+                <td>Offset of the cubic button content.</td>
+                <td>array (offset)</td>
+            </tr>
+            <tr>
+                <td>$CUBIC_BUTTON_text_control</td>
+                <td>starlib_pkg_button_common.button_text</td>
+                <td>Control of the button text element.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$CUBIC_BUTTON_image_size</td>
+                <td>[ 100%, 100% ]</td>
+                <td>The size of the button image. It is located in the center of the image panel, which tries to take up all the available space in the button.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$CUBIC_BUTTON_image_bindings</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/button_image">$BUTTON_IMAGE_bindings</span></td>
+                <td>Button image bindings. Since cubic button image uses starlib_pkg_button_common.button_image we can use $BUTTON_IMAGE_bindings</td>
+                <td>array (bindings)</td>
+            </tr>
+            <tr>
+                <td>$CUBIC_BUTTON_bottom_padding_size</td>
+                <td>[ 0, 2 ]</td>
+                <td>Due to the fact that the image panel is trying to take up all the free space in the button, it can push the button text to the very bottom, which sometimes looks ugly. This is why an additional padding is made at the very bottom.</td>
+                <td>array (size)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

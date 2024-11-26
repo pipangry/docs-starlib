@@ -1,0 +1,35 @@
+<h1>@starlib_pkg_button_common.hover_text</h1>
+<p>starlib_pkg_button_common.hover_text is a classic panel for #form_button_text hover text.</p>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "button@starlib_pkg_button_common.common_button": { //Using StarLibV2 classic button root
+        "$COMMON_BUTTON_hover_control": "server_form.hover_state" /*Defining
+        our hover state element*/
+        //...Other variables
+    },
+    "hover_state": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            {
+                "hover_text@starlib_pkg_button_common.hover_text": {}
+                //Here we using hover text panel
+            },
+            {
+                "hover_texture": {
+                    //...
+                }
+                //Additional element or texture for hover state
+            }
+        ]
+    }
+    </div>
+</div>

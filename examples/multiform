@@ -1,0 +1,281 @@
+<h1>Mulfi Form example | MultiFormUI</h1>
+<p>Hi! In this example, I will show you how to create a simple multiform in StarLibV2. We will also work in depth with async close button and paperdoll.</p>
+<p>This UI is not considered as difficult, but I advise you to have at least a little experience with StarLibV2.</p>
+<a href="assets/examples/multiform/download/server_form.jsonc" download>
+	<button>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 2.5a.25.25 0 0 0-.25-.25H7A2.75 2.75 0 0 0 4.25 5v14A2.75 2.75 0 0 0 7 21.75h10A2.75 2.75 0 0 0 19.75 19V9.147a.25.25 0 0 0-.25-.25H15a.75.75 0 0 1-.75-.75zm-.219 10.664a.75.75 0 0 1 .938 1.172l-2.494 1.995a.747.747 0 0 1-.473.169h-.008a.747.747 0 0 1-.465-.166l-2.497-1.998a.75.75 0 0 1 .937-1.172l1.281 1.026v-3.44a.75.75 0 1 1 1.5 0v3.44z" clip-rule="evenodd"/><path fill="currentColor" d="M15.75 2.824c0-.184.193-.301.336-.186c.121.098.23.212.323.342l3.013 4.197c.068.096-.006.22-.124.22H16a.25.25 0 0 1-.25-.25z"/></svg>
+        Download code of this example
+    </button>
+</a>
+<div class="image-container">
+    <div class="image-item">
+        <img src="assets/examples/multiform/1.png" alt="Image 1">
+    </div>
+    <div class="image-item">
+        <img src="assets/examples/multiform/2.png" alt="Image 2">
+    </div>
+</div>
+<p>To begin with, I'll tell you a little about the structure of our UI. In the main element, we will have global elements, that is, which will act on 2 forms at once. Since we also change the size of the forms, we can't just make different contents. So, in the main element there will be global variations on the type of shape style, buttons, and a custom close button. You should know that the variables initiated from top to bottom, that is, always until the variable below is changed.</p>
+<h2>Global variables assembling</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "long_form@starlib_pkg_screen_template.screen": {
+            //As always, we use the StarLibV2 screen template, nothing new =)
+
+            "$SCREEN_TEMPLATE_fade_enabled": true, //Enabling screen fade
+    
+            //Header variables
+            "$HEADER_TEMPLATE_style_control": "server_form.header",
+            //Using our custom header style
+
+            "$HEADER_TEMPLATE_close_button_control": "global.empty_panel",
+            /*Our close button will be located in another element of the form at the bottom,
+            so we remove the close button from the header by specifying
+            an empty panel in the variable*/
+    
+            //Close button variables, our close button will be located in the form
+            sub content, but we can specify its parameters here*/
+            "$CLOSE_BUTTON_size": [ //Defining size
+                "100%",
+                18
+            ],
+            "$CLOSE_BUTTON_text_enabled": true,
+            //Enabling close button text
+
+            //Close button panel variables
+            "$CLOSE_BUTTON_default_control": "server_form.close_button",
+            "$CLOSE_BUTTON_hover_control": "server_form.hover",
+            "$CLOSE_BUTTON_pressed_control": "server_form.hover",
+
+            //Offseting text a little bit for better style
+            "$CLOSE_BUTTON_text_offset": [
+                0,
+                -2
+            ],
+    
+            //Now the form variables and close button assembling
+            "$FORM_TEMPLATE_appear_sub_contents_padding": true,
+            "$FORM_TEMPLATE_appear_header_padding": false,
+            /*In these two variables, we have specified in which places between contents
+            padding will appear or not*/
+
+            "$FORM_TEMPLATE_sub_content_control": "starlib_pkg_screen_common.async_close_button",
+            //As sub content, we define an async close button that we set up earlier.
+
+            "$FORM_TEMPLATE_background_texture": "textures/multiform/background",
+            //Form content background texture
+
+            //Defining size for our padding between form content and close button
+            "$FORM_TEMPLATE_between_contents_padding_size": [
+                0,
+                1
+            ],
+            "$FORM_TEMPLATE_content_size": [
+                "100% - 14px",
+                "100% - 14px"
+            ],
+            //Here we reducing form content panel size to fit it better into our style
+    
+            //Global buttons variables
+            "$BUTTON_STYLE_default_texture": "textures/multiform/button",
+            //Texture for button style
+
+            //Button panel elements
+            "$COMMON_BUTTON_hover_control": "server_form.hover",
+            "$COMMON_BUTTON_pressed_control": "server_form.hover",
+        },
+    </div>
+</div>
+<p>The global parameters of the form are specified! Now we need to write some style elements for our form.</p>
+<h2>Style elements</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        //As you can see, here I am using the style.image image template from StarLibV2.
+        "header@style.image": {
+            "texture": "textures/multiform/header"
+        },
+        "close_button@style.image": {
+            "texture": "textures/multiform/close_button"
+        },
+        "hover@style.image": {
+            "texture": "textures/multiform/hover"
+        },
+
+        /*I will make my own form text, as I need to slightly reduce its size horizontally
+        for more beauty of the layout*/
+        "form_text@starlib_pkg_screen_common.form_text_template": {
+            //Using StarLibV2 form text template annotation
+
+            "size": [ //Size
+                "100% - 2px",
+                "default"
+                //Don't forget to set the Y size to the default, since this element is a label.
+            ]
+        }
+    </div>
+</div>
+<p>Styles are ready! Now let's move on to assembling our multiforms. I will use $forms_holder_controls to build 2 forms at once. Each of these forms will be linked to a title binding to create title-based forms.</p>
+<p>Let me remind you that so far we do not have any form in the screen, because the default form is located in $forms_holder_control, which we are going to change.</p>
+<h2>Multi Forms assembling</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "long_form@starlib_pkg_screen_template.screen": {
+            //...Global variables
+
+            "$forms_holder_controls": [
+            /*As you can see, here I will use title_binding and reverse_title_binding to automatically
+            switch between forms. We will specify the child element in $control*/
+
+                {
+                    //Default form
+                    "form@global.reverse_title_binding": { //Binding element annotation
+                        "$form_size": [ //Size of our form
+                            280,
+                            225
+                        ],
+
+                        //Here I am changing the control of the form text element to our custom one.
+                        "$SCROLLING_CONTENT_form_text_control": "server_form.form_text",
+
+                        "$BORDERED_BUTTON_background_control": "global.empty_panel",
+                        /*Since the borders for the button are already present in the button texture itself,
+                        I will remove them by simply exposing an empty panel*/
+
+                        //By defining button borders control to empty_panel, we create margins from the buttons.
+                        Therefore, we do not need to use the horizontal_button annotation with the margins applied.
+                        We will use horizontal_button_template, where there are no default margins*/
+                        "$button_item_control": "starlib_pkg_button_templates.horizontal_button_template",
+
+                        /*I will slightly increase the size of the upper paddings, which are actually used for additional content.
+                        But they can also be used simply as an additional indentation from form_text*/
+                        "$SCROLLING_CONTENT_additional_content_margins_size": [
+                            0,
+                            1
+                        ],
+
+                        "$key": "§f§0§0", //Key for binding
+                        "$control": "starlib_pkg_screen_template.form_template",
+                        //In $control, I specify the form template that our variables are applied to
+
+                        /*Since the binding elements do not have a size, I need to specify it myself.
+                        Do not forget to set it to child size, because the final size of the form is determined
+                        in the child element, that is, in the $control annotation*/
+                        "size": [
+                            "100%c",
+                            "100%c"
+                        ]
+                    }
+                },
+                {
+                    //Custom form
+                    "form@global.title_binding": { //Binding element annotation
+                        "$form_size": [ //Size of our form
+                            340,
+                            235
+                        ],
+                        "$scrolling_content": "server_form.buttons_grid",
+                        //Here I am defining scrolling content to our custom button grid,
+                        which you can see in the element below*/
+
+                        //Paperdoll panel size in form content template
+                        "$COMMON_PAPERDOLL_size": [
+                            "33.3%",
+                            "100%"
+                        ],
+                        "$COMMON_PAPERDOLL_background_texture": "textures/multiform/paperdoll_background",
+                        //By default, the starlib_pkg_custom_renders.common_paperdoll annotation is used for
+                        paperdoll, so we have access to these variables*/
+
+                        "$PAPERDOLL_offset": [ //Offset for better style
+                            0,
+                            -30
+                        ],
+
+                        "$CONTENT_enable_paperdoll": true, //Enabling size paperdoll
+
+                        //Here I add padding between paperdoll and scrolling panel
+                        "$CONTENT_between_contents_padding_size": [
+                            5,
+                            0
+                        ],
+
+                        //Here we specify the parameters of our button, which will then be used in the button grid.
+                        "$CUBIC_BUTTON_image_size": [
+                            "100% - 16px",
+                            "100% - 16px"
+                        ],
+
+                        //Slightly raise the lower padding for a better style
+                        "$CUBIC_BUTTON_bottom_padding_size": [
+                            0,
+                            3
+                        ],
+
+                        "$key": "§f§0§0", //Key for binding
+                        "$control": "starlib_pkg_screen_template.form_template",
+                        //In $control, I specify the form template that our variables are applied to
+
+                        /*Since the binding elements do not have a size, I need to specify it myself.
+                        Do not forget to set it to child size, because the final size of the form is determined
+                        in the child element, that is, in the $control annotation*/
+                        "size": [
+                            "100%c",
+                            "100%c"
+                        ]
+                    }
+                }
+            ]
+        },
+        //Custom form contents
+        "buttons_grid@global.grid": { //Using StarLibV2 button grid template
+            "$grid_item": "server_form.grid_button"
+            //Defining grid item to our custom button
+        },
+
+        //I had to create a separate button element to add margins using the grid_item_template annotation
+        "grid_button@starlib_pkg_button_templates.grid_item_template": {
+            "$GRID_ITEM_root_control": "starlib_pkg_button_templates.cubic_button",
+            //Using StarLibV2 cubic button template
+
+            "$GRID_ITEM_size": [ //Our grid button size. Percentage very recommended!
+                "33.3%",
+                96
+            ]
+            /*We don't need to specify the size for cubic_button as it automatically becomes equal to
+            grid item size with attached margins*/
+        },
+    </div>
+</div>
+<h2>UI is done!</h2>
+<h1>Conclusion</h1>
+<p>From this example, you could learn how to assemble your multiforms using StarLibV2, how to make custom layout solutions (Like this cool close button) and how to make your custom content. Some of the solutions in this UI are a bit non-standard, but they are made to expand your knowledge about StarLibV2.</p>
+<p>I hope this example was useful to you. But you always can request additional information from me. I also ask you very much not to use this example on servers or realms, because it was created only for educational purposes.</p>
+<h1>Off topic</h1>
+<div class="billboard">
+    <div class="billboard-content">
+        <h2 class="billboard-title">GrimUI</h2>
+        <div class="billboard-description">
+            <p>GrimUI - the most complex and the most powerful Form UI. Uses dynamic structure. Highly optimized and customizable.</p>
+            <a class="load-content-no-bg" style="font-size: 18px;" href="https://discord.com/channels/523663022053392405/1300103021035786260" target="_blank">Bedrock Addons post</a>
+        </div>
+
+    </div>
+    <div class="billboard-images">
+        <img src="assets/pages/home/FriendsSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/MarketplaceSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/ServersSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/PlaySW.png" alt="GrimUI showcase" class="billboard-image">
+    </div>
+</div>

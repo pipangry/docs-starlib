@@ -1,0 +1,52 @@
+<h1>@starlib_pkg_button_style.button_style_template</h1>
+<p>starlib_pkg_button_style.button_style_template is used as a template for default style variations. It includes only style.image and an empty bindings field. Basically, starlib_pkg_button_style.style_variable and starlib_pkg_button_style.reverse_style_variable are used for style variations, but if you need to change the binding, you use this element.</p>
+<div>
+    <span class="load-content" data-file="docs/package_button/button_style/style_variable">starlib_pkg_button_style.style_variable</span>
+    <span class="load-content" data-file="docs/package_button/button_style/reverse_style_variable">starlib_pkg_button_style.reverse_style_variable</span>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$bindings</td>
+                <td>[]</td>
+                <td>Style variable bindings.</td>
+                <td>array (bindings)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "default_style@starlib_pkg_button_style.button_style_template": { //Annotation
+            "texture": "textures/my_ui/default_button_style", /*We can change texture because button_style_template
+            using style.image annotation*/
+            "$bindings": [ //Changing bindings
+                {
+                    "binding_collection_name": "form_buttons",
+                    "binding_name": "#form_button_text",
+                    "binding_type": "collection"
+                },
+                {
+                    "binding_type": "view",
+                    "source_property_name": "(not((#form_button_text - 'red' - 'green') = #form_button_text))",
+                    "target_property_name": "#visible"
+                }
+            ]
+            /*Mostly you need to use button_style_template for cases then classic StarLibV2
+            style variables bindings isn't suitable*/
+        }
+    </div>
+</div>

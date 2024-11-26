@@ -1,0 +1,37 @@
+<h1>@starlib_pkg_custom_common.search_conditions_element_binding</h1>
+<p>search_conditions_element_binding is a pre-made binding for elements (Mainly for buttons) that hides buttons when there are discrepancies with the data entered in the search bar, and shows them if the data entered in the search bar matches the button text. There is also an starlib_pkg_custom_common.text_range_search_conditions_element_binding that is alternative to this element that performs the same function, but also combines the properties of global.range_selection_binding.</p>
+<span class="load-content" data-file="docs/global/range_selection_binding">@global.range_selection_binding</span>
+<span class="load-content" data-file="docs/package_custom/common_custom/text_range_search_conditions_element_binding">@starlib_pkg_custom_common.text_range_search_conditions_element_binding</span>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$search_binding_name</td>
+                <td>search_field</td>
+                <td>The name of the edit box to which your binding will be linked. If you are using the <span class="load-content-no-bg" data-file="docs/package_custom/custom_edit_box/common_search_box">starlib_pkg_custom_edit_box.common_search_box</span>, then this value is specified in $COMMON_SEARCH_BOX_name.</td>
+                <td>string</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...Edit box or search bar
+    "my_button@starlib_pkg_custom_common.search_conditions_element_binding": {
+        "$search_binding_name": "my_search_bar"
+        //...
+    }
+    </div>
+</div>

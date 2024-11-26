@@ -1,0 +1,98 @@
+<h1>@starlib_pkg_dynamic_structure.dynamic_item_with_background</h1>
+<p>starlib_pkg_dynamic_structure.dynamic_item_with_background is the entry point for the dynamic structure assembling of the button, similar in function to starlib_pkg_dynamic_structure.dynamic_item_template, but providing an additional background for the element, as well as customized background borders</p>
+<span class="load-content" data-file="docs/package_dynamic/dynamic_structure/dynamic_item_template">starlib_pkg_dynamic_structure.dynamic_item_template</span>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Info</h3>
+        <p>According to the default, there are no paddings for the root element. To avoid bugs, it is best to reduce the vertical size of the final element of the button.</p>
+    </div>
+</div>
+<p>The top and bottom paddings are those elements that will separate the background of different elements, as well as act as a barrier for the background, if you have, for example, the beginning or end of a stack of buttons. Also they are called background borders.</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$DYNAMIC_ITEM_root_control</td>
+                <td><span style="font-style: italic;">Debug message<span></td>
+                <td>Control of the root element. You can immediately use dynamic sizer as an entry element.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_side_paddings_size</td>
+                <td>[ 3, 0 ]</td>
+                <td>The size of the paddings on both sides, which will reduce the size of the $DYNAMIC_ITEM_root_control element. It is mainly used for styling so that the background is more visible.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_top_padding_key</td>
+                <td>""</td>
+                <td>Key to show top padding. Similar to <span class="load-content-no-bg" data-file="docs/global/binding">global.binding</span></td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_top_padding_size</td>
+                <td>[ 100%, 3 ]</td>
+                <td>The size of the top padding. Since the top and bottom paddings are in the vertical stack panel, do not forget to set the X size to 100%.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_top_padding_texture</td>
+                <td>""</td>
+                <td>Top padding texture. The @style.image annotation is used.</td>
+                <td>string (texture path)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_top_padding_bindings</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/top_binding">View full binding</span></td>
+                <td>Top padding bindings. Indentical to <span class="load-content-no-bg" data-file="docs/global/binding">global.binding</span> by default.</td>
+                <td>array (bidnings)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_bottom_padding_key</td>
+                <td>""</td>
+                <td>Key to show bottom padding. Similar to <span class="load-content-no-bg" data-file="docs/global/binding">global.binding</span></td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_bottom_padding_size</td>
+                <td>[ 100%, 3 ]</td>
+                <td>The size of the bottom padding. Since the top and bottom paddings are in the vertical stack panel, do not forget to set the X size to 100%.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_bottom_padding_texture</td>
+                <td>""</td>
+                <td>Bottom padding texture. The @style.image annotation is used.</td>
+                <td>string (texture path)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_bottom_padding_bindings</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/bottom_binding">View full binding</span></td>
+                <td>Bottom padding bindings. Indentical to <span class="load-content-no-bg" data-file="docs/global/binding">global.binding</span> by default.</td>
+                <td>array (bidnings)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_background_texture</td>
+                <td>""</td>
+                <td>Background texture. The @style.image annotation is used.</td>
+                <td>string (texture path)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_background_bindings</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/dynamic_background">View full binding</span></td>
+                <td>Background bindings. It usually changes if you need to hide the background in some cases.</td>
+                <td>array (bindings)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>There is no example, I'm sorry, I was too lazy =)</p>

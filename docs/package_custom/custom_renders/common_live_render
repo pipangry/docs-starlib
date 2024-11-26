@@ -1,0 +1,53 @@
+<h1>@starlib_pkg_custom_renders.common_live_render</h1>
+<p>starlib_pkg_custom_renders.common_live_render is a ready-made and assembled element of live player renderer, using starlib_pkg_custom_renders.live_render_template</p>
+<span class="load-content" data-file="docs/package_custom/custom_renders/live_render_template">starlib_pkg_custom_renders.live_render_template</span>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>This element is still in beta testing. Be careful when using this element. It may change in the near future.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$COMMON_LIVERENDER_size</td>
+                <td>[ 100%, 100% ]</td>
+                <td>Live renderer panel element size.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$COMMON_LIVERENDER_background_texture</td>
+                <td>""</td>
+                <td>Texture for background element. Uses style.image. Have a full size of the panel.</td>
+                <td>string (texture path)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        //...
+        "my_paperdoll@starlib_pkg_custom_renders.common_live_render": { //Annotation
+            "$COMMON_LIVERENDER_size": [ //Changing live render panel size
+                "33.3$",
+                "100% - 8px"
+            ],
+            "$COMMON_LIVERENDER_background_texture": "textures/my_ui/renderer_background",
+            //Defining my background texture
+        }
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<h1>@starlib_pkg_custom_renders.live_render_template</h1>
+<p>starlib_pkg_custom_renders.live_render_template is a classic template for rendering live_player_rendered.</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$LIVE_RENDER_size</td>
+                <td>[ 100%, 100% ]</td>
+                <td>Live player renderer size.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$LIVE_RENDER_offset</td>
+                <td>[ 0, 0 ]</td>
+                <td>Live player renderer offset.</td>
+                <td>array (offset)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

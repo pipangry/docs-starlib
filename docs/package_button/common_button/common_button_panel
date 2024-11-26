@@ -1,0 +1,75 @@
+<h1>@starlib_pkg_button_common.common_button_panel</h1>
+<p>starlib_pkg_button_common.common_button_panel is a classic template for an asynchronous clickable panel (button panel). Uses common.button. If you want a regular button panel, without the async structure, you can use @starlib_pkg_button_common.sensible_button_panel. Also used as a default button panel for starlib_pkg_button_common.common_button</p>
+<div>
+    <span class="load-content" data-file="docs/package_button/common_button/sensible_button_template">@starlib_pkg_button_common.sensible_button_panel</span>
+    <span class="load-content" data-file="docs/package_button/common_button/common_button">@starlib_pkg_button_common.common_button</span>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>What is async?</h3>
+        <p>Asynchronous button panel this means that the control of the main button style is an element separate from the button panel, and the hover state and pressed state elements are superimposed on top of it. This allows you to optimize the button, especially when you have a large style manager.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$COMMON_BUTTON_hover_control</td>
+                <td>style.hightlight</td>
+                <td>Annotation of the hover state element.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$COMMON_BUTTON_pressed_control</td>
+                <td>$COMMON_BUTTON_hover_control</td>
+                <td>Annotation of the pressed state element.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$COMMON_BUTTON_bindings</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/common_button">View full binding</span></td>
+                <td>Button bindings.</td>
+                <td>array (bindings)</td>
+            </tr>
+            <tr>
+                <td>$COMMON_BUTTON_sound_name</td>
+                <td>random.click</td>
+                <td>Button panel click sound.</td>
+                <td>string (sound id)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "button_panel@starlib_pkg_button_common.common_button_panel": { //Annotation
+        "$COMMON_BUTTON_hover_control": "server_form.hover_state", //Changing hover state control
+        "$COMMON_BUTTON_bindings": [ //Changing button bindings
+            {
+                "binding_collection_name": "form_buttons",
+                "binding_type": "collection_details"
+            }
+        ],
+    }
+    //...Or
+    "button_root@starlib_pkg_button_common.common_button": {
+        "$COMMON_BUTTON_panel_control": "starlib_pkg_button_common.common_button_panel"
+        /*starlib_pkg_button_common.common_button_panel is
+        already default element for $COMMON_BUTTON_panel_control, just showed for example*/
+    }
+    </div>
+</div>

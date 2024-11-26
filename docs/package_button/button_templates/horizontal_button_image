@@ -1,0 +1,58 @@
+<h1>@starlib_pkg_button_templates.horizontal_button_image</h1>
+<p>starlib_pkg_button_templates.horizontal_button_image is a dynamic pre-made image template for the horizontal button. Used in starlib_pkg_button_templates.horizontal_button_template</p>
+<span class="load-content" data-file="docs/package_button/button_templates/horizontal_button_template">@starlib_pkg_button_templates.horizontal_button_template</span>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Info</h3>
+        <p>This image element supports adding a background to the image panel, as well as customizing the size of the right margin from the main content of the horizontal button.</p>
+    </div>
+</div>
+<div class="image-container">
+    <div class="image-item">
+        <p>Without enabled image panel background</p>
+        <img src="assets/pages/button_templates/horizontal_img.png" alt="Image 1">
+    </div>
+    <div class="image-item">
+        <p>With enabled image panel background</p>
+        <img src="assets/pages/button_templates/horizontal_img_bg.png" height="200px" alt="Image 2">
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$HORIZONTAL_BUTTON_image_panel_size</td>
+                <td>[ 100%y + 1px, 100% ]</td>
+                <td>Size of the image panel. Here we add 1px to add an padding from the main button. If you also change $HORIZONTAL_BUTTON_image_margin_size (for example, to 2, 0), then you need to change the pixel addition to 2px. This is done so that the final image is exactly square. Basically, you don't need to touch this parameter.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$HORIZONTAL_BUTTON_image_bindings</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/horizontal_image">View full binding</span></td>
+                <td>Image panel bindings.</td>
+                <td>array (bindings)</td>
+            </tr>
+            <tr>
+                <td>$HORIZONTAL_BUTTON_image_margin_size</td>
+                <td>[ 1, 0 ]</td>
+                <td>The size of the right padding. Button image will fill all possible space from $HORIZONTAL_BUTTON_image_panel_size given the size of this padding.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$HORIZONTAL_BUTTON_image_background_texture</td>
+                <td>""</td>
+                <td>Button image background texture. Equal to the size of the button image.</td>
+                <td>string (texture path)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

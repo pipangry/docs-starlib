@@ -1,0 +1,99 @@
+<h1>@starlib_pkg_screen_template.screen</h1>
+<p>@starlib_pkg_screen_template.screen contains the basic StarLibV2 template for quick screen creation. This immediately includes the ability to customize the background of the entire screen, the form manager, and so on.</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>Do not use @starlib_pkg_screen_template.screen as a template for multiforms, as this element contains a full screen setup. If you need to create multiforms, use an internal manager $forms_holder_controls with @starlib_pkg_screen_template.form_template as template element.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$SCREEN_TEMPLATE_fade_control</td>
+                <td>style.fade</td>
+                <td>Control of the element that will be taken as a template for the screen background fade. Disabled by default using the $fade_enabled setting.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$SCREEN_TEMPLATE_frame_control</td>
+                <td>style.white_frame</td>
+                <td>Control of the element that will be taken as a template for the form element frame. Disabled by default using the $frame_enabled setting.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$SCREEN_TEMPLATE_fade_alpha</td>
+                <td>0.3</td>
+                <td>The alpha value of the $SCREEN_TEMPLATE_fade_control element.</td>
+                <td>float</td>
+            </tr>
+            <tr>
+                <td>$SCREEN_TEMPLATE_fade_enabled</td>
+                <td><h4>false</h4></td>
+                <td>If true, the $SCREEN_TEMPLATE_fade_control element is visible.</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <td>$SCREEN_TEMPLATE_frame_enabled</td>
+                <td><h4>false</h4></td>
+                <td>If true, the $SCREEN_TEMPLATE_frame_control element is visible.</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <td>$SCREEN_TEMPLATE_background_texture</td>
+                <td>""</td>
+                <td>Texture of the screen background element. By default it is nothing so screen background invisible.</td>
+                <td>string (texture path)</td>
+            </tr>
+            <tr>
+                <td>$forms_holder_controls</td>
+                <td>[ { <span class="load-content-no-bg" data-file="docs/package_screen/screen_template/form_template">main@starlib_pkg_screen_template.form_template</span> } ]</td>
+                <td>A list of the forms. It is mainly used to create multiforms</td>
+                <td>array (controls)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "screen@starlib_pkg_screen_template.screen": { //Using screen template
+        "$SCREEN_TEMPLATE_frame_enabled": true, //Enabling form frame
+        //...Other variables
+        "$forms_holder_controls": [
+            {
+                "default_form@starlib_pkg_screen_template.form_template": {
+                    //...
+                    "bindings": [
+                        {
+                            //Bindings to show title-based form.
+                        }
+                    ]
+                }
+            },
+            {
+                "custom_form@starlib_pkg_screen_template.form_template": {
+                    //...
+                    "bindings": [
+                        {
+                            //Bindings to show title-based form.
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    </div>
+</div>

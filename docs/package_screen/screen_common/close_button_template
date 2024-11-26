@@ -1,0 +1,46 @@
+<h1>@starlib_pkg_screen_common.close_button_template</h1>
+<p>Classic close button template for StarLibV2. Uses common.button, therefore, supports focus.</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$CLOSE_BUTTON_size</td>
+                <td>[ 15, 15 ]</td>
+                <td>Close button size.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_default_control</td>
+                <td>style.close_button_default</td>
+                <td>Control of the default state element.</td>
+                <td>string (annonation)</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_hover_control</td>
+                <td>style.close_button_hover</td>
+                <td>Control of the hover state element.</td>
+                <td>string (annonation)</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_pressed_control</td>
+                <td>style.close_button_hover</td>
+                <td>Control of the pressed state element.</td>
+                <td>string (annonation)</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_sound_name</td>
+                <td>random.click</td>
+                <td>Button panel click sound.</td>
+                <td>string (sound id)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

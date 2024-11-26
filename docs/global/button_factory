@@ -1,0 +1,21 @@
+<h1>@global.button_factory</h1>
+<p>Classic button factory. By default, it has a vertical orientation. It is also used in @starlib_pkg_screen_template.scrolling_content_template</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$factory_item</td>
+                <td><span style="font-style: italic;">Debug message<span></td>
+                <td>Button factory item control.</td>
+                <td>string (control)</td>
+            </tr>
+    </table>
+</div>

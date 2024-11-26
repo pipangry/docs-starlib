@@ -1,0 +1,63 @@
+//=======================================
+//
+//   Website & Documentation - https://pipangry.github.io/docs-starlib
+//
+//   StarLibV2 PeanutUI example | by pipa_ngry
+//   Use it only for educational purposes!
+//   Thanks =)
+//
+//=======================================
+{
+    "namespace": "server_form",
+    "third_party_server_screen@common.base_screen": {
+        "$screen_content": "server_form.server_form",
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_cancel",
+                "to_button_id": "button.menu_exit",
+                "mapping_type": "global"
+            }
+        ]
+    },
+    "server_form": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            {
+                "server_form_factory": {
+                    "type": "factory",
+                    "control_ids": {
+                        "long_form": "@server_form.long_form",
+                        "custom_form": "@server_form.custom_form"
+                    }
+                }
+            }
+        ]
+    },
+    "long_form@starlib_pkg_screen_template.screen": {
+        "$SCREEN_TEMPLATE_frame_enabled": true,
+        "$HEADER_TEMPLATE_style_control": "server_form.header",
+        "$HEADER_TEMPLATE_contents_offset": [
+            0,
+            -1
+        ],
+        "$FORM_TEMPLATE_background_texture": "textures/example_2/background",
+        "$button_item_control": "starlib_pkg_button_templates.horizontal_button",
+        "$HORIZONTAL_BUTTON_image_background_texture": "textures/example_2/image_background",
+        "$BUTTON_STYLE_default_texture": "textures/example_2/button",
+        "$COMMON_BUTTON_hover_control": "server_form.hover"
+    },
+    "header@style.image": {
+        "texture": "textures/example_2/header"
+    },
+    "hover@style.image": {
+        "texture": "textures/example_2/border",
+        "size": [
+            "100% + 2px",
+            "100% + 2px"
+        ]
+    }
+}

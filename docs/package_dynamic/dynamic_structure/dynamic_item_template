@@ -1,0 +1,43 @@
+<h1>@starlib_pkg_dynamic_structure.dynamic_item_template</h1>
+<p>starlib_pkg_dynamic_structure.dynamic_item_template is the standard entry point for the dynamic structure of the button. Basically, the horizontal dynamic sizer acts as the initial entry element for dynamic_item_template. There is also an analog in the form of starlib_pkg_dynamic_structure.dynamic_item_with_background, this element performs the same function, but provides an additional background for dynamic objects, as well as background borders.</p>
+<span class="load-content" data-file="docs/package_dynamic/dynamic_structure/dynamic_item_with_background">starlib_pkg_dynamic_structure.dynamic_item_with_background</span>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$DYNAMIC_ITEM_entry</td>
+                <td><span style="font-style: italic;">Debug message<span></td>
+                <td>The entry point for assembling a dynamic structure. It is usually a horizontal dynamic sizer.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_ITEM_bindings</td>
+                <td>[]</td>
+                <td>Dynamic item template bindings. Mainly used to hide button.</td>
+                <td>array (bindings)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "button@starlib_pkg_dynamic_structure.dynamic_item_template": { //Annotation
+        "$DYNAMIC_ITEM_entry": "starlib_pkg_dynamic_sizer.common_auto_sizer",
+        /*Here, for example, i use common_auto_sizer as entry element,
+        it also can be third_sizer_template and others.*/
+    }
+    </div>
+</div>
+<p>Another example of usage can be found in the Dynamic UI example.</p>

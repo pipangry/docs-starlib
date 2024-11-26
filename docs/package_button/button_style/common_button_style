@@ -1,0 +1,52 @@
+<h1>@starlib_pkg_button_style.common_button_style</h1>
+<p>starlib_pkg_button_style.common_button_style is a classic StarLibV2 button style manager. It can be used both with an asynchronous button structure and with a synchronous structure.</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>What is style manager?</h3>
+        <p>Style manager is an element that is responsible for registering button styles (textures). If, for example, you want to make several variations of the button style (for example: red, regular, green, etc.), then you use the style manager for this. It is best to use the style manager in compatibility with the asynchronous button structure for greater optimization.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$BUTTON_STYLE_variables</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/common_style">View full binding</span></td>
+                <td>Style manager variables controls. Used to register several styles for a button (for example: red, regular, green, etc.). If you have only one style, you can leave this variable untouched.</td>
+                <td>array (controls)</td>
+            </tr>
+            <tr>
+                <td>$BUTTON_STYLE_default</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_button/button_style/button_style_template">starlib_pkg_button_style.button_style_template</span></td>
+                <td>Annotation for the default element in $BUTTON_STYLE_variables. When $BUTTON_STYLE_variables is changed, it does not work.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$BUTTON_STYLE_default_texture</td>
+                <td>"textures/ui/Black"</td>
+                <td>The texture for the default element in $BUTTON_STYLE_variables. When $BUTTON_STYLE_variables is changed, it does not work.</td>
+                <td>string (texture path)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "my_super_duper_style_manager@starlib_pkg_button_style.common_button_style": { //Annotation
+            "$BUTTON_STYLE_default_texture": "textures/my_ui/button" //Changing default style texture
+        }
+    </div>
+</div>

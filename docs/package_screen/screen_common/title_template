@@ -1,0 +1,15 @@
+<h1>@starlib_pkg_screen_common.title_template</h1>
+<p>Classic form title template. Uses @style.label</p>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "title@starlib_pkg_screen_common.title_template": { //Annotation
+        "text_alignment": "left", //Changing alignment
+        "font_type": "MinecraftTen" //Changing font type to MinecraftTen
+    }
+    </div>
+</div>

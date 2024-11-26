@@ -1,0 +1,66 @@
+<h1>@starlib_pkg_button_templates.hover_button</h1>
+<p>starlib_pkg_button_templates.hover_button is a pre-made template for the button structure. You can see an example below.</p>
+<h3>Classic horizontal button example (No changes)</h3>
+<div class="image-container">
+    <img src="assets/pages/button_templates/hover.png" alt="Hover button"><img>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>This element uses starlib_pkg_button_common.common_button with already defined variable $COMMON_BUTTON_hover_control on starlib_pkg_button_templates.hover_button_hover_root. hover_button_hover_root is not shown in the documentation as it is an intermediary for adding hover_text.</p>
+    </div>
+</div>
+<p>For the place $COMMON_BUTTON_hover_control, use the variable $HOVER_BUTTON_hover_control. You can read the reason for this above. This button structure uses <span class="load-content-no-bg" data-file="docs/package_button/common_button/hover_text">starlib_pkg_button_common.hover_text</span> as an element for hover text.</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$HOVER_BUTTON_size</td>
+                <td>[ 100%, 100%x ]</td>
+                <td>Size of the button.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$HOVER_BUTTON_image_size</td>
+                <td>[ 100% - 8px, 100% - 8px ]</td>
+                <td>Size of the button image. <span class="load-content-no-bg" data-file="docs/package_button/common_button/button_image">@starlib_pkg_button_common.button_image</span> is used as the button image element.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$HOVER_BUTTON_hover_control</td>
+                <td>global.empty_panel</td>
+                <td>Control of hover state element similar to $COMMON_BUTTON_hover_control. Changed due to the addition of an intermediary element for hover text.</td>
+                <td>string (annotation)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "grid@global.grid": { //Using StarLibV2 classic grid template annotation
+        "$grid_item": "server_form.hover_button" //Using our button
+    },
+    //...
+    "hover_button@starlib_pkg_button_templates.hover_button": { //Annotation
+        "HOVER_BUTTON_hover_control": "server_form.hover_state", /*Defining button
+        panel hover state element*/
+        "HOVER_BUTTON_size": [ //Changing size
+            32,
+            32
+        ]
+    }
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<h1>@starlib_pkg_custom_renders.doll_rotation_area</h1>
+<p>starlib_pkg_custom_renders.doll_rotation_area is an input_panel element for assembling a panel for rotating papardoll renderer. Mainly used in compatibility with starlib_pkg_custom_renders.paperdoll_template</p>
+<span class="load-content" data-file="docs/package_custom/custom_renders/paperdoll_template">starlib_pkg_custom_renders.paperdoll_template</span>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>This element is still in beta testing. Be careful when using this element. It may change in the near future.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$ROTATION_AREA_size</td>
+                <td>[ 100%, 100% ]</td>
+                <td>Rotation area element size.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$ROTATION_AREA_root_control</td>
+                <td>global.empty_panel</td>
+                <td>Rotation area rotating (root) element control.</td>
+                <td>string (annotation)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,64 @@
+<h1>@global.range_selection_binding</h1>
+<p>@global.range_selection_binding is used to check if there is any text in the range from $from to $to in #form_button_text. You can also use @starlib_pkg_button_common.range_selection_button_text, which is identical to this binding, but uses style.label to display text from the selected range.</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>How it works?</h3>
+        <p>If there is any text in the range from $from to $to in #form_button_text that is not \t, the element is visible. /t acts as a space symbol in the range.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$from</td>
+                <td>""</td>
+                <td>The point in the character range from which the selection range starts.</td>
+                <td>float</td>
+            </tr>
+            <tr>
+                <td>$to</td>
+                <td>""</td>
+                <td>The point in the character range to which the selection range goes.</td>
+                <td>float</td>
+            </tr>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //Since binding uses #form_button_text, you can only use this element in the button collection
+    "my_element@global.range_selection_binding": { //Annotation
+        "$from": "100", //Range selection variables.
+        "$to": "200"
+    }
+    </div>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Script example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        //...Our form data
+        .button(text("my text", 100) + text("another my text", 100)) //Using our function
+
+        //...
+        function text(text, totalLength) { //Here the totalLength is the number of characters that we need to achieve by adding \t
+            if(text.length > totalLength) throw new Error("The text is too long...");
+            return   text + "\t".repeat((totalLength - text.length));
+        }
+    </div>
+</div>
+<p>As a result, our my_element element will be visible, because there is "another my text" in the radius we specified.</p>

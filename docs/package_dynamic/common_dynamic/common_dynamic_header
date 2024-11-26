@@ -1,0 +1,102 @@
+<h1>@starlib_pkg_dynamic_common.common_dynamic_header</h1>
+<p>starlib_pkg_dynamic_common.common_dynamic_header is a form component header with extensive customization of content and a stack panel structure. You can see an example of usage in the Dynamic UI example.</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$DYNAMIC_HEADER_size</td>
+                <td>[ 100%, 24]</td>
+                <td>Header panel size.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_HEADER_background_control</td>
+                <td>style.black</td>
+                <td>Control of the dynamic header background element.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_HEADER_root_size</td>
+                <td>[ 100% - 2px, 100% - 2px ]</td>
+                <td>The size of the root panel, where all the content of the dynamic header is located. Basically the size is reduced to create paddings. Root panel have a structure of a stack panel.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_HEADER_header_contents_control</td>
+                <td>global.empty_panel</td>
+                <td>Control of the additional content element of the header on the left side. Mainly used to add a header buttons.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_HEADER_right_header_contents_control</td>
+                <td>global.empty_panel</td>
+                <td>Control of the additional content element of the header on the right side next to the close button. Mainly used to add a header buttons.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_HEADER_style_control</td>
+                <td>style.black_alpha</td>
+                <td>Control of the main style element on which the title will be located. It always tries to fill all free space, being in the center.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_HEADER_close_button_control</td>
+                <td>starlib_pkg_dynamic_common.common_dynamic_header_close_button</td>
+                <td>Close button element control. Located on the right side.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$DYNAMIC_HEADER_title_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_screen/screen_common/title_template">starlib_pkg_screen_common.title_template</span></td>
+                <td>Control of the title element. Located in the panel, which also contains $DYNAMIC_HEADER_style_control.</td>
+                <td>string (annotation)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>starlib_pkg_dynamic_common.common_dynamic_header_close_button is not included in the documentation, as it is just starlib_pkg_screen_common.close_button_template but with the size [ 100%y, 100% ].</p>
+    </div>
+</div>
+<span class="load-content" data-file="docs/package_screen/screen_common/close_button_template">starlib_pkg_screen_common.close_button_template</span>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "dynamic_header@starlib_pkg_dynamic_common.common_dynamic_header": { //Annotation
+        "$DYNAMIC_HEADER_size": [ //Changing header size
+            "100%",
+            32
+        ],
+        "$DYNAMIC_HEADER_header_contents_control": "server_form.header_buttons",
+        //Adding additional dynamic header content (For example: header buttons)
+
+        "$DYNAMIC_HEADER_style_control": "server_form.my_header"
+    },
+    "header_buttons@global.button_factory": { //Using StarLibV2 button factory template
+        //...Header buttons
+        "orientation": "horizontal"
+        /*You need to use horizontal orientation in your factories or grids in the
+        dynamic header additional contents because dynamic header root stack panel
+        has horizontal orientation*/
+    },
+    "my_header@style.image": { //Common StarLibV2 image template
+        "texture": "textures/my_ui/header"
+    }
+    //...
+    </div>
+</div>

@@ -1,0 +1,160 @@
+{
+    "Home": "docs/home",
+    "Getting started": "docs/start",
+    "Examples": {
+        "Easy.text": {},
+        "PeanutUI": "examples/simple",
+        "MatrixUI": "examples/normal",
+        "Medium.text": {},
+        "MultiFormUI": "examples/multiform",
+        "NutUI V2": "examples/nut",
+        "Hard.text": {},
+        "BundleUI": "examples/bundle"
+    },
+    "style.jsonc": "docs/style",
+    "global.jsonc": {
+        "Bindings.text": {},
+        "binding": "docs/global/binding",
+        "reverse_binding": "docs/global/reverse_binding",
+        "title_binding": "docs/global/title_binding",
+        "reverse_title_binding": "docs/global/reverse_title_binding",
+        "range_selection_binding": "docs/global/range_selection_binding",
+        "Basic elements.text": {},
+        "scrolling_panel": "docs/global/scrolling_panel",
+        "button_factory": "docs/global/button_factory",
+        "grid": "docs/global/grid"
+    },
+    "Package screen": {
+        "screen_template.jsonc": {
+            "Screen root.text": {},
+            "screen": "docs/package_screen/screen_template/screen",
+            "form_template": "docs/package_screen/screen_template/form_template",
+            "Form components.text": {},
+            "header_template": "docs/package_screen/screen_template/header_template",
+            "content_template": "docs/package_screen/screen_template/content_template",
+            "scrolling_content_template": "docs/package_screen/screen_template/scrolling_content_template"
+        },
+        "screen_common.jsonc": {
+            "Common components.text": {},
+            "title_template": "docs/package_screen/screen_common/title_template",
+            "close_button_template": "docs/package_screen/screen_common/close_button_template",
+            "async_close_button": "docs/package_screen/screen_common/async_close_button_template",
+            "form_text_template": "docs/package_screen/screen_common/form_text_template"
+        }
+    },
+    "Package button": {
+        "common_button.jsonc": {
+            "Button panels.text": {},
+            "common_button_panel": "docs/package_button/common_button/common_button_panel",
+            "sensible_button_panel": "docs/package_button/common_button/sensible_button_template",
+            "disabled_variable_button_panel": "docs/package_button/common_button/disabled_variable_button_panel",
+            "Button root.text": {},
+            "common_button": "docs/package_button/common_button/common_button",
+            "Button components.text": {},
+            "button_image": "docs/package_button/common_button/button_image",
+            "button_text": "docs/package_button/common_button/button_text",
+            "hover_text": "docs/package_button/common_button/hover_text",
+            "range_selection_button_text": "docs/package_button/common_button/range_selection_button_text",
+            "conditions_range_selection_button_text": "docs/package_button/common_button/conditions_range_selection_button_text",
+            "reverse_conditions_range_selection_button_text": "docs/package_button/common_button/reverse_conditions_range_selection_button_text",
+            "range_selection_hover_text": "docs/package_button/common_button/range_selection_hover_text"
+        },
+        "button_templates.jsonc": {
+            "Structure assemblers.text": {},
+            "common_vertical_stack_item": "docs/package_button/button_templates/common_vertical_stack_item",
+            "bordered_button_template": "docs/package_button/button_templates/bordered_button_template",
+            "grid_item_template": "docs/package_button/button_templates/grid_item_template",
+            "Horizontal button.text": {},
+            "horizontal_button": "docs/package_button/button_templates/horizontal_button",
+            "horizontal_button_template": "docs/package_button/button_templates/horizontal_button_template",
+            "horizontal_button_image": "docs/package_button/button_templates/horizontal_button_image",
+            "Cubic button.text": {},
+            "cubic_button": "docs/package_button/button_templates/cubic_button",
+            "common_cubic_button_content": "docs/package_button/button_templates/common_cubic_button_content",
+            "Big button.text": {},
+            "big_button": "docs/package_button/button_templates/big_button",
+            "common_big_button_content": "docs/package_button/button_templates/common_big_button_content",
+            "Hover button.text": {},
+            "hover_button": "docs/package_button/button_templates/hover_button"
+        },
+        "button_style.jsonc": {
+            "Style components.text": {},
+            "common_button_style": "docs/package_button/button_style/common_button_style",
+            "button_style_template": "docs/package_button/button_style/button_style_template",
+            "Pre-made variables.text": {},
+            "style_variable": "docs/package_button/button_style/style_variable",
+            "reverse_style_variable": "docs/package_button/button_style/reverse_style_variable",
+            "disabled_variable_button_style": "docs/package_button/button_style/disabled_variable_button_style"
+        }
+    },
+    "Package dynamic": {
+        "common_dynamic.jsonc": {
+            "Dynamic elements.text": {},
+            "common_dynamic_header": "docs/package_dynamic/common_dynamic/common_dynamic_header",
+            "Dynamic components.text": {},
+            "common_dynamic_button_content": "docs/package_dynamic/common_dynamic/common_dynamic_button_content",
+            "image_conditions_dynamic_button_content": "docs/package_dynamic/common_dynamic/image_conditions_dynamic_button_content"
+        },
+        "dynamic_structure.json": {
+            "Dynamic item templates.text": {},
+            "dynamic_item_with_background": "docs/package_dynamic/dynamic_structure/dynamic_item_with_background",
+            "dynamic_item_template": "docs/package_dynamic/dynamic_structure/dynamic_item_template",
+            "uncollizeble_content_dynamic_item": "docs/package_dynamic/dynamic_structure/uncollizeble_content_dynamic_item",
+            "Vertical assembling.text": {},
+            "vertical_sizer_template": "docs/package_dynamic/dynamic_structure/vertical_sizer_template",
+            "vertical_processing_panel": "docs/package_dynamic/dynamic_structure/vertical_processing_panel"
+        },
+        "dynamic_sizer.jsonc": {
+            "FAQ.text": {},
+            "How it work?": "docs/how/sizers",
+            "Sizer templates.text": {},
+            "third_sizer_template": "docs/package_dynamic/dynamic_sizer/third_sizer_template",
+            "half_sizer_template": "docs/package_dynamic/dynamic_sizer/half_sizer_template",
+            "custom_sizer_template": "docs/package_dynamic/dynamic_sizer/custom_sizer_template",
+            "Pre-made sizers.text": {},
+            "common_auto_sizer": "docs/package_dynamic/dynamic_sizer/common_auto_sizer"
+        }
+    },
+    "Package custom": {
+        "common_custom.jsonc": {
+            "Search bar bindings.text": {},
+            "search_conditions_element_binding": "docs/package_custom/common_custom/search_conditions_element_binding",
+            "text_range_search_conditions_element_binding": "docs/package_custom/common_custom/text_range_search_conditions_element_binding"
+        },
+        "custom_edit_box.jsonc": {
+            "Search bar.text": {},
+            "common_search_box": "docs/package_custom/custom_edit_box/common_search_box"
+        },
+        "custom_toggles.jsonc": {
+            "Common toggles.text": {},
+            "common_toggle": "docs/package_custom/custom_toggles/common_toggle",
+            "tab_view_binding": "docs/package_custom/custom_toggles/tab_view_binding"
+        },
+        "custom_renders.jsonc": {
+            "Render templates.text": {},
+            "paperdoll_template": "docs/package_custom/custom_renders/paperdoll_template",
+            "live_render_template": "docs/package_custom/custom_renders/live_render_template",
+            "Common renders.text": {},
+            "common_paperdoll": "docs/package_custom/custom_renders/common_paperdoll",
+            "common_live_render": "docs/package_custom/custom_renders/common_live_render",
+            "Components.text": {},
+            "doll_rotation_area": "docs/package_custom/custom_renders/doll_rotation_area"
+        }
+    },
+    ".hide-button_image": "docs/bindings/button_image",
+    ".hide-common_button": "docs/bindings/common_button",
+    ".hide-sensible_button": "docs/bindings/sensible_button",
+    ".hide-common_style": "docs/bindings/common_style",
+    ".hide-default_variable": "docs/bindings/default_variable",
+    ".hide-disabled_variable": "docs/bindings/disabled_variable",
+    ".hide-big_button": "docs/bindings/big_button",
+    ".hide-bordered": "docs/bindings/bordered",
+    ".hide-horizontal_image": "docs/bindings/horizontal_image",
+    ".hide-vertical_processing": "docs/how/vertical_processing",
+    ".hide-vertical_sizer": "docs/bindings/vertical_sizer",
+    ".hide-top_binding": "docs/bindings/top_binding",
+    ".hide-bottom_binding": "docs/bindings/bottom_binding",
+    ".hide-dynamic_background": "docs/bindings/dynamic_background",
+    ".hide-reverse_conditions": "docs/bindings/reverse_conditions",
+    ".hide-conditions": "docs/bindings/conditions"
+}

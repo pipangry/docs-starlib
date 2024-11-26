@@ -1,0 +1,47 @@
+<h1>@starlib_pkg_custom_renders.paperdoll_template</h1>
+<p>starlib_pkg_custom_renders.paperdoll_template is a classic template for rendering paperdoll. The paper_doll_renderer is used</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>This element is still in beta testing. Be careful when using this element. It may change in the near future.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$PAPERDOLL_size</td>
+                <td>[ 100%, 100% ]</td>
+                <td>Paperdoll renderer size.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$PAPERDOLL_offset</td>
+                <td>[ 0, 0 ]</td>
+                <td>Paperdoll renderer offset.</td>
+                <td>array (offset)</td>
+            </tr>
+            <tr>
+                <td>$PAPERDOLL_use_selected_skin</td>
+                <td><h4>true</h4></td>
+                <td>If true, use_selected_skin will be enabled.</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <td>$PAPERDOLL_use_uuid</td>
+                <td><h4>false</h4></td>
+                <td>If true, use_uuid will be enabled. As uuid string used #form_text.</td>
+                <td>boolean</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,34 @@
+<h1>@global.reverse_binding</h1>
+<p>global.reverse_binding is used as a standard binding to check if the specified string does not exist in form_button_text.</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Info</h3>
+        <p>If $key is not in #form_button_text, then the element is visible.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$key</td>
+                <td>""</td>
+                <td>Binding key.</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>$control</td>
+                <td>global.empty_panel</td>
+                <td>Child element control. Mainly used when you need to apply this binding to another element with an annotation.</td>
+                <td>string (annotation)</td>
+            </tr>
+    </table>
+</div>

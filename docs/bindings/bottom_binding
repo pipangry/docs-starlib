@@ -1,0 +1,18 @@
+<span class="load-content" data-file="docs/package_dynamic/dynamic_structure/dynamic_item_with_background">Back</span>
+<p style="white-space: pre-wrap;" >"$DYNAMIC_ITEM_bottom_padding_bindings|default": [
+    {
+        "binding_collection_name": "form_buttons",
+        "binding_name": "#form_button_text",
+        "binding_type": "collection"
+    },
+    {
+        "binding_type": "view",
+        "source_property_name": "(not((#form_button_text - $DYNAMIC_ITEM_bottom_padding_key) = #form_button_text))",
+        "target_property_name": "#visible"
+    },
+    {
+        "binding_type": "view",
+        "source_property_name": "(not((#form_button_text - $DYNAMIC_ITEM_bottom_padding_key) = #form_button_text))",
+        "target_property_name": "#enabled"
+    }
+]</p>

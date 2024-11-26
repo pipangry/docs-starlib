@@ -1,0 +1,93 @@
+<h1>@starlib_pkg_screen_template.content_template</h1>
+<p>starlib_pkg_screen_template.content_template is used as a standard element for form content. Includes scrolling panel, header contents and pre-made paperdoll panel on the left side. @global.scrolling_panel is used for the annotation for the scrolling panel.</p>
+<span class="load-content" data-file="docs/global/scrolling_panel">global.scrolling_panel</span>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$scrolling_content</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_screen/screen_template/scrolling_content_template">starlib_pkg_screen_template.scrolling_content_template</span></td>
+                <td>Scrolling content control. (global.scrolling_panel).</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$CONTENT_paperdoll_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_custom/custom_renders/common_paperdoll">starlib_pkg_custom_renders.common_paperdoll</span></td>
+                <td>Control of the paperdoll element on the left side next to the scrolling panel.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$CONTENT_enable_paperdoll</td>
+                <td><h4>false</h4></td>
+                <td>If true, $CONTENT_paperdoll_control will be enabled.</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <td>$CONTENT_paperdoll_bindings</td>
+                <td>[]</td>
+                <td>Paperdoll panel bindings. Mostly used if you need to hide paperdoll panel in some cases.</td>
+                <td>array (bindings)</td>
+            </tr>
+            <tr>
+                <td>$CONTENT_header_content_control</td>
+                <td>global.empty_panel</td>
+                <td>Control of the header contents element on the top of main content stack panel.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$CONTENT_header_content_control</td>
+                <td>global.empty_panel</td>
+                <td>Control of the header contents element on the top of main content stack panel.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$CONTENT_between_contents_padding_size</td>
+                <td>[ 0, 0 ]</td>
+                <td>Size of the padding between content panel contents. That is, the size of those paddings that exist between the scrolling panel and the paperdoll panel, as well as between header contents and root contents.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$CONTENT_appear_main_contents_padding</td>
+                <td><h4>false</h4></td>
+                <td>If true, between contents padding will also appear between header contents and root contents (Root content is the scrolling panel and paperdoll).</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <td>$CONTENT_appear_root_contents_padding</td>
+                <td><h4>true</h4></td>
+                <td>If true, between contents padding will appear between scrolling panel and paperdoll panel.</td>
+                <td>boolean</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "content@starlib_pkg_screen_template.content_template": {
+        "$CONTENT_enable_paperdoll": true, //Enabling paperdoll
+        "$scrolling_content": "server_form.my_scrolling_content", //Changing scrolling content
+
+        /*I can change the parameters of the scrolling panel since
+        we have not changed the content of the form, which by default
+        always uses @global.scrolling_panel*/
+        "$scroll_bar_left_padding_size": [ /*Changing padding between scrolling
+        bar and scrolling content*/
+            1,
+            0
+        ]
+    }
+    </div>
+</div>

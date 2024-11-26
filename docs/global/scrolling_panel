@@ -1,0 +1,9 @@
+<h1>@global.scrolling_panel</h1>
+<p>global.scrolling_panel is a ready-made scrolling panel for StarLibV2. Uses common.scrolling_panel</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Info</h3>
+        <p>global.scrolling_panel is a common.scrolling_panel, but just with some settings already made. To control the scrolling content, $scrolling_panel is used.</p>
+    </div>
+</div>

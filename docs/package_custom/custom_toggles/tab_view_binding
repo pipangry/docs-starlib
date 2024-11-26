@@ -1,0 +1,23 @@
+<h1>@starlib_pkg_custom_toggles.tab_view_binding</h1>
+<p>starlib_pkg_custom_toggles.tab_view_binding is a binding for an element to link the state of a certain toggle to it. If you are using starlib_pkg_custom_toggles.common_toggle, then the name to bind there is $COMMON_TOGGLE_toggle_name</p>
+<span class="load-content" data-file="docs/package_custom/custom_toggles/common_toggle">@starlib_pkg_custom_toggles.common_toggle</span>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$toggle_name</td>
+                <td>common_toggle</td>
+                <td>The name of the toggle to which the element will be linked.</td>
+                <td>string</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

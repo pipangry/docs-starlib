@@ -1,0 +1,9 @@
+<span class="load-content" data-file="docs/package_button/button_style/disabled_variable_button_style">Back</span>
+<p style="white-space: pre-wrap;">"$BUTTON_STYLE_default_variable_controls|default": [
+    {
+        "default_default@starlib_pkg_button_style.button_style_template": {
+            "texture": "$BUTTON_STYLE_default_variable_texture",
+            "$BUTTON_STYLE_default_variable_texture|default": ""
+        }
+    }
+],</p>

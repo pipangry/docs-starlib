@@ -1,0 +1,71 @@
+<h1>@starlib_pkg_button_templates.bordered_button_template</h1>
+<p>starlib_pkg_button_templates.bordered_button_template is a button structure assembler for buttons that adds padding to the button, while leaving the button background with the full size. Used as a standard annotation for starlib_pkg_button_templates.horizontal_button_template</p>
+<span class="load-content" data-file="docs/package_button/button_templates/horizontal_button_template">@starlib_pkg_button_templates.horizontal_button_template</span>
+<div class="image-container">
+    <div class="image-item">
+        <p>Without bordered_button_template</p>
+        <img src="assets/pages/button_templates/no_bordered.png" alt="Image 1">
+    </div>
+    <div class="image-item">
+        <p>With bordered_button_template</p>
+        <img src="assets/pages/button_templates/bordered.png" alt="Image 2">
+    </div>
+</div>
+<p>As you can see, the paddings and background for the button have been added. This element is mainly used to add a background for the button.</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$BORDERED_BUTTON_size</td>
+                <td>[ 100%, 100% ]</td>
+                <td>Size of the element.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$BORDERED_BUTTON_background_control</td>
+                <td>style.black</td>
+                <td>Control of the background element.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$BORDERED_BUTTON_inner</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/bordered">View full controls</span></td>
+                <td>Controls of inner elements. That is, those size will be reduced to create paddings. Basically you won't need to modify this variable, as you can use $BORDERED_BUTTON_default_control</td>
+                <td>array (controls)</td>
+            </tr>
+            <tr>
+                <td>$BORDERED_BUTTON_default_control</td>
+                <td><span style="font-style: italic;">Debug message<span></td>
+                <td>Control of the standard element in $BORDERED_BUTTON_inner. It only works with the unmodified $BORDERED_BUTTON_inner</td>
+                <td>string (annotation)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "my_button@starlib_pkg_button_templates.bordered_button_template": { //Annotation
+        "$BORDERED_BUTTON_default_control": "server_form.my_button_inner", //Defining inner control element
+        "$BORDERED_BUTTON_size": [ //Size
+            64,
+            64
+        ],
+        "$BORDERED_BUTTON_background_control": "server_form.button_background" //Changing background control
+    }
+    "button_background@style.image": { //Here I using classic StarLibV2 image template annotation
+        "texture": "textures/my_ui/button_background"
+    },
+    </div>
+</div>

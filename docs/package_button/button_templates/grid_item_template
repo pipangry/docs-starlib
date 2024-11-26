@@ -1,0 +1,55 @@
+<h1>@starlib_pkg_button_templates.grid_item_template</h1>
+<p>starlib_pkg_button_templates.grid_item_template is used to add margins on all sides for grid elements. Similar in function to starlib_pkg_button_templates.common_vertical_stack_item, but for button grid elements.</p>
+<span class="load-content" data-file="docs/package_button/button_templates/common_vertical_stack_item">@starlib_pkg_button_templates.common_vertical_stack_item</span>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$GRID_ITEM_size</td>
+                <td>[ 100%, 100%x ]</td>
+                <td>Size of the grid item.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$GRID_ITEM_root_control</td>
+                <td><span style="font-style: italic;">Debug message<span></td>
+                <td>Control of the central root element.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$GRID_ITEM_root_size</td>
+                <td>[ 100% - 2px, 100% - 2px ]</td>
+                <td>Size of the central root element. Used to add paddings by reducing the size of $GRID_ITEM_root_control.</td>
+                <td>array (size)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "grid@global.grid": { //Using StarLibV2 classic grid template annotation
+        "$grid_item": "server_form.button" //Using our button
+    },
+    //...
+    "button@starlib_pkg_button_templates.grid_item_template": { //Annotation
+        "$GRID_ITEM_size": [ //Changing size
+            64,
+            64
+        ],
+        "GRID_ITEM_root_control": "starlib_pkg_button_templates.big_button"
+        //Here I using big_button template just for example
+    }
+    </div>
+</div>

@@ -1,0 +1,162 @@
+//=======================================
+//
+//   Website & Documentation - https://pipangry.github.io/docs-starlib
+//
+//   StarLibV2 MultiForm example | by pipa_ngry
+//   Use it only for educational purposes!
+//   Thanks =)
+//
+//=======================================
+{
+    "namespace": "server_form",
+    "third_party_server_screen@common.base_screen": {
+        "$screen_content": "server_form.server_form",
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_cancel",
+                "to_button_id": "button.menu_exit",
+                "mapping_type": "global"
+            }
+        ]
+    },
+    "server_form": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            {
+                "server_form_factory": {
+                    "type": "factory",
+                    "control_ids": {
+                        "long_form": "@server_form.long_form",
+                        "custom_form": "@server_form.custom_form"
+                    }
+                }
+            }
+        ]
+    },
+    "long_form@starlib_pkg_screen_template.screen": {
+        "$SCREEN_TEMPLATE_fade_enabled": true,
+
+        "$HEADER_TEMPLATE_style_control": "server_form.header",
+        "$HEADER_TEMPLATE_close_button_control": "global.empty_panel",
+
+        "$CLOSE_BUTTON_size": [
+            "100%",
+            18
+        ],
+        "$CLOSE_BUTTON_text_enabled": true,
+        "$CLOSE_BUTTON_default_control": "server_form.close_button",
+        "$CLOSE_BUTTON_hover_control": "server_form.hover",
+        "$CLOSE_BUTTON_pressed_control": "server_form.hover",
+        "$CLOSE_BUTTON_text_offset": [
+            0,
+            -2
+        ],
+
+        "$FORM_TEMPLATE_appear_sub_contents_padding": true,
+        "$FORM_TEMPLATE_appear_header_padding": false,
+        "$FORM_TEMPLATE_sub_content_control": "starlib_pkg_screen_common.async_close_button",
+        "$FORM_TEMPLATE_background_texture": "textures/multiform/background",
+        "$FORM_TEMPLATE_between_contents_padding_size": [
+            0,
+            1
+        ],
+        "$FORM_TEMPLATE_content_size": [
+            "100% - 14px",
+            "100% - 14px"
+        ],
+
+        "$BUTTON_STYLE_default_texture": "textures/multiform/button",
+        "$COMMON_BUTTON_hover_control": "server_form.hover",
+        "$COMMON_BUTTON_pressed_control": "server_form.hover",
+        
+        "$forms_holder_controls": [
+            {
+                "form@global.reverse_title_binding": {
+                    "$form_size": [
+                        280,
+                        225
+                    ],
+                    "$SCROLLING_CONTENT_form_text_control": "server_form.form_text",
+                    "$button_item_control": "starlib_pkg_button_templates.horizontal_button_template",
+                    "$BORDERED_BUTTON_background_control": "global.empty_panel",
+                    "$SCROLLING_CONTENT_additional_content_margins_size": [
+                        0,
+                        1
+                    ],
+                    "$key": "§f§0§0",
+                    "$control": "starlib_pkg_screen_template.form_template",
+                    "size": [
+                        "100%c",
+                        "100%c"
+                    ]
+                }
+            },
+            {
+                "form@global.title_binding": {
+                    "$form_size": [
+                        340,
+                        235
+                    ],
+                    "$scrolling_content": "server_form.buttons_grid",
+                    "$COMMON_PAPERDOLL_size": [
+                        "33.3%",
+                        "100%"
+                    ],
+                    "$COMMON_PAPERDOLL_background_texture": "textures/multiform/paperdoll_background",
+                    "$PAPERDOLL_offset": [
+                        0,
+                        -30
+                    ],
+                    "$CONTENT_enable_paperdoll": true,
+                    "$CONTENT_between_contents_padding_size": [
+                        5,
+                        0
+                    ],
+                    "$CUBIC_BUTTON_image_size": [
+                        "100% - 16px",
+                        "100% - 16px"
+                    ],
+                    "$CUBIC_BUTTON_bottom_padding_size": [
+                        0,
+                        3
+                    ],
+                    "$key": "§f§0§0",
+                    "$control": "starlib_pkg_screen_template.form_template",
+                    "size": [
+                        "100%c",
+                        "100%c"
+                    ]
+                }
+            }
+        ]
+    },
+    "buttons_grid@global.grid": {
+        "$grid_item": "server_form.grid_button"
+    },
+    "grid_button@starlib_pkg_button_templates.grid_item_template": {
+        "$GRID_ITEM_root_control": "starlib_pkg_button_templates.cubic_button",
+        "$GRID_ITEM_size": [
+            "33.3%",
+            96
+        ]
+    },
+    "header@style.image": {
+        "texture": "textures/multiform/header"
+    },
+    "close_button@style.image": {
+        "texture": "textures/multiform/close_button"
+    },
+    "hover@style.image": {
+        "texture": "textures/multiform/hover"
+    },
+    "form_text@starlib_pkg_screen_common.form_text_template": {
+        "size": [
+            "100% - 2px",
+            "default"
+        ]
+    }
+}

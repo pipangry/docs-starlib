@@ -1,0 +1,60 @@
+<h1>@starlib_pkg_button_templates.cubic_button</h1>
+<p>starlib_pkg_button_templates.cubic_button is a button structure template, an example of which you can see below. By default, the starlib_pkg_button_common.common_button root panel is used.</p>
+<div style="margin-bottom: 10px;">
+    <span class="load-content" data-file="docs/package_button/common_button/common_button">@starlib_pkg_button_common.common_button</span>
+    <span class="load-content" data-file="docs/package_button/button_templates/common_cubic_button_content">@starlib_pkg_button_templates.common_cubic_button_content</span>
+</div>
+<div class="image-container">
+    <img src="assets/pages/button_templates/cubic.png" alt="Cubic button"><img>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Structure description</h3>
+        <p>The main content of the button is located in starlib_pkg_button_templates.common_cubic_button_content. Otherwise, it's just a root panel and content. The content control of the button cannot be changed.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$CUBIC_BUTTON_size</td>
+                <td>[ 100%, 100%x ]</td>
+                <td>Size of the button.</td>
+                <td>array (size)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "grid@global.grid": { //Using StarLibV2 classic grid template annotation
+        "$grid_item": "server_form.button" //Using our cubic button
+    },
+    //...
+    "button@starlib_pkg_button_templates.cubic_button": { //Annotation
+        "$CUBIC_BUTTON_size": [
+            64,
+            64
+        ],
+        "$CUBIC_BUTTON_image_size": [
+            "100% - 8px",
+            "100% - 8px"
+        ] /*This variable is located in
+        @starlib_pkg_button_templates.common_cubic_button_content, we can use it,
+        since this element is the default for cubic button content*/
+    }
+    </div>
+</div>

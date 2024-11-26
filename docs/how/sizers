@@ -1,0 +1,33 @@
+<h1>Dynamic sizers and how do they work?</h1>
+<p>Hi! In this article, I will tell you about the basics of a dynamic UI, and in accordance with the dynamic sizers themselves.</p>
+<p>A dynamic UI is a UI whose form appearance is controlled using special text tags inserted from your script (or plugin) into the text of the button, which is how you build the appearance of your form with buttons.</p>
+<p>The most common example of building a dynamic UI using buttons is buttons placed in a row. It looks fresh and unusual considering it's still in the same button factory.</p>
+<p>A more advanced example of the dynamic UI bulding is GrimUI. GrimUI is the most powerful and most complex form UI that exists at the moment. It uses more sophisticated technologies that cannot be done even with the help of StarLibV2.</p>
+<p>But here we will talk about a simpler technology for building dynamic UI - dynamic sizers. The dynamic sizer consists of a horizontal stack panel, in which paddings with a certain size are located on both sides, and in the center is the main element, called the 'output', which having the size 'fill' by X.</p>
+<p>Dynamic sizers work on the principle that paddings from different sides push the main element (output) in the other direction, thereby reducing its size.</p>
+<h3>Example</h3>
+<div class="image-container">
+    <img src="assets/pages/sizer/example.png" alt="Example"><img>
+</div>
+<p>In this example, padding is equal to 50% of the entire sizing panel. You can arrange sizers in different order. That is, for example, after third_sizer_template comes half_sizer_template, which allows us to make as many as 5 variations of the button location. Specifically, you can see an example with third_sizer_template and half_sizer_template in DynamicUI example.</p>
+<p>In dynamic structures, vertical_processing_panel is always used in addition to dynamic sizer. Long story short, vertical_processing_panel is an intermediary that allows you to change the vertical size of the elements so that they stand in one row. You can read more about vertical_processing_panel at the link below.</p>
+<span class="load-content" data-file="docs/how/vertical_processing">How Vertical processing works?</span>
+<h2>Conclusion</h2>
+<p>Here I have told you the method of how horizontal dynamic sizers. In any case, it is best to understand their work in practice. I have provided a fairly detailed example of a dynamic UI in the DynamicUI example.</p>
+<h1>Off topic</h1>
+<div class="billboard">
+    <div class="billboard-content">
+        <h2 class="billboard-title">GrimUI</h2>
+        <div class="billboard-description">
+            <p>GrimUI - the most complex and the most powerful Form UI. Uses dynamic structure. Highly optimized and customizable.</p>
+            <a class="load-content-no-bg" style="font-size: 18px;" href="https://discord.com/channels/523663022053392405/1300103021035786260" target="_blank">Bedrock Addons post</a>
+        </div>
+
+    </div>
+    <div class="billboard-images">
+        <img src="assets/pages/home/FriendsSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/MarketplaceSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/ServersSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/PlaySW.png" alt="GrimUI showcase" class="billboard-image">
+    </div>
+</div>

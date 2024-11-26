@@ -1,0 +1,84 @@
+<h1>@starlib_pkg_screen_template.header_template</h1>
+<p>@starlib_pkg_screen_template.header_template is a classic template for the StarLibV2 form header. All the content in it is not dynamic, that is, this header template has the form of a panel in which the content is located statically. If you need a header that will work dynamically with elements in the stack panel type, you can use @starlib_pkg_dynamic_common.common_dynamic_header</p>
+<span class="load-content" data-file="docs/package_dynamic/common_dynamic/common_dynamic_header">starlib_pkg_dynamic_common.common_dynamic_header</span>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$HEADER_TEMPLATE_size</td>
+                <td>[ 100%, 24 ]</td>
+                <td>Size of the header.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$HEADER_TEMPLATE_style_control</td>
+                <td>style.black</td>
+                <td>The element that will act as the background (or style) in the header. Takes up the entire size.</td>
+                <td>string (control)</td>
+            </tr>
+            <tr>
+                <td>$HEADER_TEMPLATE_title_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_screen/screen_common/title_template">starlib_pkg_screen_common.title_template</span></td>
+                <td>The element that will act as the title in the header. Maximum size is set to [ 100%, 100% ] in $HEADER_TEMPLATE_contents_size.</td>
+                <td>string (control)</td>
+            </tr>
+            <tr>
+                <td>$HEADER_TEMPLATE_close_button_control</td>
+                <td>starlib_pkg_screen_template.close_button</td>
+                <td>The element that will act as the close button in the header.</td>
+                <td>string (control)</td>
+            </tr>
+            <tr>
+                <td>$HEADER_TEMPLATE_contents_offset</td>
+                <td>[ 0, 0 ]</td>
+                <td>Offset of the header content elements: $HEADER_TEMPLATE_close_button_control and $HEADER_TEMPLATE_title_control.</td>
+                <td>array (offset)</td>
+            </tr>
+            <tr>
+                <td>$HEADER_TEMPLATE_contents_size</td>
+                <td>[ 100%, 100% ]</td>
+                <td>Size of the header content elements: $HEADER_TEMPLATE_close_button_control and $HEADER_TEMPLATE_title_control.</td>
+                <td>array (size)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>starlib_pkg_screen_template.close_button is not included in the documentation as it is a standard header_template setting. You can see its parameters here: anchor - right-middle; offset - [ -5, 0 ]. Uses the annotation @starlib_pkg_screen_common.close_button_template.</p>
+    </div>
+</div>
+<span class="load-content" data-file="docs/package_screen/screen_common/close_button_template">starlib_pkg_dynamic_common.close_button_template</span>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "my_form@starlib_pkg_screen_template.header_template": { //Annotation
+        "$HEADER_TEMPLATE_style_control": "server_form.my_header", //Changing style control
+        "$HEADER_TEMPLATE_size": [ //Changing header size
+            "100%",
+            32
+        ],
+        "$HEADER_TEMPLATE_contents_offset": [ //Raising the header content by 1 pixel
+            0,
+            1
+        ]
+    },
+    "my_header@style.image": { //Here I using StarLibV2 image template
+        "texture": "textures/my_ui/header"
+    }
+    </div>
+</div>

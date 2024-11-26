@@ -1,0 +1,365 @@
+<h1>Advanced Dynamic UI example | BundleUI</h1>
+<p>Hi! In this example, I will show you a more advanced dynamic UI scheme and tell you how it works. This UI uses dynamic content technology, a custom vertical sizer and an interesting design solution.</p>
+<p>Be sure to read articles about how dynamic sizers work and what vertical processing is. Without this information, you won't understand how this UI works. This UI is quite complex, so you should familiarize yourself with the easier examples of StarLibV2.</p>
+<div>
+    <span class="load-content" data-file="docs/how/sizers">How Dynamic sizers works?</span>
+    <span class="load-content" data-file="docs/how/vertical_processing">How Vertical processing works?</span>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>What is dynamic UI?</h3>
+        <p>A dynamic UI is a UI whose form appearance is controlled using special text tags inserted from your script (or plugin) into the text of the button, which is how you build the appearance of your form with buttons.</p>
+    </div>
+</div>
+<a href="assets/examples/advanced/download/server_form.jsonc" download>
+	<button>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 2.5a.25.25 0 0 0-.25-.25H7A2.75 2.75 0 0 0 4.25 5v14A2.75 2.75 0 0 0 7 21.75h10A2.75 2.75 0 0 0 19.75 19V9.147a.25.25 0 0 0-.25-.25H15a.75.75 0 0 1-.75-.75zm-.219 10.664a.75.75 0 0 1 .938 1.172l-2.494 1.995a.747.747 0 0 1-.473.169h-.008a.747.747 0 0 1-.465-.166l-2.497-1.998a.75.75 0 0 1 .937-1.172l1.281 1.026v-3.44a.75.75 0 1 1 1.5 0v3.44z" clip-rule="evenodd"/><path fill="currentColor" d="M15.75 2.824c0-.184.193-.301.336-.186c.121.098.23.212.323.342l3.013 4.197c.068.096-.006.22-.124.22H16a.25.25 0 0 1-.25-.25z"/></svg>
+        Download code of this example
+    </button>
+</a>
+<div class="image-container">
+    <div class="image-item">
+        <img src="assets/examples/advanced/1.png" alt="Image 1">
+    </div>
+    <div class="image-item">
+        <img src="assets/examples/advanced/2.png" alt="Image 2">
+    </div>
+    <div class="image-item">
+        <img src="assets/examples/advanced/3.png" alt="Image 3">
+    </div>
+    <div class="image-item">
+        <img src="assets/examples/advanced/4.png" alt="Image 4">
+    </div>
+</div>
+<h2>Screen and Form assembling</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "long_form@starlib_pkg_screen_template.screen": { //Using StarLibV2 screen template annotation
+            //I need to add background fade to my UI so i will use screen fade
+            "$SCREEN_TEMPLATE_fade_enabled": true,
+            "$SCREEN_TEMPLATE_fade_alpha": 0.5,
+
+            //Now let's customize form
+            "$FORM_TEMPLATE_background_texture": "textures/bundle/background", //Contant background
+            "$FORM_TEMPLATE_sub_content_control": "server_form.footer",
+            //I can use form sub content to add my style-purpose footer
+
+            "$form_size": [ //Changing form size
+                255,
+                225
+            ],
+            "$FORM_TEMPLATE_content_size": [ /*Here i reducing my content size to fit
+            it better in my content background*/
+                "100% - 28px",
+                "100% - 9px"
+            ],
+            "$FORM_TEMPLATE_content_offset": [ //A small offset for a better view
+                0,
+                -1
+            ],
+            "$button_item_control": "server_form.advanced_dynamic_button",
+            //Defining my button item
+
+            //Now i need to change my header
+            "$HEADER_TEMPLATE_style_control": "server_form.header", //Changing style
+            "$HEADER_TEMPLATE_close_button_control": "server_form.close_button",
+            //Changing close button to my custom one
+
+            "$HEADER_TEMPLATE_title_control": "server_form.title", 
+            //Changing title to my custom one
+
+            "$HEADER_TEMPLATE_size": [ //Increasing header size
+                "100%",
+                36
+            ],
+            "$HEADER_TEMPLATE_contents_size": [
+                "100% - 20px",
+                "100% - 8px"
+            ],
+            /*Here i reducing header contents size to fit it better
+            in my header style*/
+
+
+            "$HEADER_TEMPLATE_contents_offset": [//A small contents offset
+                0,
+                -2
+            ],
+
+            /*I can change the parameters of the scrolling panel since
+            we have not changed the content of the form, which by default
+            always uses @global.scrolling_panel*/
+            "$scroll_bar_left_padding_size": [ /*Changing padding between scrolling
+            bar and scrolling content*/
+                1,
+                0
+            ]
+        },
+    </div>
+</div>
+<p>Our form setup is ready! Now let's make style elements for our UI.</p>
+<h2>Adding style elements</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        //As you can see we using StarLibV2 image template annotation
+        "header@style.image": { //Header style
+            "texture": "textures/bundle/header"
+        },
+
+        "footer@style.image": { //Footer element
+            "texture": "textures/bundle/footer",
+            "size": [ /*Our footer is specified in the form sub contents, which
+            does not have a default size. That's why we need to add a size here*/
+                "100%",
+                24
+            ]
+        },
+
+        "close_button@starlib_pkg_screen_common.close_button_template": {
+            //Close button template annotation
+
+            //Minor location changes
+            "anchor_from": "right_middle",
+            "anchor_to": "right_middle",
+            "offset": [
+                1,
+                -1
+            ]
+        },
+
+        /*Now we need to make the title layout on the left, so I'm creating
+        a separate element for that*/
+        "title@starlib_pkg_screen_common.title_template": { //Title template
+            "text_alignment": "left"
+        },
+
+        "hover@style.image": { //Hover element for out form buttons
+            "texture": "textures/bundle/button/hover/default",
+            /*Since our button does not include borders, they are created using a texture.
+            Therefore, we need to reduce our hover image so as not to touch the borders*/
+            "size": [ 
+                "100% - 2px",
+                "100% - 2px"
+            ]
+        },
+    </div>
+</div>
+<p>Now we will move on to the button. The button is the most difficult element in a dynamic UI, as it must be highly customizable. You are lucky to have StarLibV2, which does almost all the work for you, you just need to understand the structure.</p>
+<h3>Button structure plan</h3>
+<p>I will use the classic dynamic button structure elements, but at the same time I will create my own button root to use the dynamic content of the button.</p>
+<h2>Let's start with dynamic structure assembling!</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "advanced_dynamic_button@starlib_pkg_dynamic_structure.dynamic_item_template": {
+            //We now using common StarLibV2 dynamic item annotation
+
+            /*Defining dynamic item entry. Here I will use the pre-made horizontal sizer:
+            common_auto_sizer, since we only need the assembly of third_sizer and half_sizer*/
+            "$DYNAMIC_ITEM_entry": "starlib_pkg_dynamic_sizer.common_auto_sizer",
+
+            //Definign vertical processing output to our custom button
+            "$VERTICAL_PROCESSING_output_control": "server_form.advanced_button",
+            "$VERTICAL_PROCESSING_no_height_key": "§m§0§0", //No height key
+
+            /*In this UI, I wanted to make a dynamic vertical sizer,
+            so here we introduce our custom vertical sizer*/
+            "$VERTICAL_PROCESSING_sizer_template_control": "server_form.vertical_sizer",
+
+            //Defining sizer keys
+            "$BUTTON_SIZER_left_third": "§m§1§0",
+            "$BUTTON_SIZER_right_third": "§m§2§0",
+            "$BUTTON_SIZER_left_half": "§m§1§1",
+            "$BUTTON_SIZER_right_half": "§m§2§1"
+        },
+        //Now we need to make out customm vertical sizer
+        "vertical_sizer@starlib_pkg_dynamic_structure.vertical_sizer_template": {
+            //vertical sizer template annotation
+            "$VERTICAL_SIZER_controls": [ //Changing vertical sizer items
+
+            /*As you can see, here I use global.reverse_binding and global.binding
+            to automatically switch between sizes.*/
+                {
+                    "size_default@global.reverse_binding": {
+                        "$key": "§m§0§1", //Reverse binding key
+                        "size": [
+                            0,
+                            30
+                        ]
+                    }
+                },
+                {
+                    "size_custom@global.binding": {
+                        "$key": "§m§0§1", //Binding key
+                        "size": [
+                            "100%",
+                            "100%x"
+                        ]
+                    }
+                }
+            ]/*You can also see that I did not specify "type": "panel" in
+            vertical sizer items since they are already defined in the binding element*/
+        },
+    </div>
+</div>
+<p>Our dynamic button structure is assembled! Here are the keys that we have specified:</p>
+<p>No height: §m§0§0; Left_third: §m§1§0; Right_third: §m§2§0; Left_half: §m§1§1; Right_half: §m§2§1; Vertical size by X: §m§0§1;</p>
+<h2>Now we need to create our custom button</h2>
+<p>In this UI, I want to use dynamic button content, especially because we have a vertical size of X. Therefore, I need to create a new button. I will use the already assembled starlib_pkg_button_common.common_button template.</p>
+<span class="load-content" data-file="docs/package_button/common_button/common_button">starlib_pkg_button_common.common_button</span>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "advanced_button@starlib_pkg_button_common.common_button": { //Assembled button template annotation
+
+            //Common button controls
+            "$COMMON_BUTTON_panel_control": "starlib_pkg_button_common.disabled_variable_button_panel",
+            //We will use custom button panel with pre-made bindings to disable it with key
+
+            "$COMMON_BUTTON_style_control": "starlib_pkg_button_style.disabled_variable_button_style",
+            //Changing style
+            
+            //Changing common button content to dynamic button content that we need
+            "$COMMON_BUTTON_content_control": "starlib_pkg_dynamic_common.common_dynamic_button_content",
+
+            //Defining controls for button panel
+            "$COMMON_BUTTON_hover_control": "server_form.hover",
+            "$COMMON_BUTTON_pressed_control": "server_form.hover",
+
+            //Now let's customize our dynamic content variables
+            "$DYNAMIC_CONTENT_switch_key": "§m§0§2", //Key to switch contents
+            "$DYNAMIC_CONTENT_text_control": "server_form.text_content",
+            //We using out custom text content to allow customizing font
+
+            //A small image size change
+            "$DYNAMIC_CONTENT_image_size": [
+                "100% - 4px",
+                "100% - 4px"
+            ],
+
+            "size": [ //Adding padding between button by reducing button size
+                "100% - 2px",
+                "100% - 2px"
+            ],
+            /*Important about size! Due dynamic button structure, our button size is already
+            defined by vertical processing and dynamic sizers*/
+
+            //Now we need to customize out button style
+            "$BUTTON_STYLE_disabled_variable_key": "§m§3§2", //Key to switch styles
+
+            //Disabled variable default element texture path
+            "$BUTTON_STYLE_disabled_variable_texture": "textures/bundle/button/disabled/default",
+
+            /*We need multiple styles in default button variable, so we adding them
+            by changing variable controls*/
+            "$BUTTON_STYLE_default_variable_controls": [
+            //As you can see, here we use pre-made bindings for style variations
+                {
+                    "default_default@starlib_pkg_button_style.reverse_style_variable": {
+                        "texture": "textures/bundle/button/default",
+                        "$key": "§m§3§1" //Key to switch style
+                    }
+                },
+                {
+                    "alt_default@starlib_pkg_button_style.style_variable": {
+                        "texture": "textures/bundle/button/alt",
+                        "$key": "§m§3§1" //Key to switch style
+                    }
+                }
+            ]
+        },
+    </div>
+</div>
+<p>Our button is assembled! Now I would just like to create a custom button text with the ability to switch between font types.</p>
+<h2>Custom button text assembling</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "text_content": {
+            "type": "panel",
+            "size": [
+                "100%",
+                "100%c"
+            ],
+            "controls": [
+            /*We will use global.binding and global.reverse_binding to automatically
+            switch text elements using the key*/
+                {
+                    "default@global.reverse_binding": {
+                        "$key": "§m§4§0", //Key
+                        "size": [ //We need to set the size to child size
+                            "100%",
+                            "100%c"
+                        ],
+                        "controls": [
+                            {
+                                "button_text@starlib_pkg_button_common.button_text": {}
+                                //Button text template annotation
+                            }
+                        ]
+                    }
+                },
+                {
+                    "sided@global.binding": {
+                        "$key": "§m§4§0",
+                        "size": [ //We need to set the size to child size
+                            "100% - 8px", /*I will also reduce the available space for the
+                            text so that it is not adjacent to the border of the button*/
+                            "100%c"
+                        ],
+                        "controls": [
+                            {
+                                "button_text@starlib_pkg_button_common.button_text": {
+                                    //Button text template annotation
+
+                                    "font_type": "MinecraftTen",
+                                    "text_alignment": "left"
+                                    /*We can change these paramentes due the fact that
+                                    button_text uses style.label annotation*/
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    </div>
+</div>
+<h2>UI is done!</h2>
+<h1>Conclusion</h1>
+<p>From this UI, you could learn to understand a more complex dynamic structure, use a custom vertical sizer and dynamic button content (In beta).</p>
+<p>I hope this example was useful to you. But you always can request additional information from me. I also ask you very much not to use this example on servers or realms, because it was created only for educational purposes.</p>
+<h1>Off topic</h1>
+<div class="billboard">
+    <div class="billboard-content">
+        <h2 class="billboard-title">GrimUI</h2>
+        <div class="billboard-description">
+            <p>GrimUI - the most complex and the most powerful Form UI. Uses dynamic structure. Highly optimized and customizable.</p>
+            <a class="load-content-no-bg" style="font-size: 18px;" href="https://discord.com/channels/523663022053392405/1300103021035786260" target="_blank">Bedrock Addons post</a>
+        </div>
+
+    </div>
+    <div class="billboard-images">
+        <img src="assets/pages/home/FriendsSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/MarketplaceSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/ServersSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/PlaySW.png" alt="GrimUI showcase" class="billboard-image">
+    </div>
+</div>

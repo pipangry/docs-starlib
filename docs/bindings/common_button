@@ -1,0 +1,7 @@
+<span class="load-content" data-file="docs/package_button/common_button/common_button_panel">Back</span>
+<p style="white-space: pre-wrap;" >"$COMMON_BUTTON_bindings|default": [
+    {
+        "binding_collection_name": "form_buttons",
+        "binding_type": "collection_details"
+    }
+],</p>

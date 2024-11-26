@@ -1,0 +1,57 @@
+<h1>@starlib_pkg_button_style.disabled_variable_button_style</h1>
+<p>starlib_pkg_button_style.disabled_variable_button_style is a ready-made assembly of 2 variations of the style. You can see an example of usage in the Dynamic UI example. Uses annotation starlib_pkg_button_style.common_button_style. It is mainly used in conjunction with starlib_pkg_button_common.disabled_variable_button_panel</p>
+<div>
+    <span class="load-content" data-file="docs/package_button/button_style/common_button_style">@starlib_pkg_button_style.common_button_style</span>
+    <span class="load-content" data-file="docs/package_button/common_button/disabled_variable_button_panel">@starlib_pkg_button_common.disabled_variable_button_panel</span>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>How it works?</h3>
+        <p>If $BUTTON_STYLE_disabled_variable_key exists in #form_button_text, the style is switched from the content of $BUTTON_STYLE_default_variable_controls to the content of $BUTTON_STYLE_disabled_variable_controls.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$BUTTON_STYLE_disabled_variable_key</td>
+                <td>""</td>
+                <td>Key is to show the disabled variation. If it exists in #form_button_text, "$BUTTON_STYLE_default_variable_controls is hidden, and $BUTTON_STYLE_disabled_variable_controls is now visible.</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>$BUTTON_STYLE_default_variable_controls</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/default_variable">View binding</span></td>
+                <td>Control of elements for default variable. Mainly used to add additional styles to already existing variations.</td>
+                <td>array (control)</td>
+            </tr>
+            <tr>
+                <td>$BUTTON_STYLE_disabled_variable_controls</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/disabled_variable">View binding</span></td>
+                <td>Control of elements for disabled variable. Mainly used to add additional styles to already existing variations.</td>
+                <td>array (control)</td>
+            </tr>
+            <tr>
+                <td>$BUTTON_STYLE_default_variable_texture</td>
+                <td>""</td>
+                <td>Texture of default style element in $BUTTON_STYLE_default_variable_controls. Uses <span class="load-content-no-bg" data-file="docs/package_button/button_style/button_style_template">starlib_pkg_button_style.button_style_template</span></td>
+                <td>string (texture path)</td>
+            </tr>
+            <tr>
+                <td>$BUTTON_STYLE_disabled_variable_texture</td>
+                <td>""</td>
+                <td>Texture of default style element in $BUTTON_STYLE_disabled_variable_controls. Uses <span class="load-content-no-bg" data-file="docs/package_button/button_style/button_style_template">starlib_pkg_button_style.button_style_template</span></td>
+                <td>string (texture path)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

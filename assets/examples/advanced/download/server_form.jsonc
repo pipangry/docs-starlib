@@ -1,0 +1,214 @@
+//=======================================
+//
+//   Website & Documentation - https://pipangry.github.io/docs-starlib
+//
+//   StarLibV2 BundleUI example | by pipa_ngry
+//   Use it only for educational purposes!
+//   Thanks =)
+//
+//=======================================
+{
+    "namespace": "server_form",
+    "third_party_server_screen@common.base_screen": {
+        "$screen_content": "server_form.server_form",
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_cancel",
+                "to_button_id": "button.menu_exit",
+                "mapping_type": "global"
+            }
+        ]
+    },
+    "server_form": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            {
+                "server_form_factory": {
+                    "type": "factory",
+                    "control_ids": {
+                        "long_form": "@server_form.long_form",
+                        "custom_form": "@server_form.custom_form"
+                    }
+                }
+            }
+        ]
+    },
+    "long_form@starlib_pkg_screen_template.screen": {
+        "$SCREEN_TEMPLATE_fade_enabled": true,
+        "$SCREEN_TEMPLATE_fade_alpha": 0.5,
+
+        "$FORM_TEMPLATE_background_texture": "textures/bundle/background",
+        "$FORM_TEMPLATE_sub_content_control": "server_form.footer",
+        "$form_size": [
+            255,
+            225
+        ],
+        "$FORM_TEMPLATE_content_size": [
+            "100% - 28px",
+            "100% - 9px"
+        ],
+        "$FORM_TEMPLATE_content_offset": [
+            0,
+            -1
+        ],
+        "$button_item_control": "server_form.advanced_dynamic_button",
+
+        "$HEADER_TEMPLATE_style_control": "server_form.header",
+        "$HEADER_TEMPLATE_close_button_control": "server_form.close_button",
+        "$HEADER_TEMPLATE_title_control": "server_form.title",
+        "$HEADER_TEMPLATE_size": [
+            "100%",
+            36
+        ],
+        "$HEADER_TEMPLATE_contents_size": [
+            "100% - 20px",
+            "100% - 8px"
+        ],
+        "$HEADER_TEMPLATE_contents_offset": [
+            0,
+            -2
+        ],
+
+        "$scroll_bar_left_padding_size": [
+            1,
+            0
+        ]
+    },
+    "header@style.image": {
+        "texture": "textures/bundle/header"
+    },
+    "footer@style.image": {
+        "texture": "textures/bundle/footer",
+        "size": [
+            "100%",
+            24
+        ]
+    },
+    "close_button@starlib_pkg_screen_common.close_button_template": {
+        "anchor_from": "right_middle",
+        "anchor_to": "right_middle",
+        "offset": [
+            1,
+            -1
+        ]
+    },
+    "title@starlib_pkg_screen_common.title_template": {
+        "text_alignment": "left"
+    },
+    "advanced_dynamic_button@starlib_pkg_dynamic_structure.dynamic_item_template": {
+        "$DYNAMIC_ITEM_entry": "starlib_pkg_dynamic_sizer.common_auto_sizer",
+        "$VERTICAL_PROCESSING_output_control": "server_form.advanced_button",
+        "$VERTICAL_PROCESSING_no_height_key": "§m§0§0",
+        "$VERTICAL_PROCESSING_sizer_template_control": "server_form.vertical_sizer",
+        "$BUTTON_SIZER_left_third": "§m§1§0",
+        "$BUTTON_SIZER_right_third": "§m§2§0",
+        "$BUTTON_SIZER_left_half": "§m§1§1",
+        "$BUTTON_SIZER_right_half": "§m§2§1"
+    },
+    "advanced_button@starlib_pkg_button_common.common_button": {
+        "$COMMON_BUTTON_panel_control": "starlib_pkg_button_common.disabled_variable_button_panel",
+        "$BUTTON_STYLE_disabled_variable_key": "§m§3§2",
+        "$COMMON_BUTTON_style_control": "starlib_pkg_button_style.disabled_variable_button_style",
+        "$COMMON_BUTTON_content_control": "starlib_pkg_dynamic_common.common_dynamic_button_content",
+        "$DYNAMIC_CONTENT_switch_key": "§m§0§2",
+        "$DYNAMIC_CONTENT_text_control": "server_form.text_content",
+        "$COMMON_BUTTON_hover_control": "server_form.hover",
+        "$COMMON_BUTTON_pressed_control": "server_form.hover",
+        "$DYNAMIC_CONTENT_image_size": [
+            "100% - 4px",
+            "100% - 4px"
+        ],
+        "size": [
+            "100% - 2px",
+            "100% - 2px"
+        ],
+        "$BUTTON_STYLE_disabled_variable_texture": "textures/bundle/button/disabled/default",
+        "$BUTTON_STYLE_default_variable_controls": [
+            {
+                "default_default@starlib_pkg_button_style.reverse_style_variable": {
+                    "texture": "textures/bundle/button/default",
+                    "$key": "§m§3§1"
+                }
+            },
+            {
+                "alt_default@starlib_pkg_button_style.style_variable": {
+                    "texture": "textures/bundle/button/alt",
+                    "$key": "§m§3§1"
+                }
+            }
+        ]
+    },
+    "hover@style.image": {
+        "texture": "textures/bundle/button/hover/default",
+        "size": [
+            "100% - 2px",
+            "100% - 2px"
+        ]
+    },
+    "vertical_sizer@starlib_pkg_dynamic_structure.vertical_sizer_template": {
+        "$VERTICAL_SIZER_controls": [
+            {
+                "size_default@global.reverse_binding": {
+                    "$key": "§m§0§1",
+                    "size": [
+                        0,
+                        30
+                    ]
+                }
+            },
+            {
+                "size_custom@global.binding": {
+                    "$key": "§m§0§1",
+                    "size": [
+                        "100%",
+                        "100%x"
+                    ]
+                }
+            }
+        ]
+    },
+    "text_content": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%c"
+        ],
+        "controls": [
+            {
+                "default@global.reverse_binding": {
+                    "$key": "§m§4§0",
+                    "size": [
+                        "100%",
+                        "100%c"
+                    ],
+                    "controls": [
+                        {
+                            "button_text@starlib_pkg_button_common.button_text": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "sided@global.binding": {
+                    "$key": "§m§4§0",
+                    "size": [
+                        "100% - 8px",
+                        "100%c"
+                    ],
+                    "controls": [
+                        {
+                            "button_text@starlib_pkg_button_common.button_text": {
+                                "font_type": "MinecraftTen",
+                                "text_alignment": "left"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

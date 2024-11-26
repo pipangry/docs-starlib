@@ -1,0 +1,79 @@
+<h1>@starlib_pkg_button_common.sensible_button_panel</h1>
+<p>starlib_pkg_button_common.sensible_button_panel is used as the root panel of the button. As long as it is not asynchronous, like starlib_pkg_button_common.common_button_panel in compatibility with starlib_pkg_button_common.common_button, it can be used immediately as a root element without using starlib_pkg_button_common.common_button.</p>
+<div>
+    <span class="load-content" data-file="docs/package_button/common_button/common_button_panel">@starlib_pkg_button_common.common_button_panel</span>
+    <span class="load-content" data-file="docs/package_button/common_button/common_button">@starlib_pkg_button_common.common_button</span>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>What is async?</h3>
+        <p>Asynchronous button panel this means that the control of the main button style is an element separate from the button panel, and the hover state and pressed state elements are superimposed on top of it.</p>
+    </div>
+</div>
+<p> Due to the fact that starlib_pkg_button_common.sensible_button_panel is not an asynchronous button panel, you need to specify styles directly in its states. Basically, sensible_button_panel is used for such buttons that need to be expanded in different states.</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$SENSIBLE_BUTTON_default_control</td>
+                <td>global.empty_panel</td>
+                <td>Default state element control.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$SENSIBLE_BUTTON_hover_control</td>
+                <td>global.empty_panel</td>
+                <td>Hover state element control.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$SENSIBLE_BUTTON_pressed_control</td>
+                <td>$SENSIBLE_BUTTON_hover_control</td>
+                <td>Pressed state element control.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$SENSIBLE_BUTTON_bindings</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/sensible_button">View full binding</span></td>
+                <td>Sensible button bindings.</td>
+                <td>array (bindings)</td>
+            </tr>
+            <tr>
+                <td>$SENSIBLE_BUTTON_hover_size</td>
+                <td>[ 100% + 2px, 100% + 2px]</td>
+                <td>Sensible button hover state size. Used to increase the size of the button when hover state.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$SENSIBLE_BUTTON_sound_name</td>
+                <td>random.click</td>
+                <td>Button panel click sound.</td>
+                <td>string (sound id)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "button_panel@starlib_pkg_button_common.sensible_button_panel": { //Annotation
+        "$SENSIBLE_BUTTON_default_control": "server_form.default_state", //Defining default state control
+        "$SENSIBLE_BUTTON_hover_control": "server_form.hover_state" //Defining hover state control
+        /*We don't need to define pressed state control because it using
+        $SENSIBLE_BUTTON_hover_control by default*/
+    }
+    </div>
+</div>

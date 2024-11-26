@@ -1,0 +1,54 @@
+<h1>@starlib_pkg_button_common.range_selection_hover_text</h1>
+<p>starlib_pkg_button_common.range_selection_hover_text is similar in function to global.range_selection_binding, but it shows the text range output in hover text. If you want classic hover_text element, use starlib_pkg_button_common.hover_text</p>
+<div>
+    <span class="load-content" data-file="docs/global/range_selection_binding">@global.range_selection_binding</span>
+    <span class="load-content" data-file="docs/package_button/common_button/hover_text">@starlib_pkg_button_common.hover_text</span>
+    <div id="important-info-container" class="important-info">
+        <div class="important-info-bar"></div>
+        <div class="important-info-content">
+            <h3>How it works?</h3>
+            <p>This element shows hover text in the range from $from to $to in #form_button_text, deleting \t. /t acts as a space symbol in the range.</p>
+        </div>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>$from</td>
+                    <td>""</td>
+                    <td>The point in the character range from which the selection range starts.</td>
+                    <td>float</td>
+                </tr>
+                <tr>
+                    <td>$to</td>
+                    <td>""</td>
+                    <td>The point in the character range to which the selection range goes.</td>
+                    <td>float</td>
+                </tr>
+        </table>
+    </div>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...Button
+    "my_hover_text@starlib_pkg_button_common.range_selection_hover_text": { //Annotation
+        "$from": "100", //Range selection variables.
+        "$to": "200"
+    }
+    </div>
+</div>
+<div style="font-size: 18px;">
+    <span style="margin-right: 3px;">You can read more detailed examples with descriptions and an example of script usage in</span><span class="load-content-no-bg" data-file="docs/package_button/common_button/range_selection_button_text">starlib_pkg_button_common.range_selection_button_text</span>
+</div>

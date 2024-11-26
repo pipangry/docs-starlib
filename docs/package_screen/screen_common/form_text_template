@@ -1,0 +1,9 @@
+<h1>@starlib_pkg_screen_common.form_text_template</h1>
+<p>Classic form text template. Uses @style.label</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Binding info</h3>
+        <p>If the #form_text is empty, the element is not visible.</p>
+    </div>
+</div>

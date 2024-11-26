@@ -1,0 +1,63 @@
+<h1>@starlib_pkg_custom_renders.common_paperdoll</h1>
+<p>starlib_pkg_custom_renders.common_paperdoll is a ready-made and assembled element for paperdoll renderer, using starlib_pkg_custom_renders.doll_rotation_area and starlib_pkg_custom_renders.paperdoll_template</p>
+<div>
+    <span class="load-content" data-file="docs/package_custom/custom_renders/paperdoll_template">starlib_pkg_custom_renders.paperdoll_template</span>
+    <span class="load-content" data-file="docs/package_custom/custom_renders/doll_rotation_area">starlib_pkg_custom_renders.doll_rotation_area</span>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>This element is still in beta testing. Be careful when using this element. It may change in the near future.</p>
+    </div>
+</div>
+<p>Due to the fact that this element also uses starlib_pkg_custom_renders.doll_rotation_area, by default the $ROTATION_AREA_size parameter here is set to [ 100% - 8px, 100% - 8px ].</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$COMMON_PAPERDOLL_size</td>
+                <td>[ 100%, 100% ]</td>
+                <td>Paperdoll panel element size.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$COMMON_PAPERDOLL_background_texture</td>
+                <td>""</td>
+                <td>Texture for background element. Uses style.image. Have a full size of the panel.</td>
+                <td>string (texture path)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        //...
+        "my_paperdoll@starlib_pkg_custom_renders.common_paperdoll": { //Annotation
+            "$COMMON_PAPERDOLL_size": [ //Changing doll panel size
+                64,
+                "100% - 8px"
+            ],
+            "$COMMON_PAPERDOLL_background_texture": "textures/my_ui/doll_background",
+            //Defining my background texture
+
+            "$ROTATION_AREA_size": [ /*Changing doll rotation area size,
+            we can use it because doll_rotation_area used in our element*/
+                "100% - 16px",
+                "100% - 16px"
+            ]
+        }
+    </div>
+</div>

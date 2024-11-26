@@ -1,0 +1,22 @@
+<h1>@starlib_pkg_button_common.button_image</h1>
+<p>starlib_pkg_button_common.button_image is a standard button image element. Uses style.image</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$BUTTON_IMAGE_bindings</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/button_image">View full binding</span></td>
+                <td>Button image bindings.</td>
+                <td>array (bindings)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

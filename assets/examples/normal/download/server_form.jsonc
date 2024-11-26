@@ -1,0 +1,142 @@
+//=======================================
+//
+//   Website & Documentation - https://pipangry.github.io/docs-starlib
+//
+//   StarLibV2 MatrixUI example | by pipa_ngry
+//   Use it only for educational purposes!
+//   Thanks =)
+//
+//=======================================
+{
+    "namespace": "server_form",
+    "third_party_server_screen@common.base_screen": {
+        "$screen_content": "server_form.server_form",
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_cancel",
+                "to_button_id": "button.menu_exit",
+                "mapping_type": "global"
+            }
+        ]
+    },
+    "server_form": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            {
+                "server_form_factory": {
+                    "type": "factory",
+                    "control_ids": {
+                        "long_form": "@server_form.long_form",
+                        "custom_form": "@server_form.custom_form"
+                    }
+                }
+            }
+        ]
+    },
+    "long_form@starlib_pkg_screen_template.screen": {
+        "$SCREEN_TEMPLATE_fade_enabled": true,
+        "$SCREEN_TEMPLATE_fade_alpha": 0.4,
+
+        "$HEADER_TEMPLATE_style_control": "global.empty_panel",
+        "$HEADER_TEMPLATE_title_control": "server_form.title",
+        "$HEADER_TEMPLATE_contents_size": [
+            "100% - 46px",
+            "100%"
+        ],
+        "$HEADER_TEMPLATE_close_button_control": "server_form.close_button",
+
+        "$FORM_TEMPLATE_form_background_texture": "textures/matrix/background",
+        "$form_size": [
+            350,
+            235
+        ],
+        "$FORM_TEMPLATE_content_size": [
+            "100% - 32px",
+            "100% - 30px"
+        ],
+        "$FORM_TEMPLATE_content_offset": [
+            0,
+            -10
+        ],
+
+        "$SCROLLING_CONTENT_additional_content_margins_size": [
+            0,
+            1
+        ],
+        "$SCROLLING_CONTENT_main_control": "global.grid",
+        "$grid_item": "starlib_pkg_button_templates.grid_item_template",
+
+        "$GRID_ITEM_root_control": "starlib_pkg_button_templates.big_button",
+        "$GRID_ITEM_size": [
+            "25%",
+            "100%x"
+        ],
+        "$GRID_ITEM_root_size": [
+            "100% - 4px",
+            "100% - 4px"
+        ],
+
+        "$BIG_BUTTON_image_overlap_control": "server_form.gradient",
+        "$BIG_BUTTON_content_control": "server_form.button_content",
+        "$BIG_BUTTON_content_size": [
+            "100% - 6px",
+            "100% - 6px"
+        ],
+        "$BIG_BUTTON_image_size": [
+            "100% - 8px",
+            "100% - 8px"
+        ],
+        "$BIG_BUTTON_overlap_size": [
+            "100% - 2px",
+            "100% - 2px"
+        ],
+
+        "$COMMON_BUTTON_hover_control": "server_form.button_hover",
+        "$BUTTON_STYLE_default_texture": "textures/matrix/button"
+    },
+    "gradient@style.image": {
+        "texture": "textures/matrix/gradient",
+        "alpha": 0.5
+    },
+    "button_hover@style.image": {
+        "texture": "textures/matrix/button_hover"
+    },
+    "title@starlib_pkg_screen_common.title_template": {
+        "text_alignment": "left",
+        "font_type": "MinecraftTen",
+        "color": [
+            0,
+            -235,
+            -103
+        ],
+        "font_scale_factor": 1.3
+    },
+    "button_content@starlib_pkg_button_templates.common_big_button_content": {
+        "color": [
+            0,
+            -235,
+            -103
+        ]
+    },
+    "close_button@starlib_pkg_screen_common.close_button_template": {
+        "anchor_from": "right_middle",
+        "anchor_to": "right_middle",
+        "$CLOSE_BUTTON_default_control": "server_form.close_button_default",
+        "$CLOSE_BUTTON_hover_control": "server_form.close_button_hover",
+        "$CLOSE_BUTTON_pressed_control": "server_form.close_button_hover",
+        "offset": [
+            2,
+            2
+        ]
+    },
+    "close_button_default@style.image": {
+        "texture": "textures/matrix/close_button"
+    },
+    "close_button_hover@style.image": {
+        "texture": "textures/matrix/close_button_hover"
+    }
+}

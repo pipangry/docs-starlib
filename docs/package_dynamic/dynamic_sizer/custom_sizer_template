@@ -1,0 +1,77 @@
+<h1>@starlib_pkg_dynamic_sizer.custom_sizer_template</h1>
+<p>starlib_pkg_dynamic_sizer.custom_sizer_template is a template for dynamic sizer with a custom padding size defined by variable. You can read about how dynamic sizing works at the link below.</p>
+<span class="load-content" data-file="docs/how/sizers">How dynamic sizing works?</span>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$BUTTON_SIZER_custom_panel_size</td>
+                <td>[ 100%, 100%cm ]</td>
+                <td>The size of the entire sizer panel. Mainly changes only for very complex solutions.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$BUTTON_SIZER_custom_output</td>
+                <td><span style="font-style: italic;">Debug message<span></td>
+                <td>Control of the element to be used as the sizer output.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$BUTTON_SIZER_custom_size</td>
+                <td>[ 0, 0 ]</td>
+                <td>The size of the right and left paddings of the sizer.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$BUTTON_SIZER_custom_output_size</td>
+                <td>[ fill, 100%c ]</td>
+                <td>The size of the output element. It mainly changes only for very complex solutions. Be sure to leave the X size on the 'fill', otherwise sizer will simply not work.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$BUTTON_SIZER_left_custom</td>
+                <td>""</td>
+                <td>Key to enable left padding. Uses <span class="load-content-no-bg" data-file="docs/global/binding">@global.binding</span></td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>$BUTTON_SIZER_right_custom</td>
+                <td>""</td>
+                <td>Key to enable right padding. Uses <span class="load-content-no-bg" data-file="docs/global/binding">@global.binding</span></td>
+                <td>string</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "button@starlib_pkg_dynamic_structure.dynamic_item_template": { /*Here we using
+        dynamic item template as dynamic sizing entry element*/
+        "$DYNAMIC_ITEM_entry": "starlib_pkg_dynamic_sizer.custom_sizer_template",
+        //Defining our custom sizer as entry sizer
+
+        "$BUTTON_SIZER_custom_output": "starlib_pkg_dynamic_structure.vertical_processing_panel",
+        //Defining the output to vertical_processing_panel if the current sizer is the last one
+
+        "BUTTON_SIZER_custom_size": [ //For example, I want paddings to be for 25% size
+            "25%",
+            0
+        ],
+
+        "$BUTTON_SIZER_left_custom": "key_left", //Keys
+        "$BUTTON_SIZER_right_custom": "key_right"
+    }
+    </div>
+</div>

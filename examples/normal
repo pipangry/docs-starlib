@@ -1,0 +1,232 @@
+<h1>Common UI example | MartixUI</h1>
+<p>Hi! In this example, I will show you a simple example of a UI made with StarLibV2. It's not as easy as PeanutUI, but it will definitely help you understand more advanced editing of styles, non-standard elements and custom layout.</p>
+<p>This UI is not complicated, ideal for beginners in StarLibV2.</p>
+<a href="assets/examples/normal/download/server_form.jsonc" download>
+	<button>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 2.5a.25.25 0 0 0-.25-.25H7A2.75 2.75 0 0 0 4.25 5v14A2.75 2.75 0 0 0 7 21.75h10A2.75 2.75 0 0 0 19.75 19V9.147a.25.25 0 0 0-.25-.25H15a.75.75 0 0 1-.75-.75zm-.219 10.664a.75.75 0 0 1 .938 1.172l-2.494 1.995a.747.747 0 0 1-.473.169h-.008a.747.747 0 0 1-.465-.166l-2.497-1.998a.75.75 0 0 1 .937-1.172l1.281 1.026v-3.44a.75.75 0 1 1 1.5 0v3.44z" clip-rule="evenodd"/><path fill="currentColor" d="M15.75 2.824c0-.184.193-.301.336-.186c.121.098.23.212.323.342l3.013 4.197c.068.096-.006.22-.124.22H16a.25.25 0 0 1-.25-.25z"/></svg>
+        Download code of this example
+    </button>
+</a>
+<div class="image-container">
+    <div class="image-item">
+        <img src="assets/examples/normal/1.png" alt="Image 1">
+    </div>
+</div>
+<h2>Let's start with form assembling!</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "long_form@starlib_pkg_screen_template.screen": {
+            //Using StarLibV2 screen template
+
+            "$SCREEN_TEMPLATE_fade_enabled": true, //Enabling screen background fade
+            "$SCREEN_TEMPLATE_fade_alpha": 0.4, //Fade alpha, just more intensive here
+    
+            //Header variables
+            "$HEADER_TEMPLATE_style_control": "global.empty_panel",
+            /*In our form layout we don't need header style, only header content,
+            so i delete it by defining control to empty panel*/
+
+            "$HEADER_TEMPLATE_title_control": "server_form.title",
+            //Using our custom title element
+
+            //Here we need to reduce header content size to fit them better into our 'frame'
+            "$HEADER_TEMPLATE_contents_size": [
+                "100% - 46px",
+                "100%"
+            ],
+            "$HEADER_TEMPLATE_close_button_control": "server_form.close_button",
+            //Using our custom close button element
+    
+            //Global form variables
+            "$FORM_TEMPLATE_form_background_texture": "textures/matrix/background",
+            //Here we defining texture of whole form background
+
+            "$form_size": [ //Form size
+                350,
+                235
+            ],
+            "$FORM_TEMPLATE_content_size": [ //Reducing form content size to fit it better
+                "100% - 32px",
+                "100% - 30px"
+            ],
+            "$FORM_TEMPLATE_content_offset": [ //Offsetting content a little bit up
+                0,
+                -10
+            ],
+    
+            /*I will slightly increase the size of the upper paddings, which are actually used
+            for additional content. But they can also be used simply as an additional
+            indentation from form_text*/
+            "$SCROLLING_CONTENT_additional_content_margins_size": [
+                0,
+                1
+            ],
+
+            "$SCROLLING_CONTENT_main_control": "global.grid",
+            //We will use StarLibV2 grid template as the main scrolling content element
+
+            /*Defining our button for grid. I use grid_item_template to automatically add
+            padding between buttons*/
+            "$grid_item": "starlib_pkg_button_templates.grid_item_template"
+        },
+    </div>
+</div>
+<p>The initial layout of the form is done. Now we need to make the form and button style elements. In this example, I will also show you how to change the colors to your custom ones, because the text colors are from Minecraft itself (According to type §a). That is, we will also create custom text elements with custom colors and apply them to our elements.</p>
+<h2>Custom labels and style elements</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        //Elements for button
+        "gradient@style.image": {
+            //Overlap element for big button image
+            "texture": "textures/matrix/gradient",
+            "alpha": 0.5 //Aplha for better style
+        },
+
+        "button_hover@style.image": {
+            //Hover state element for our button with async structure
+            "texture": "textures/matrix/button_hover"
+        },
+        
+        "button_content@starlib_pkg_button_templates.common_big_button_content": {
+            /*Since our button is a big_button, we use a content template for this button,
+            simply changing the text color to our custom one. We can edit this parameter,
+            because common_big_button_content uses the style.label annotation*/
+
+            "color": [
+                0,
+                -235,
+                -103
+            ]
+        },
+
+        //Elements for form
+        "title@starlib_pkg_screen_common.title_template": {
+            //Using StarLibV2 form title template
+
+            //Changing label parametres, title_template uses style.label, so we can change them
+            "text_alignment": "left",
+            "font_type": "MinecraftTen",
+            "color": [ //Setting RGB color for title text
+                0,
+                -235,
+                -103
+            ],
+            "font_scale_factor": 1.3 //Increasing label size a little bit
+        },
+
+        //Custom close button
+        "close_button@starlib_pkg_screen_common.close_button_template": {
+            //Using StarLibV2 common close button template
+
+            //Position the button on the right
+            "anchor_from": "right_middle",
+            "anchor_to": "right_middle",
+            "offset": [ //Small offset for better style
+                2,
+                2
+            ],
+            //Close button panel variables
+            "$CLOSE_BUTTON_default_control": "server_form.close_button_default",
+            "$CLOSE_BUTTON_hover_control": "server_form.close_button_hover",
+            "$CLOSE_BUTTON_pressed_control": "server_form.close_button_hover"
+        },
+
+        /*As you can see, we using StarLibV2 image template by adding
+        style.image annotation*/
+
+        //Elements for close button states
+        "close_button_default@style.image": {
+            "texture": "textures/matrix/close_button"
+        },
+        "close_button_hover@style.image": {
+            "texture": "textures/matrix/close_button_hover"
+        }
+    </div>
+</div>
+<p>Our UI is almost ready! Now we just need to add the elements for the button. I will use the big button from StarLibV2 because it is the best fit for our style and layout. We can add the button variations directly to the main element of the form.</p>
+<h2>Button variables</h2>
+<div class="code-container">
+    <div class="code-header">
+        <h3>server_form.json</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        "long_form@starlib_pkg_screen_template.screen": {
+            //...Form variables
+
+            //Grid item template variables
+            "$GRID_ITEM_root_control": "starlib_pkg_button_templates.big_button",
+            //Using StarLibV2 big button as grid item root element
+
+            "$GRID_ITEM_size": [ /*Grid item size. Here I use percentages so that 
+            only 4 buttons can fit into our scrolling content*/
+                "25%",
+                "100%x"
+            ],
+            "$GRID_ITEM_root_size": [ /*We reduce the size of the root element,
+            thereby increasing the margins between the buttons*/
+                "100% - 4px",
+                "100% - 4px"
+            ],
+
+            //Big button template variables
+            "$BIG_BUTTON_image_overlap_control": "server_form.gradient",
+            //Using our gradient element as a big button image overlap element
+
+            "$BIG_BUTTON_content_control": "server_form.button_content",
+            //Using our custom big button content with changed label color
+
+            "$BIG_BUTTON_content_size": [ //Reducing content size for better style
+                "100% - 6px",
+                "100% - 6px"
+            ],
+            "$BIG_BUTTON_image_size": [ //Reducing the big button image size for better style
+                "100% - 8px",
+                "100% - 8px"
+            ],
+            "$BIG_BUTTON_overlap_size": [ /*Reducing the size of the overlay element so that
+            it does not go beyond the button borders*/
+                "100% - 2px",
+                "100% - 2px"
+            ],
+    
+            //Button panel variables
+
+            "$COMMON_BUTTON_hover_control": "server_form.button_hover",
+            /*Defining a button panel hover state element to our custom one.
+            We do not need to specify an element for pressed state, since it is
+            set by default to the one that will be specified in hover control*/
+
+            "$BUTTON_STYLE_default_texture": "textures/matrix/button"
+            //Chaning default button style texture to our custom one
+        },
+    </div>
+</div>
+<h2>UI is done!</h2>
+<p>From this example, you could learn how to use custom content, edit button templates content, and a more interesting layout solution.</p>
+<p>I hope this example was useful to you. But you always can request additional information from me. I also ask you very much not to use this example on servers or realms, because it was created only for educational purposes.</p>
+<h1>Off topic</h1>
+<div class="billboard">
+    <div class="billboard-content">
+        <h2 class="billboard-title">GrimUI</h2>
+        <div class="billboard-description">
+            <p>GrimUI - the most complex and the most powerful Form UI. Uses dynamic structure. Highly optimized and customizable.</p>
+            <a class="load-content-no-bg" style="font-size: 18px;" href="https://discord.com/channels/523663022053392405/1300103021035786260" target="_blank">Bedrock Addons post</a>
+        </div>
+
+    </div>
+    <div class="billboard-images">
+        <img src="assets/pages/home/FriendsSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/MarketplaceSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/ServersSW.png" alt="GrimUI showcase" class="billboard-image">
+        <img src="assets/pages/home/PlaySW.png" alt="GrimUI showcase" class="billboard-image">
+    </div>
+</div>

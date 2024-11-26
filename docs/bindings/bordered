@@ -1,0 +1,11 @@
+<span class="load-content" data-file="docs/package_button/button_templates/bordered_button_template">Back</span>
+<p style="white-space: pre-wrap;" >"$BORDERED_BUTTON_inner|default": [
+    {
+        "root@$BORDERED_BUTTON_default_control": {
+            "size": [
+                "100%",
+                "100%"
+            ]
+        }
+    }
+]</p>

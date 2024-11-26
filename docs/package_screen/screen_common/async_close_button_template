@@ -1,0 +1,105 @@
+<h1>@starlib_pkg_screen_common.async_close_button</h1>
+<p>starlib_pkg_screen_common.async_close_button is a close button with an asynchronous structure. Uses starlib_pkg_screen_common.close_button_template. Also supports adding an additional icon.</p>
+<span class="load-content" data-file="docs/package_screen/screen_common/close_button_template">starlib_pkg_dynamic_common.close_button_template</span>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>What is async?</h3>
+        <p>Asynchronous button panel this means that the control of the main button style is an element separate from the button panel, and the hover state and pressed state elements are superimposed on top of it. This allows you to optimize the button and its code.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$CLOSE_BUTTON_size</td>
+                <td>[ 15, 15 ]</td>
+                <td>Size of the async close button.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_icon_texture</td>
+                <td>""</td>
+                <td>Close button icon texture.</td>
+                <td>string (texture path)</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_icon_size</td>
+                <td>[ 100%, 100% ]</td>
+                <td>Size of the close button icon. Mainly edited for a more correct appearance of the icon.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_icon_offset</td>
+                <td>[ 0, 0 ]</td>
+                <td>Offset of the close button icon.</td>
+                <td>array (offset)</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_text_enabled</td>
+                <td><h4>false</h4></td>
+                <td>If true, close button text will be visible.</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_text_offset</td>
+                <td>[ 0, 0 ]</td>
+                <td>Offset of the close button text.</td>
+                <td>array (offset)</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_text_font_type</td>
+                <td>MinecraftTen</td>
+                <td>Font type of the close button text.</td>
+                <td>string (font_type)</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_default_control</td>
+                <td>style.black</td>
+                <td>Control of the close button style element. Since this button is asynchronous, this control performs the main element of the style, such as in <span class="load-content-no-bg" data-file="docs/package_button/common_button/common_button">starlib_pkg_button_common.common_button</span></td>
+                <td>string (annonation)</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_hover_control</td>
+                <td>style.close_button_hover</td>
+                <td>Control of the hover state element. Overlaid on top of $CLOSE_BUTTON_default. This variable is located in the <span class="load-content-no-bg" data-file="docs/package_screen/screen_common/close_button_template">starlib_pkg_dynamic_common.close_button_template</span>, which is used as the root panel in this element.</td>
+                <td>string (annonation)</td>
+            </tr>
+            <tr>
+                <td>$CLOSE_BUTTON_pressed_control</td>
+                <td>style.close_button_hover</td>
+                <td>Control of the pressed state element. Overlaid on top of $CLOSE_BUTTON_default. This variable is located in the <span class="load-content-no-bg" data-file="docs/package_screen/screen_common/close_button_template">starlib_pkg_dynamic_common.close_button_template</span>, which is used as the root panel in this element.</td>
+                <td>string (annonation)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "close_button@starlib_pkg_screen_common.async_close_button": {
+        "$CLOSE_BUTTON_size": [ //Changing close button size
+            "100%y", //y means that the size will be equal to the size of Y.
+            "100%"
+        ],
+        "$CLOSE_BUTTON_icon_texture": "textures/my_ui/cross", //Icon texture path
+
+        //Button states defining
+        "$CLOSE_BUTTON_default_control": "server_form.close_button_default",
+        "$CLOSE_BUTTON_hover_control": "server_form.close_button_hover",
+        "$CLOSE_BUTTON_pressed_control": "server_form.close_button_hover"
+    }
+    </div>
+</div>

@@ -1,0 +1,120 @@
+<h1>@starlib_pkg_screen_template.form_template</h1>
+<p>@starlib_pkg_screen_template.form_template is used as the main form item template for the StarLibV2 form. It has the structure of a vertical stack of root: header, main content, additional (lower) content. Used as a standard form element in @starlib_pkg_screen_template.screen</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$form_size</td>
+                <td>[ 300, 255 ]</td>
+                <td>Size of the form.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_header_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_screen/screen_template/header_template">starlib_pkg_screen_template.header_template</span></td>
+                <td>Control of the element to be used as a header.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_content_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_screen/screen_template/content_template">starlib_pkg_screen_template.content_template</span></td>
+                <td>Control of the element to be used as a main form content. Takes up all the free space in the form.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_content_size</td>
+                <td>[ 100% - 8px, 100% - 8px ]</td>
+                <td>Size of the $FORM_TEMPLATE_content_control element. Located in the center of the form content panel.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_content_offset</td>
+                <td>[ 0, 0 ]</td>
+                <td>Offset of the $FORM_TEMPLATE_content_control element. Does not affect $FORM_TEMPLATE_background_control.</td>
+                <td>array (offset)</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_sub_content_control</td>
+                <td>global.empty_panel</td>
+                <td>Control of the element to be used as a form sub content. Located at the bottom of the form.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_background_control</td>
+                <td>style.image</td>
+                <td>Control of the element to be used as a $FORM_TEMPLATE_content_control element background.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_background_texture</td>
+                <td>""</td>
+                <td>Texture of the $FORM_TEMPLATE_background_control.</td>
+                <td>string (texture path)</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_between_contents_padding_texture</td>
+                <td>""</td>
+                <td>Texture of between contents paddings. Mostly used if, instead of the usual indentation, you need, for example, a white line.</td>
+                <td>string (texture path)</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_between_contents_padding_size</td>
+                <td>[ 0, 0 ]</td>
+                <td>Size of the paddings between form contents.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_appear_header_padding</td>
+                <td><h4>true</h4></td>
+                <td>If true, between contents padding will appear between main content and header element.</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_appear_sub_contents_padding</td>
+                <td><h4>false</h4></td>
+                <td>If true, between contents padding will also appear between main content and sub content.</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_root_size</td>
+                <td>[ 100%, 100% ]</td>
+                <td>Size of the main central element of the form, where the main content, header, additional content, and so on are located. It is mainly used together with form_background to increase the size of the margins from the borders</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$FORM_TEMPLATE_form_background_texture</td>
+                <td>""</td>
+                <td>Texture of the form background. Always has a full form size.</td>
+                <td>string (texture path)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "my_form@starlib_pkg_screen_template.form_template": { //Annotation
+        "$FORM_TEMPLATE_content_size": [ //Changing content size
+            "100% - 16px",
+            "100% - 16px" 
+        ],
+        "$FORM_TEMPLATE_between_contents_padding_size": [ //Adding padding between my header and form content
+            0,
+            1 
+        ],
+        "$FORM_TEMPLATE_background_texture": "textures/my_ui/background" //Changing background texture to custom one
+    }
+    </div>
+</div>

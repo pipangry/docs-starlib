@@ -1,0 +1,64 @@
+<h1>@starlib_pkg_dynamic_structure.vertical_sizer_template</h1>
+<p>starlib_pkg_dynamic_structure.vertical_sizer_template is the standard vertical sizer template in StarLibV2. It always takes the sum of the sizes of all its child controls as Y size (100%c).</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$VERTICAL_SIZER_controls</td>
+                <td><span class="load-content-no-bg" data-file="docs/bindings/vertical_sizer">View full controls</span></td>
+                <td>Child elements controls. It is used to add dynamic vertical sizes or change the default one.</td>
+                <td>array (controls)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+        //...Vertical processing
+        "my_vertical_sizer@starlib_pkg_dynamic_structure.vertical_sizer_template": {
+            //In this example I will show you how to make dynamic vertical sizer
+            "VERTICAL_SIZER_controls": [
+                {
+                    /*We using global.reverse_binding to disable default size if
+                    custom size is enabled*/
+
+                    "size_default@global.reverse_binding": {
+                        "$key": "custom_size",
+                        "size": [
+                            0,
+                            32
+                        ]
+                    }
+                },
+                {
+                    /*We using global.binding to enable custom size only
+                    if key exists in #form_button_text*/
+                    
+                    "size_custom@global.binding": {
+                        "$key": "custom_size",
+                        "size": [
+                            "100%",
+                            "100%x"
+                        ]
+
+                        /*In this example, I'm showing you how you can implement a X axis
+                        vertical size*/
+                    }
+                }
+            ]
+        }
+        /...
+    </div>
+</div>

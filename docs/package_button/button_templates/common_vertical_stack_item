@@ -1,0 +1,62 @@
+<h1>@starlib_pkg_button_templates.common_vertical_stack_item</h1>
+<p>starlib_pkg_button_templates.common_vertical_stack_item is used to add margins to the bottom and top for vertical stack elements.</p>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>You cannot use this element for dynamic structure buttons since the vertical child size is used here, and the margins are not removed with keys.</p>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$VERTICAL_ITEM_button_control</td>
+                <td><span style="font-style: italic;">Debug message<span></td>
+                <td>Control of the main central element.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$VERTICAL_ITEM_top_margin_size</td>
+                <td>[ 0, 1 ]</td>
+                <td>Size of the top margin.</td>
+                <td>array (size)</td>
+            </tr>
+            <tr>
+                <td>$VERTICAL_ITEM_bottom_margin_size</td>
+                <td>[ 0, 1 ]</td>
+                <td>Size of the bottom margin.</td>
+                <td>array (size)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "factory@global.button_factory": { /*Using StarLibV2 classic vertical button factory
+        template annotation*/
+        "$factory_item": "server_form.button" //Using our button
+    },
+    //...
+    "button@starlib_pkg_button_templates.common_vertical_stack_item": { //Annotation
+        "$VERTICAL_ITEM_button_control": "starlib_pkg_button_templates.horizontal_button_template",
+        //Here for example I using horizontal_button_template
+        "VERTICAL_ITEM_bottom_margin_size": [ //Changing bottom margin size
+            0,
+            2
+        ]
+    }
+    </div>
+</div>

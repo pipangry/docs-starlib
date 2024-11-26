@@ -1,0 +1,64 @@
+<h1>@starlib_pkg_dynamic_structure.vertical_processing_panel</h1>
+<p>starlib_pkg_dynamic_structure.vertical_processing_panel is an advanced StarLibV2 vertical processing panel system for dynamic button structure. Has the ability to select custom variations of vertical size and keys. You can read more about the work of the vertical processing panel at the link below. Also you can see a detailed example of using the vertical processing panel in the Dynamic UI example.</p>
+<span class="load-content" data-file="docs/how/vertical_processing">How Vertical processing works?</span>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>Due to the structure of the vertical processing panel, you cannot further use child size in the $VERTICAL_PROCESSING_output_control element.</p>
+    </div>
+</div>
+<p>I also warn you that for the vertical processing panel to work correctly, you need to specify the vertical sizer panel.</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$VERTICAL_PROCESSING_sizer_template_control</td>
+                <td><span class="load-content-no-bg" data-file="docs/package_dynamic/dynamic_structure/vertical_sizer_template">starlib_pkg_dynamic_structure.vertical_sizer_template</span></td>
+                <td>Control of the annotation element for vertical sizer.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$VERTICAL_PROCESSING_output_control</td>
+                <td>global.empty_panel</td>
+                <td>Control of the main output element. Basically, the end button is indicated here, since usually vertical_processing_panel is the last component of the assembly of a dynamic structure.</td>
+                <td>string (annotation)</td>
+            </tr>
+            <tr>
+                <td>$VERTICAL_PROCESSING_no_height_key</td>
+                <td>""</td>
+                <td>Key to disable vertical collision of the element. Necessary!</td>
+                <td>string</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "button@starlib_pkg_dynamic_structure.dynamic_item_template": { /*Here we using
+        dynamic item template as dynamic sizing entry element*/
+        "$DYNAMIC_ITEM_entry": "starlib_pkg_dynamic_sizer.common_auto_sizer",
+
+        /*In this example I will use common_auto_sizer since its output is
+        automatically vertical_processing_panel*/
+
+        "$VERTICAL_PROCESSING_output_control": "starlib_pkg_button_templates.horizontal_button",
+        //Using StarLibV2 horizontal button.
+
+        "$VERTICAL_PROCESSING_no_height_key": "disable_collision"
+        //No height key is necessary
+    }
+    </div>
+</div>

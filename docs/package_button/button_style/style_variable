@@ -1,0 +1,47 @@
+<h1>@starlib_pkg_button_style.style_variable</h1>
+<p>starlib_pkg_button_style.style_variable performs the role of global.binding, but with using annotation starlib_pkg_button_style.button_style_template.</p>
+<div>
+    <span class="load-content" data-file="docs/global/binding">@global.binding</span>
+    <span class="load-content" data-file="docs/package_button/button_style/button_style_template">@starlib_pkg_button_style.button_style_template</span>
+    <div id="important-info-container" class="important-info">
+        <div class="important-info-bar"></div>
+        <div class="important-info-content">
+            <h3>How it works?</h3>
+            <p>If $key exists in #form_button_text, texture is visible.</p>
+        </div>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default value</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$key</td>
+                <td>""</td>
+                <td>Key to show style element.</td>
+                <td>string</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    //...
+    "custom_style_variable@starlib_pkg_button_style.style_variable": { //Annotation
+        "$key": "green", //Key
+        "texture": "textures/my_ui/green_button_style" /*Since style_variable uses
+        starlib_pkg_button_style.button_style_template, we can modify it direcly*/
+    }
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<h1>@starlib_pkg_button_templates.horizontal_button</h1>
+<p>starlib_pkg_button_templates.horizontal_button is a pre-made button structure, an example of which you can see below. Uses starlib_pkg_button_templates.horizontal_button_template. Intended only for vertical stacks.</p>
+<div>
+    <span class="load-content" data-file="docs/package_button/button_templates/horizontal_button_template">@starlib_pkg_button_templates.horizontal_button_template</span>
+    <span class="load-content" data-file="docs/package_button/button_templates/common_vertical_stack_item">@starlib_pkg_button_templates.common_vertical_stack_item</span>
+</div>
+<h3>Classic horizontal button example (No changes)</h3>
+<div class="image-container">
+    <img src="assets/pages/button_templates/horizontal.png" alt="Horizontal button"><img>
+</div>
+<div id="important-info-container" class="important-info">
+    <div class="important-info-bar"></div>
+    <div class="important-info-content">
+        <h3>Attention!</h3>
+        <p>Since this element uses starlib_pkg_button_templates.common_vertical_stack_item annotation, you cannot use this element in dynamic button structures. To do this, use starlib_pkg_button_templates.horizontal_button_template.</p>
+    </div>
+</div>
+<div class="code-container">
+    <div class="code-header">
+        <h3>Example</h3>
+        <button class="copy-button"></button>
+    </div>
+    <div class="code-content">
+    "button_factory@global.button_factory": { //Using StarLibV2 classic button factory template annotation
+        "$factory_item": "server_form.button" //Using our button
+    },
+    //...
+    "button@starlib_pkg_button_templates.horizontal_button": { //Annotation
+        "$HORIZONTAL_BUTTON_size": [ //Changing size
+            "100% - 2px",
+            34
+        ],
+        "$HORIZONTAL_BUTTON_content_control": "server_form.my_button_text"
+        /*This variable is located in
+        @starlib_pkg_button_templates.horizontal_button_template, we can use it,
+        since this element is the horizontal_button template*/
+    }
+    </div>
+</div>
