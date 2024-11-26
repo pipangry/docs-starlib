@@ -153,7 +153,7 @@
                         /*Since the borders for the button are already present in the button texture itself,
                         I will remove them by simply exposing an empty panel*/
 
-                        //By defining button borders control to empty_panel, we create margins from the buttons.
+                        /*By defining button borders control to empty_panel, we create margins from the buttons.
                         Therefore, we do not need to use the horizontal_button annotation with the margins applied.
                         We will use horizontal_button_template, where there are no default margins*/
                         "$button_item_control": "starlib_pkg_button_templates.horizontal_button_template",
