@@ -274,7 +274,7 @@ document.getElementById('search').addEventListener('input', function() {
 
             const fileName = filePath.replace(/^docs\//, '');
 
-            resultItem.innerHTML = `<strong>${fileName}</strong>: <span class="highlight">${matches.join(', ')}</span>`;
+            resultItem.innerHTML = `<strong>${fileName}</strong>: ${matches.join(', ')}`;
 
             resultItem.onclick = function() {
                 loadFileContent(filePath);
