@@ -205,7 +205,7 @@ button {
     border: 0;
     border-radius: 10px;
     padding: 10px 15px;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     display: flex;
