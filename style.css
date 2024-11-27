@@ -164,6 +164,8 @@ a {
 #search-results div {
     padding: 15px;
     border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    line-height: 1.5;
     transition: 0.2s;
 }
 
