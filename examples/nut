@@ -100,7 +100,7 @@
             "$key": "§p§4§0", //Key for binding
 
             "$COMMON_BUTTON_style_control": "starlib_pkg_button_style.common_button_style",
-            //Due to the fact that this variable is defined in the main element of the
+            /*Due to the fact that this variable is defined in the main element of the
             form above (You will see further), we need to reset the parameter to default*/
 
             "controls": [
