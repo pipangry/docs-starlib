@@ -15,8 +15,7 @@ body {
 }
 
 p {
-    font-size: 18px;
-    line-height: 1.5;
+    font-size: 1.1em;
 }
 
 #sidebar {
@@ -205,8 +204,8 @@ button {
     border: 0;
     border-radius: 10px;
     padding: 10px 15px;
+    font-size: 1em;
     cursor: pointer;
-    font-size: 16px;
     transition: background-color 0.3s, transform 0.3s;
     display: flex;
     align-items: center;
@@ -414,10 +413,6 @@ tbody tr:hover {
         border-bottom: 1px solid #ccc;
         width: 220px;
         min-width: 220px;
-    }
-
-    #content {
-        padding: 10px;
     }
 
     input[type="text"], button {
