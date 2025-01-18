@@ -6,20 +6,3 @@
 <p>The vertical processing panel makes your button factory think that the size of the button is zero, but at the same time gives you control over it. That is, you can make the button size normal (that is, with a collision) and with a zero vertical size. But then how does the button still look the way it would at a normal size? It's all about asynchronous vertical sizes. The main panel where the vertical sizer is located with the option to turn off (Becomes hided by binding). And the buffer panel, where our main element (Output) with sibiling size parameter is located, and another vertical sizer, which can no longer be turned off. This asynchrony allows you to quickly switch between different sizes. Yes, it is not very optimized, because you duplicate your bindings, if, for example, your vertical sizer has several variations of the vertical size. A more advanced technology has already been invented by me, but because of its closed source code, it is not available in StarLibV2.</p>
 <h2>Conclusion</h2>
 <p>I hope you have at least understood something from my story. It was quite difficult for me to formulate this. In any case, it's best for you to look at the open source vertical processing panel in the code of StarLibV2 itself. This technology is also used in the open source Dynamic UI example, which I also recommend you to look at.</p>
-<h1>Off topic</h1>
-<div class="billboard">
-    <div class="billboard-content">
-        <h2 class="billboard-title">Also check GrimUI</h2>
-        <div class="billboard-description">
-            <p>GrimUI - the most complex and the most powerful Form UI. Uses dynamic structure. Highly optimized and customizable.</p>
-            <a class="load-content-no-bg" style="font-size: 18px;" href="https://discord.com/channels/523663022053392405/1300103021035786260" target="_blank">Bedrock Addons post</a>
-        </div>
-
-    </div>
-    <div class="billboard-images">
-        <img src="assets/pages/home/FriendsSW.png" alt="GrimUI showcase" class="billboard-image">
-        <img src="assets/pages/home/MarketplaceSW.png" alt="GrimUI showcase" class="billboard-image">
-        <img src="assets/pages/home/ServersSW.png" alt="GrimUI showcase" class="billboard-image">
-        <img src="assets/pages/home/PlaySW.png" alt="GrimUI showcase" class="billboard-image">
-    </div>
-</div>

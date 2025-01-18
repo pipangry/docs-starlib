@@ -213,20 +213,3 @@
 <h2>UI is done!</h2>
 <p>From this example, you could learn how to use custom content, edit button templates content, and a more interesting layout solution.</p>
 <p>I hope this example was useful to you. But you always can request additional information from me. I also ask you very much not to use this example on servers or realms, because it was created only for educational purposes.</p>
-<h1>Off topic</h1>
-<div class="billboard">
-    <div class="billboard-content">
-        <h2 class="billboard-title">GrimUI</h2>
-        <div class="billboard-description">
-            <p>GrimUI - the most complex and the most powerful Form UI. Uses dynamic structure. Highly optimized and customizable.</p>
-            <a class="load-content-no-bg" style="font-size: 18px;" href="https://discord.com/channels/523663022053392405/1300103021035786260" target="_blank">Bedrock Addons post</a>
-        </div>
-
-    </div>
-    <div class="billboard-images">
-        <img src="assets/pages/home/FriendsSW.png" alt="GrimUI showcase" class="billboard-image">
-        <img src="assets/pages/home/MarketplaceSW.png" alt="GrimUI showcase" class="billboard-image">
-        <img src="assets/pages/home/ServersSW.png" alt="GrimUI showcase" class="billboard-image">
-        <img src="assets/pages/home/PlaySW.png" alt="GrimUI showcase" class="billboard-image">
-    </div>
-</div>
